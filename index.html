@@ -1,11 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Text Adventure</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
+    <section class="load-page">
+
+        <section class="text-container">
+            <h1>The Slow Saga:</h1>
+            <h2>Rise Of PowerSchool</h2>
+        </section>
+
+        <section class="img-container">
+            <img src="Images/fastStart.png" alt="fastStart">
+        </section>
+
+        <button>Start</button>
+    </section>
+
+    <section class="home-page hidden">
+        <img src="Images/locationIcon.png" alt="Location Icon">
+
+        <img src="Images/backpackIcon.png" alt="Backpack Icon">
+
+        <section class="text-container" id="text-output">
+
+        </section>
+
+        <section class="button-container">
+
+            <button id="btn1">Button 1</button>
+            <button id="btn2">Button 2</button>
+            <button id="btn3">Button 3</button>
+
+        </section>
+    </section>
+
+    <section class="inventory hidden">
+
+        <section class="inventory-container">
+
+            <section class="invItem">
+                <img src="Images/pickleObj.png" alt="Pickle Object">
+                <p>Pickle</p>
+                <p id="invValue">1</p>
+            </section>
+
+        </section>
+
+    </section>
+
+    <section class="map hidden">
+        <img src="Images/" alt="Map Image">
+    </section>
+
+    <section class="ending hidden">
+
+        <h2>Game Over</h2>
+        <img src="Images/jamesDead.png" alt="Game Over Screen">
+
+        <section class="endingMessage" id="endingMessage">
+
+            <h3>CATASTROPHE ALERT: Loitering Detected!</h3>
+            <p>Alas, the echoes of your idle footsteps have shattered the very foundation of the Center for Advanced
+                Research and Technology (CART)! Your blatant disregard for the no-loitering policy has unleashed chaos
+                and discord, disrupting the delicate balance required for scientific brilliance. The heavens weep, and
+                the stars dim at the sight of such negligence, plunging the realm of innovation into darkness.</p>
+
+        </section>
+
+        <section class="summary" id="summary">
+            <p>Your day at CART was like some kind of twisted fever dream. You (events to end route)[, even though you
+                (other ending that the player had all items for)]. From 7:40 AM to 10:45 AM, you managed to collect (all
+                inventory items) and a total of (money). On your demented quest, you managed to defeat a total of (NPCS
+                defeated).</p>
+        </section>
+
+
+        <button>Try Again</button>
+    </section>
+
 </body>
+
 </html>
