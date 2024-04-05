@@ -48,13 +48,31 @@ var Map = {
 
 };
 
-// After page is loaded
+// After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
+
 
 
     });
 });
 
+// After Location button is pressed
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("locIcon").addEventListener("click", function () {
+
+
+
+    });
+});
+
+// After Backpack button is pressed
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("backIcon").addEventListener("click", function () {
+
+
+
+    });
+});
 
 
