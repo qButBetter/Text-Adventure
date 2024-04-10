@@ -60,12 +60,12 @@ var NPC = {
             "I'm busy right now.",
             "I'm right wing.",
             "Trump 2024.",
-            "I watch Judge Judy"]
+            "I watch Judge Judy"],
             atk: [1],
             drop: [1],
             cartImg: [],
             sierraImg: []
-    }
+    },
 
     buttons: {
         good: 0,
