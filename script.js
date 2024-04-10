@@ -25,7 +25,7 @@ var NPC = {
             "DME kids are SO stuck up. What do you mean you're from the tech labs? What's a “web application”?",
             "Business is my passion.",
             "Hey bro."],
-        buttons: ["OK.",
+        reply: ["OK.",
             "I'm busy.",
             "Isn't crypto cool?",
             "How's your stocks?",
@@ -38,6 +38,40 @@ var NPC = {
             "Doge is the only true currency."],
         atk: [1],
         drop: [1],
+        cartImg: [],
+        sierraImg: []
+    },
+    law: {
+        dialogue: ["Deodorant? What's that?",
+            "Hey! I'm writing about Hamilton, can I have you proofread the first 30 pages for me?",
+            "We're learning about the women's rights movement. Isn't it crazy that women had to lobby for their right to move around before the 1920's?",
+            "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal. Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this. But, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth. ",
+            "Shouldn't you be playing League of Legends?",
+            "Are you sure you can't watch one episode of my 1983 BBC released period drama with me?",
+            "Take my survey now!!",
+            "You look like you love freedom. Care to talk to me about the American dream?",
+            "Law is my passion."],
+        reply: ["I love George Washington!",
+            "OK.",
+            "Law is so underappreciated!",
+            "I rewatched Top Gun recently.",
+            "I love your tie!",
+            "Heck yeah America!",
+            "I'm busy right now.",
+            "I'm right wing.",
+            "Trump 2024.",
+            "I watch Judge Judy"]
+            atk: [1],
+            drop: [1],
+            cartImg: [],
+            sierraImg: []
+    }
+
+    buttons: {
+        good: 0,
+        mid: 0,
+        bad: 0,
+        // good ends battle, mid takes no damage but doesnt end battle, bad takes damage
     }
 
 };
