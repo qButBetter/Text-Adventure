@@ -126,13 +126,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
 
         var student = new Player();
-        // let nameInput = prompt("What's your name?");
-        // student.name = nameInput;
+        let nameInput = prompt("What's your name?");
+        student.name = nameInput;
 
 
         hidePage("load-page");
         removeHidden("home-page");
-        // setText(student.name);
+        setText(student.name);
 
 
     });
