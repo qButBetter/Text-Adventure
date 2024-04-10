@@ -71,10 +71,34 @@ var Map = {
 
 };
 
+function hidePage(input) {
+    document.getElementById(input).classList.add("hidden");
+}
+
+function removeHidden(input) {
+    document.getElementById(input).classList.remove("hidden");
+}
+
+function setText(input) {
+    document.getElementById("text-output").innerText = input;
+}
+
+function setBackground(input) {
+    document.getElementById("text-output").setBackground = input;
+}
+
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
 
+        var student = new Player();
+        // let nameInput = prompt("What's your name?");
+        // student.name = nameInput;
+
+
+        hidePage("load-page");
+        removeHidden("home-page");
+        // setText(student.name);
 
 
     });
@@ -84,7 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("locIcon").addEventListener("click", function () {
 
-
+        setText("");
+        setBackground = ("")
 
     });
 });
@@ -93,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backIcon").addEventListener("click", function () {
 
-
+        setText("");
 
     });
 });
