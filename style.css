@@ -3,6 +3,9 @@
 * {
     box-sizing: border-box;
     margin: 0 auto;
+    font-family: "Karantina", sans-serif;
+    color: white;
+    text-transform: uppercase;
 }
 
 section {
@@ -11,11 +14,6 @@ section {
 
 body {
     background-color: black;
-}
-
-h1, h2, h3, p {
-    font-family: "Karantina", sans-serif;
-    color: white;
 }
 
 /* Load Page */
