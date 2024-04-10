@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         hidePage("load-page");
         removeHidden("home-page");
-        setText(student.name);
+        document.getElementById("name-container").innerText = student.name;
 
 
     });
@@ -142,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("locIcon").addEventListener("click", function () {
 
-        setText("");
         setBackground = ("")
 
     });
@@ -152,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backIcon").addEventListener("click", function () {
 
-        setText("");
+        setBackground("");
 
     });
 });
