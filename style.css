@@ -3,7 +3,9 @@ black
 border
 left
 center
-around */
+around 
+tenEm
+main-size*/
 
 
 
@@ -42,9 +44,10 @@ body {
     align-items: center;
 }
 
-section {
-    height: 100%;
-    width: 100%;
+.column {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 }
 
 .left{
@@ -55,36 +58,51 @@ section {
     text-align: center;
 }
 
+.tenEm{
+    font-size: 10em;
+}
+
+.main-size{
+    font-size:3em;
+}
+
+/* Universal */
 .text-container{
     height: 15em;
 }
 
-/* Load Page */
-.load-page .text-container {
-    display: flex;
-    flex-flow: column wrap;
-    height: 100%;
+.button-container{
+    height: 5em;
+
 }
 
-.load-page {
-    background-image: url(BackgroundImages/landbg.png);
-    background-repeat: none;
-    background-size: 100vw 100vh;
-    background-position: 100%;
+.wrapper {
     height: 100vh;
 }
 
-.load-page h1 {
-    font-size: 10em;
-    align-self: left;
-}
-
-.img-container{
+.button-container {
     display: flex;
-    flex-flow: row-reverse wrap;
+    justify-content: space-around;
 }
 
+/* Load Page */
 
+.load-page {
+    background-image: url(BackgroundImages/landbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80%;
+    height: 100%;
+}
+
+.load-page h1 {
+    align-self: left;
+    text-shadow: 15px 0 black;
+}
+
+.title{
+    margin-top: 1.5em;
+}
 
 /* Home Page */
 
