@@ -23,79 +23,95 @@
                 <a class="loadEndBtn main-size" id="start-btn">Start</a>
             </section>
         </section>
-   
 
-    <section id="home-page" class="home-page hidden">
 
-        <section id="name-container" class="nameContainer">
+        <section id="home-page" class="home-page hidden">
 
+            <section id="name-container" class="nameContainer">
+
+            </section>
+
+            <section class="row">
+                <!-- this should be the left column w the map & time -->
+                <section class="column">
+                    <span id="health" class="tenEm">100</span>
+                    <img id="locIcon" class="locIcon" src="Images/locationIcon.png" alt="Location Icon">
+
+                </section>
+
+                <section class="image-container" id="home-image">
+                    <img src="mr-mog.png">
+                </section>
+
+                <section class="column">
+                    <img id="backIcon" class="backIcon" src="Images/backpackIcon.png" alt="Backpack Icon">
+                    <span id="money" class="tenEm">100</span>
+                </section>
+            </section>
+
+            <section class="text-container black border" id="text-output">
+
+            </section>
+
+
+            <section class="button-container">
+
+                <button class="black border main-size" id="btn1">Button 1</button>
+                <button class="black border main-size" id="btn2">Button 2</button>
+                <button class="black border main-size" id="btn3">Button 3</button>
+
+            </section>
         </section>
 
-        <img id="locIcon" src="Images/locationIcon.png" alt="Location Icon">
+        <section id="inventory" class="inventory hidden">
 
-        <img id="backIcon" src="Images/backpackIcon.png" alt="Backpack Icon">
+            <section class="inventory-container">
 
-        <section class="image-container" id="home-image">
-            
-        </section>
+                <section class="invItem">
+                    <img src="MiscItemImages/pickleObj.png" alt="Pickle Object">
+                    <p>Pickle</p>
+                    <p id="invValue">1</p>
+                </section>
 
-        <section class="text-container black border" id="text-output">
-
-        </section>
-
-        <section class="button-container">
-
-            <button class="black border main-size" id="btn1">Button 1</button>
-            <button class="black border main-size" id="btn2">Button 2</button>
-            <button class="black border main-size" id="btn3">Button 3</button>
-
-        </section>
-    </section>
-
-    <section id="inventory" class="inventory hidden">
-
-        <section class="inventory-container">
-
-            <section class="invItem">
-                <img src="MiscItemImages/pickleObj.png" alt="Pickle Object">
-                <p>Pickle</p>
-                <p id="invValue">1</p>
             </section>
 
         </section>
 
-    </section>
-
-    <section id="map" class="map hidden">
-        <img src="Images/" alt="Map Image">
-    </section>
-
-    <section id="ending" class="ending hidden">
-
-        <h2>Game Over</h2>
-        <img src="Images/jamesDead.png" alt="Game Over Screen">
-
-        <section class="endingMessage" id="endingMessage">
-
-            <h3>CATASTROPHE ALERT: Loitering Detected!</h3>
-            <p>Alas, the echoes of your idle footsteps have shattered the very foundation of the Center for Advanced
-                Research and Technology (CART)! Your blatant disregard for the no-loitering policy has unleashed chaos
-                and discord, disrupting the delicate balance required for scientific brilliance. The heavens weep, and
-                the stars dim at the sight of such negligence, plunging the realm of innovation into darkness.</p>
-
+        <section id="map" class="map hidden">
+            <img src="Images/" alt="Map Image">
         </section>
 
-        <section class="summary" id="summary">
-            <p>Your day at CART was like some kind of twisted fever dream. You (events to end route)[, even though you
-                (other ending that the player had all items for)]. From 7:40 AM to 10:45 AM, you managed to collect (all
-                inventory items) and a total of (money). On your demented quest, you managed to defeat a total of (NPCS
-                defeated).</p>
+        <section id="ending" class="ending hidden">
+
+            <h2>Game Over</h2>
+            <img src="Images/jamesDead.png" alt="Game Over Screen">
+
+            <section class="endingMessage" id="endingMessage">
+
+                <h3>CATASTROPHE ALERT: Loitering Detected!</h3>
+                <p>Alas, the echoes of your idle footsteps have shattered the very foundation of the Center for Advanced
+                    Research and Technology (CART)! Your blatant disregard for the no-loitering policy has unleashed
+                    chaos
+                    and discord, disrupting the delicate balance required for scientific brilliance. The heavens weep,
+                    and
+                    the stars dim at the sight of such negligence, plunging the realm of innovation into darkness.</p>
+
+            </section>
+
+            <section class="summary" id="summary">
+                <p>Your day at CART was like some kind of twisted fever dream. You (events to end route)[, even though
+                    you
+                    (other ending that the player had all items for)]. From 7:40 AM to 10:45 AM, you managed to collect
+                    (all
+                    inventory items) and a total of (money). On your demented quest, you managed to defeat a total of
+                    (NPCS
+                    defeated).</p>
+            </section>
+
+
+            <a class="loadEndBtn main-size" id="end-btn">Try Again</a>
         </section>
-
-
-        <a class="loadEndBtn main-size" id="end-btn">Try Again</a>
-    </section> 
-</section>
+    </section>
 
 </body>
 
