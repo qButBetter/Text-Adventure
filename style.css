@@ -8,7 +8,7 @@ tenEm
 main-size*/
 
 
-
+/* generic styling */
 
 @import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap');
 
@@ -34,9 +34,6 @@ body {
     border: 3px solid white;
 }
 
-.button {
-    width: 3em;
-}
 
 .around{
     display: flex;
@@ -69,11 +66,7 @@ body {
 /* Universal */
 .text-container{
     height: 15em;
-}
-
-.button-container{
-    height: 5em;
-
+    margin-bottom: 1em;
 }
 
 .wrapper {
@@ -91,6 +84,11 @@ text-decoration: underline;
 
 .loadEndBtn::after {
     color: white;
+}
+
+button {
+    width: 30%;
+    padding: .5em;
 }
 
 /* Load Page */
@@ -113,6 +111,16 @@ text-decoration: underline;
 }
 
 /* Home Page */
+.home-page{
+    height: 100%;
+}
+
+.image-container{
+    height: 70%;
+    width: 50%;
+    background-color: rgb(202, 202, 202);
+}
+
 
 /* Inventory Page */
 
