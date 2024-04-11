@@ -224,6 +224,10 @@ function setBackground(input) {
     document.getElementById("text-output").style.backgroundImage = `url(${input})`;
 }
 
+function utilBackground(input) {
+    document.getElementById("").style.backgroundImage = `url(${input})`;
+}
+
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
@@ -245,7 +249,18 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("locIcon").addEventListener("click", function () {
 
-        setBackground("mr-mog.png");
+        let counter = 0;
+
+        if (counter % 2 == 0) {
+            utilBackground("mr-mog.png");
+            counter++;
+        }
+        else {
+            // // Access the current background from code.
+            // utilBackground("");
+            // counter++;
+        }
+        
 
     });
 });
@@ -254,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backIcon").addEventListener("click", function () {
 
-        setBackground("sad.png");
+        utilBackground("sad.png");
 
     });
 });
