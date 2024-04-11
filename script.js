@@ -221,7 +221,7 @@ function setText(input) {
 }
 
 function setBackground(input) {
-    document.getElementById("text-output").setBackground = input;
+    document.getElementById("text-output").style.backgroundImage = `url(${input})`;
 }
 
 // After start button is pressed
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("locIcon").addEventListener("click", function () {
 
-        setBackground = ("")
+        setBackground("mr-mog.png");
 
     });
 });
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backIcon").addEventListener("click", function () {
 
-        setBackground("");
+        setBackground("sad.png");
 
     });
 });
