@@ -85,6 +85,14 @@ body {
     justify-content: space-around;
 }
 
+.loadEndBtn:hover {
+text-decoration: underline;
+}
+
+.loadEndBtn::after {
+    color: white;
+}
+
 /* Load Page */
 
 .load-page {
