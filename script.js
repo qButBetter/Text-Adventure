@@ -21,8 +21,8 @@ var Ally = {
         atk: [1],
         drop: [1],
         cartImg: {
-            hall: [],
-            gallery: []
+            hall: ["StudentImages/peyton.png", "StudentImages/carl.png", "StudentImages/landon.png", "StudentImages/ryan.png", "StudentImages/sharon.png", "StudentImages/finn.png", "StudentImages/gamer.png", "StudentImages/wpm.png",],
+            gallery: ["StudentImages/an.png", "StudentImages/artist.png", "StudentImages/cybertruck.png", "StudentImages/eve.png", "StudentImages/jose.png", "StudentImages/pearla.png", "StudentImages/tameem.png",]
         },
         sierraImg: {
             //wherever u can go in sv
@@ -165,17 +165,22 @@ var NPC = {
 
 var Story = {
     // Endings
-    arson: [],
-    inspo: [],
-    slowversal: [],
-    summary: [],
-    gameover: [],
+    arson: ["Mr. Slow went down quickly, in stark contrast to his new name. As the sun slowly sets on the day, you breathe a sigh of relief, and get a Baconator from Wendy's. You still go to school the next day. When you come in, a substitute teacher waits for you, along with a new assignment. The assignment's name? “Text Adventure Project”.",],
+    inspo: ["Your great adventures through Sierra Vista Mall proved fruitful. You sit back down into your chair, rejuvenated, ready to write the ultimate function:  One which would create your entire project for you as soon as the browser booted.", "(you copy down notes of code to write a while true loop)", "You look at your Javascript creation, feeling fulfilled, knowing this majesty will negate the Super F- with its holy Github power. Anticipation peaks as you right click your empty HTML file and see the Liveserver extension appear in the options.",],
+    slowversal: ["After all of your efforts, you've finally reached the final hurdle to reversing Mr. Fast's overPower(school)ed transformation. Page by page, you piece his old self onto the wall.", "With the last page comes a blinding flash of light. Mr. Fast turns to you in a daze.", "He laughs at your response, which you delivered in a manner true to what he would provide you in the same case. Then he steps over to the computer, adjusting something on the screen.", "On your computer screen, the google classroom due changes to Monday. Not the most time, but time enough. With a sigh of relief, you collapse into your chair. It's over."],
     steedle: [],
     icaraga: [],
 
-    // Other Cutscenes
+};
+
+var GameOver = {
+
+};
+
+var Cutscene = {
     beginning: [],
-    allen: ["Hey there! What are you doing out here?", "We’re going to Sierra Vista Mall for a final field trip.", ""]
+    allen: ["Hey there! What are you doing out here?", "We're going to Sierra Vista Mall for a final field trip."],
+    fast: ["What happened?", "I don't remember that.", "Since you're all so behind, I'll give you the weekend to finish."],
 };
 
 var Summary = {
