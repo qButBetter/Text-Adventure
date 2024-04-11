@@ -225,7 +225,7 @@ function setBackground(input) {
 }
 
 function utilBackground(input) {
-    document.getElementById("").style.backgroundImage = `url(${input})`;
+    document.getElementById("home-image").style.backgroundImage = `url(${input})`;
 }
 
 // After start button is pressed
