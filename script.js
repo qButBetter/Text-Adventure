@@ -66,13 +66,6 @@ var NPC = {
         cartImg: [],
         sierraImg: []
     },
-    
-            "I watch Judge Judy"],
-            atk: [1],
-            drop: [1],
-            cartImg: [],
-            sierraImg: []
-    },
 
     buttons: {
         good: 0,
