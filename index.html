@@ -4,31 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Adventure</title>
+    <title>The Slow Saga</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="TeacherImages/fast.png">
 </head>
 
 <body>
 
-    <section id="load-page" class="load-page">
+    <section class="wrapper">
+        <section id="load-page" class="load-page column">
 
-        <section class="text-container">
-            <h1 class="left">The Slow Saga: </br> Rise of Powerschool</h1>
+            <section class="title">
+                <h1 class="left tenEm">The Slow Saga: </br> Rise of Powerschool</h1>
+            </section>
+
+            <section class="button-container">
+                <a class="loadEndBtn main-size" id="start-btn">Start</a>
+            </section>
         </section>
-
-        <section class="img-container hidden">
-            <img src="Images/fastStart.png" alt="A grainy black and white image of a man's bust.">
-        </section>
-
-        <a class="start-btn" id="start-btn">Start</a>
-    </section>
+   
 
     <section id="home-page" class="home-page hidden">
 
-<section id="name-container" class="nameContainer">
+        <section id="name-container" class="nameContainer">
 
-</section>
+        </section>
 
         <img id="locIcon" src="Images/locationIcon.png" alt="Location Icon">
 
@@ -88,8 +89,9 @@
         </section>
 
 
-        <button>Try Again</button>
-    </section>
+        <a class="loadEndBtn main-size" id="end-btn">Try Again</a>
+    </section> 
+</section>
 
 </body>
 
