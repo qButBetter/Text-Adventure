@@ -12,17 +12,68 @@ class Player {
 
     }
 
-
 }
+
+var Ally = {
+    tech: {
+        dialogue: ["Hey, did you hear about what happened in Web today? Go get yourself a snack or something. We're all doomed.", "I'm on a streak in Laser Grids rn. Just take this and leave me alone.", "Schawlgalawg! My new simlish coding language is really takin' off! It goes something like this:  You not ooh rah dah en dahp ooh rah daht endaht en dik ah poo ra ta teek a poo rah doo rah do dik oh mumblio dah dah dosa pa errah sa de.", "Dude I did NOT sign up for this.. I've gotta get outta here.", "I shoulda stayed in theatre tech like the clown I am. Good luck, man. Could this help?", "(scream)", "UX is my passion.", "IGD is my passion.", "Don't get your panties in a twist, babe. Here.", "Yo tengo tu mama!", "Look under there! HAHAHAHAHAHAHAHAHAHAHAHAHA! You said underwear!", "Dont trip, chocolate chip.", "So BOOM!", "Bless!", "I'm totally Grending right now.", "*Metal pipe sound effects*", "Don't Violate Section 3", "My name is John.", "I've gyatt to get my work done.", "I pushed my fingers into my eyes.", "I'm totally Grending right now."],
+        reply: ["Thanks!"],
+        atk: [1],
+        drop: [1],
+        cartImg: {
+            hall: [],
+            gallery: []
+        },
+        sierraImg: {
+            //wherever u can go in sv
+        }
+    },
+
+    biomed: {
+        dialogue: ["Slouching is actually really bad for 16.5 of your internal organs as well as your upper spine. If I give you this will you sit up straighter?", "It's actually really interesting seeing how computer light affects retinal processing and circadian rhythm. Study sesh sometime? About what? Well, you'd be the subject. Here, just. Take this as, like, a gift. Think about it.", "I didn't know that tech students could actually walk' I thought the chairs were, like, a part of the anatomy. Now that I think about it, it makes sense why I'm failing.", "Dude I know more about computers from playing Valorant than I will ever learn in this class. Let me switch places with you. Put in a good word for me, just keep it hush OK?", "Biomed is my passion."],
+        reply: ["Thanks!"],
+        atk: [1],
+        drop: [1],
+        cartImg: {
+            hall: [],
+            gallery: []
+        },
+    },
+
+    steedle: {
+        dialogue: ["Baki is peak.", "Pickle is my favorite character, besides Biscuit Oliva.", "Cya."],
+        reply: ["Ok", "Here's Pickle!", "bye"],
+        atk: [1],
+        drop: [1],
+        cartImg: {
+            web: [],
+        },
+    },
+
+    icaraga: {
+        dialogue: ["What's up?", "Wanna play UNO with us?", "Ok....."],
+        reply: [],
+        atk: [1],
+        drop: [1],
+        cartImg: {
+            gallery: [],
+        },
+    },
+
+    buttons: {
+        good: 1,
+        exit: 1,
+    }
+};
 
 var NPC = {
     business: {
         dialogue: ["I have SO much work to do. I literally have three coloring pages due this afternoon. I can't.",
             "What do you mean you only have one formal dress day?",
             "Do you think you could code a site about Elon Musk for me?",
-            "I have to get second opinions on my project about big business' effect on the “environment crisis”. First it was global cooling, then global warming, then global cooling, then global warming AGAIN? It can't be real.",
+            "I have to get second opinions on my project about big business' effect on the 'environment crisis'. First it was global cooling, then global warming, then global cooling, then global warming AGAIN? It can't be real.",
             "I'm gonna be honest I don't think homelessness is a problem if I can make money off it.",
-            "DME kids are SO stuck up. What do you mean you're from the tech labs? What's a “web application”?",
+            "DME kids are SO stuck up. What do you mean you're from the tech labs? What's a 'web application'?",
             "Business is my passion.",
             "Hey bro."],
         reply: ["OK.",
@@ -38,8 +89,10 @@ var NPC = {
             "Doge is the only true currency."],
         atk: [1],
         drop: [1],
-        cartImg: [],
-        sierraImg: []
+        cartImg: {
+            hall: [],
+            gallery: []
+        },
     },
     law: {
         dialogue: ["Deodorant? What's that?",
@@ -63,9 +116,44 @@ var NPC = {
             "I watch Judge Judy"],
         atk: [1],
         drop: [1],
-        cartImg: [],
-        sierraImg: []
+        cartImg: {
+            hall: [],
+            gallery: []
+        },
     },
+
+    multimedia: {
+        dialogue: ["Quick, take my survey! If I don't look busy Mr. Love will drop me from the class!", "WATCH MY SHORT FILM NOW.", "FOLLOW MY SHORT FILM'S INSTAGRAM PLEASE PLEASE PLEASE PLEASE PLE-", "Graphic design is my passion.", "Ever heard of Adobe photoshop?", "You're a web kid?? I hate you guys! I won't remember beating you by dinner.", "You're scared of failing your web class? Typical. Not even worth my time.", "Will you join me in this dance?", "Don't worry. This'll only hurt A LOT.", "This is gonna be fun!", "You best kneel before this gets ugly.", "First we crack the shell, then we crack the nuts inside!", "Finally! An opponent! Can't wait to tell Mr. Love about this!", "Multimedia is my passion."],
+        reply: ["Your boom mic's broken.", "I already follow your film insta.", "Graphic design is mid", "I did theatre.", "Can you draw me?", "Digital art isn't real art.", "I can't draw a stickman.", "MM is easy, right?", "(silence)"],
+        atk: [1],
+        drop: [1],
+        cartImg: {
+            hall: [],
+            gallery: []
+        },
+    },
+
+
+    guard: {
+        dialogue: ["Where do you think you're going?", "Lemme see some ID.", "Area's off limits.", "I can't wait to be paid tomorrow.", "Have you seen a person with a lot of makeup on?", "What are you even doing?", "Have you tried that new corndog place yet?", "Finally, I get to use my baton."],
+        reply: ["Sir, I'm not concealed carrying.", "Where's the bathroom?", "Garbage men get paid more than you.", "When's Santa coming?", "Chimpken Shacc.", "They should put a Nike store here.", "Do you want some Monster Energy.", "IS THAT PAUL BLART?!"],
+        atk: [1],
+        drop: [1],
+        sierraImg: {
+            //wherever u can go in sv ig
+        },
+    },
+
+    lady: {
+        dialogue: [],
+        reply: [],
+        atk: [1],
+        drop: [1],
+        sierraImg: {
+            //wherever u can go in sv ig
+        },
+    },
+
 
     buttons: {
         good: 0,
@@ -73,11 +161,21 @@ var NPC = {
         bad: 0,
         // good ends battle, mid takes no damage but doesnt end battle, bad takes damage
     }
-
 };
 
 var Story = {
+    // Endings
+    arson: [],
+    inspo: [],
+    slowversal: [],
+    summary: [],
+    gameover: [],
+    steedle: [],
+    icaraga: [],
 
+    // Other Cutscenes
+    beginning: [],
+    allen: ["Hey there! What are you doing out here?", "We’re going to Sierra Vista Mall for a final field trip.", ""]
 };
 
 var Summary = {
@@ -90,7 +188,7 @@ var Summary = {
 
 var Inventory = {
 
-    pickle: true,
+    pickle: 0,
     papers: 0,
     fire: 0,
     inspire: 0
