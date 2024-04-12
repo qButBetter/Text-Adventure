@@ -13,7 +13,7 @@
 <body>
 
     <section class="wrapper">
-        <section id="load-page" class="load-page column hidden">
+        <section id="load-page" class="load-page column">
 
             <section class="title">
                 <h1 class="left tenEm">The Slow Saga: </br> Rise of Powerschool</h1>
@@ -83,26 +83,25 @@
             <img src="Images/" alt="Map Image">
         </section>
 
-        <section id="ending" class="ending column">
+        <section id="ending" class="ending column center hidden">
 
             <h1 class="tenEm">Game Over</h1>
-            <section class="endImg">
-                <img src="Images/jamesDead.png" alt="Game Over Screen">
+            <section class="endImgCont fiftyWidth">
+                <img class="endImg" src="Images/jamesDead.png" alt="Game Over Screen">
             </section>
+            <br>
+            <section class="endingMessage column main-size seventyWidth" id="endingMessage">
 
-            <section class="endingMessage column" id="endingMessage">
-
-                <h3>CATASTROPHE ALERT: Loitering Detected!</h3>
-                <p>Alas, the echoes of your idle footsteps have shattered the very foundation of the Center for Advanced
+                <h3 class="center" id="endHead">CATASTROPHE ALERT: Loitering Detected!</h3>
+                <p class="left mid-size" id="endText">Alas, the echoes of your idle footsteps have shattered the very foundation of the Center for Advanced
                     Research and Technology (CART)! Your blatant disregard for the no-loitering policy has unleashed
                     chaos
                     and discord, disrupting the delicate balance required for scientific brilliance. The heavens weep,
                     and
                     the stars dim at the sight of such negligence, plunging the realm of innovation into darkness.</p>
-
+                    <!-- two span tags with these classes, content of span tags is held in an array with just the two which will iterate to give both the h3 and the p! -->
             </section>
-
-            <section class="summary" id="summary">
+            <section class="summary small-txt fiftyWidth left" id="summary">
                 <p>Your day at CART was like some kind of twisted fever dream. You (events to end route)[, even though
                     you
                     (other ending that the player had all items for)]. From 7:40 AM to 10:45 AM, you managed to collect
@@ -111,8 +110,7 @@
                     (NPCS
                     defeated).</p>
             </section>
-
-
+            <br>
             <a class="loadEndBtn main-size" id="end-btn">Try Again</a>
         </section>
     </section>
