@@ -170,6 +170,10 @@ var Story = {
     slowversal: ["After all of your efforts, you've finally reached the final hurdle to reversing Mr. Fast's overPower(school)ed transformation. Page by page, you piece his old self onto the wall.", "With the last page comes a blinding flash of light. Mr. Fast turns to you in a daze.", "He laughs at your response, which you delivered in a manner true to what he would provide you in the same case. Then he steps over to the computer, adjusting something on the screen.", "On your computer screen, the google classroom due changes to Monday. Not the most time, but time enough. With a sigh of relief, you collapse into your chair. It's over."],
     steedle: [],
     icaraga: [],
+};
+
+var Descriptions = {
+    // Descriptions for all rooms
 
 };
 
@@ -202,8 +206,52 @@ var Inventory = {
 
 var Map = {
 
-    CART: [],
-    Vista: [],
+    // CART Map & Items
+    CART:
+       [[0],     ["s"], [0],
+        [0],       [0],  [0],
+        ["e1"],   ["g"], ["j"],
+        ["n100"], ["h"], [0],
+        ["n101"], ["h"], [0],
+        [0],      ["h"], [0],
+        ["n104"], ["h"], ["0"],
+        ["n105"], ["h"], ["n110"],
+        ["n107"], ["e3"], [0]],
+
+    Janitor: [["e5"], ["b3"]],
+
+    Outside: [["p"],["e2"]],
+
+    CartItem: 
+   [[0],    [0],   [0],
+    [0],    [0],   [0],
+    [0],    ["i"], [0],
+    ["i"],  [0],   [0],
+    ["i2"], ["i"], [0],
+    [0],    ["h"], [0],
+    [0],    ["h"], ["0"],
+    ["i"],  [0],   ["n110"],
+    ["i"],  [0],   [0]],
+
+    OutsideItem: [["i2"], [0]],
+
+    JanitorItem: [[0], ["i2"]],
+
+    // SV Map & Items
+    Vista: 
+    [[0],    ["c"],  [0],
+     [0],    ["h3"], ["h3"],
+     [0],    ["m"],  [0],
+     [0],    ["h2"], [0],
+     ["e4"], ["h2"], ["h2"],
+     [0],    ["h2"], [0],
+     [0],    ["t"],  [0],
+     [0],    ["h4"], ["h4"],
+     [0],    [0],    [0],],
+
+     VistaItem: [],
+
+    //  Road Map
     Road: []
 
 };
@@ -260,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // utilBackground("");
             // counter++;
         }
-        
+
 
     });
 });
