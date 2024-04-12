@@ -20,13 +20,8 @@ var Ally = {
         reply: ["Thanks!"],
         atk: [1],
         drop: [1],
-        cartImg: {
-            hall: ["StudentImages/peyton.png", "StudentImages/carl.png", "StudentImages/landon.png", "StudentImages/ryan.png", "StudentImages/sharon.png", "StudentImages/finn.png", "StudentImages/gamer.png", "StudentImages/wpm.png",],
-            gallery: ["StudentImages/an.png", "StudentImages/artist.png", "StudentImages/cybertruck.png", "StudentImages/eve.png", "StudentImages/jose.png", "StudentImages/pearla.png", "StudentImages/tameem.png",]
-        },
-        sierraImg: {
-            //wherever u can go in sv
-        }
+        images: ["StudentImages/landon.png", "StudentImages/finn.png", "StudentImages/gamer.png",
+            "StudentImages/artist.png", "StudentImages/cybertruck.png", "StudentImages/eve.png", "StudentImages/tameem.png"]
     },
 
     biomed: {
@@ -34,10 +29,7 @@ var Ally = {
         reply: ["Thanks!"],
         atk: [1],
         drop: [1],
-        cartImg: {
-            hall: [],
-            gallery: []
-        },
+        images: ["StudentImages/pearla.png", "StudentImages/jose.png",],
     },
 
     steedle: {
@@ -45,9 +37,7 @@ var Ally = {
         reply: ["Ok", "Here's Pickle!", "bye"],
         atk: [1],
         drop: [1],
-        cartImg: {
-            web: [],
-        },
+        images: ["StudentImages/steed.png"],
     },
 
     icaraga: {
@@ -55,9 +45,7 @@ var Ally = {
         reply: [],
         atk: [1],
         drop: [1],
-        cartImg: {
-            gallery: [],
-        },
+        images: ["StudentImages/icaruy.png"],
     },
 
     buttons: {
@@ -89,11 +77,10 @@ var NPC = {
             "Doge is the only true currency."],
         atk: [1],
         drop: [1],
-        cartImg: {
-            hall: [],
-            gallery: []
-        },
+        images: ["StudentImages/an.png", "StudentImages/ryan.png"]
+
     },
+
     law: {
         dialogue: ["Deodorant? What's that?",
             "Hey! I'm writing about Hamilton, can I have you proofread the first 30 pages for me?",
@@ -116,10 +103,7 @@ var NPC = {
             "I watch Judge Judy"],
         atk: [1],
         drop: [1],
-        cartImg: {
-            hall: [],
-            gallery: []
-        },
+        images: ["StudentImages/sharon.png", "StudentImages/wpm.png"]
     },
 
     multimedia: {
@@ -127,31 +111,7 @@ var NPC = {
         reply: ["Your boom mic's broken.", "I already follow your film insta.", "Graphic design is mid", "I did theatre.", "Can you draw me?", "Digital art isn't real art.", "I can't draw a stickman.", "MM is easy, right?", "(silence)"],
         atk: [1],
         drop: [1],
-        cartImg: {
-            hall: [],
-            gallery: []
-        },
-    },
-
-
-    guard: {
-        dialogue: ["Where do you think you're going?", "Lemme see some ID.", "Area's off limits.", "I can't wait to be paid tomorrow.", "Have you seen a person with a lot of makeup on?", "What are you even doing?", "Have you tried that new corndog place yet?", "Finally, I get to use my baton."],
-        reply: ["Sir, I'm not concealed carrying.", "Where's the bathroom?", "Garbage men get paid more than you.", "When's Santa coming?", "Chimpken Shacc.", "They should put a Nike store here.", "Do you want some Monster Energy.", "IS THAT PAUL BLART?!"],
-        atk: [1],
-        drop: [1],
-        sierraImg: {
-            //wherever u can go in sv ig
-        },
-    },
-
-    lady: {
-        dialogue: [],
-        reply: [],
-        atk: [1],
-        drop: [1],
-        sierraImg: {
-            //wherever u can go in sv ig
-        },
+        image: ["StudentImages/peyton.png", "StudentImages/carl.png"]
     },
 
 
@@ -162,6 +122,24 @@ var NPC = {
         // good ends battle, mid takes no damage but doesnt end battle, bad takes damage
     }
 };
+
+var svNPC = {
+    guard: {
+        dialogue: ["Where do you think you're going?", "Lemme see some ID.", "Area's off limits.", "I can't wait to be paid tomorrow.", "Have you seen a person with a lot of makeup on?", "What are you even doing?", "Have you tried that new corndog place yet?", "Finally, I get to use my baton."],
+        reply: ["Sir, I'm not concealed carrying.", "Where's the bathroom?", "Garbage men get paid more than you.", "When's Santa coming?", "Chimpken Shacc.", "They should put a Nike store here.", "Do you want some Monster Energy.", "IS THAT PAUL BLART?!"],
+        atk: [1],
+        drop: [1],
+        images: [],
+    },
+
+    lady: {
+        dialogue: [],
+        reply: [],
+        atk: [1],
+        drop: [1],
+        images: [],
+    }
+}
 
 var Story = {
     // Endings
@@ -208,57 +186,57 @@ var Map = {
 
     // CART Map & Items
     CART:
-       [[0],     ["s"], [0],
-        [0],       [0],  [0],
-        ["e1"],   ["g"], ["j"],
+        [[0], ["s"], [0],
+        [0], [0], [0],
+        ["e1"], ["g"], ["j"],
         ["n100"], ["h"], [0],
         ["n101"], ["h"], [0],
-        [0],      ["h"], [0],
-        ["n104"], ["h"], ["0"],
+        [0], ["h"], [0],
+        ["n104"], ["h"], ["b2"],
         ["n105"], ["h"], ["n110"],
         ["n107"], ["e3"], [0]],
 
     Janitor: [["e5"], ["b3"]],
 
-    Outside: [["p"],["e2"]],
+    Outside: [["p"], ["e2"]],
 
-    CartItem: 
-   [[0],    [0],   [0],
-    [0],    [0],   [0],
-    [0],    ["i"], [0],
-    ["i"],  [0],   [0],
-    ["i2"], ["i"], [0],
-    [0],    ["h"], [0],
-    [0],    ["h"], ["0"],
-    ["i"],  [0],   ["n110"],
-    ["i"],  [0],   [0]],
+    CartItem:
+        [[0], [0], [0],
+        [0], [0], [0],
+        [0], ["i"], [0],
+        ["i"], [0], [0],
+        ["i2"], ["i"], [0],
+        [0], ["h"], [0],
+        [0], ["h"], ["0"],
+        ["i"], [0], ["n110"],
+        ["i"], [0], [0]],
 
     OutsideItem: [["i2"], [0]],
 
     JanitorItem: [[0], ["i2"]],
 
     // SV Map & Items
-    Vista: 
-    [[0],    ["c"],  [0],
-     [0],    ["h3"], ["h3"],
-     [0],    ["m"],  [0],
-     [0],    ["h2"], [0],
-     ["e4"], ["h2"], ["h2"],
-     [0],    ["h2"], [0],
-     [0],    ["t"],  [0],
-     [0],    ["h4"], ["h4"],
-     [0],    [0],    [0],],
+    Vista:
+        [[0], ["c"], [0],
+        [0], ["h3"], ["h3"],
+        [0], ["m"], [0],
+        [0], ["h2"], [0],
+        ["e4"], ["h2"], ["h2"],
+        [0], ["h2"], [0],
+        [0], ["t"], [0],
+        [0], ["h4"], ["h4"],
+        [0], [0], [0]],
 
-     VistaItem: 
-    [[0], [], [],
-     [0], [], [],
-     [0], [], [],
-     [0], [], [],
-     [0], [], [],
-     [0], [], [],
-     [0], [], [],
-     [0], [], [],
-     [0], [], [],],
+    VistaItem:
+        [[0], ["i3"], [0],
+        [0], [0], ["i3"],
+        [0], ["i3"], [0],
+        [0], [0], [0],
+        [0], [0], [0],
+        [0], [0], [0],
+        [0], [0], [0],
+        [0], ["i3"], ["b"],
+        [0], [0], [0]],
 
     //  Road Map
     Road: []
@@ -285,9 +263,37 @@ function utilBackground(input) {
     document.getElementById("home-image").style.backgroundImage = `url(${input})`;
 }
 
-function npcImage(input){
-    // document.getElementById("home-image").style.backgroundImage = `url(${input})`;
+function npcImage() {
+
+    let ranNum = Math.random();
+
+    // Change #s in Math.random for the images!
+
+    // Change to work, idea is here
+    if (student.location != "SV") {
+        if (ranNum == 0) {
+            document.getElementById("home-image").innerHTML =
+                `<img src='(${Ally.images[Math.random(0, 10)]})' alt="A generic person colored in black and white.">`;
+
+            // Take ally dialogue as well
+        }
+        else {
+            document.getElementById("home-image").innerHTML =
+                `<img src='(${NPC.images[Math.random(0, 10)]})' alt="A generic person colored in black and white.">`;
+
+            // Take enemey dialogue as well
+        }
+    }
+    else {
+        document.getElementById("home-image").innerHTML =
+            `<img src='(${svNPC.images[Math.random(0, 10)]})' alt="A generic person colored in black and white.">`;
+
+        // Take guard dialogue as well
+    }
+
+
 }
+
 
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
