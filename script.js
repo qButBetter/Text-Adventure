@@ -276,6 +276,10 @@ function utilBackground(input) {
     document.getElementById("home-image").style.backgroundImage = `url(${input})`;
 }
 
+function npcImage(input){
+    // document.getElementById("home-image").style.backgroundImage = `url(${input})`;
+}
+
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
