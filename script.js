@@ -269,7 +269,18 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backIcon").addEventListener("click", function () {
 
-        utilBackground("sad.png");
+        let counter = 0;
+
+        if (counter % 2 == 0) {
+            utilBackground("sad.png");
+            counter++;
+        }
+        else {
+            // // Access the current background from code.
+            // utilBackground("");
+            // counter++;
+        }
+
 
     });
 });
