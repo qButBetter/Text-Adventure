@@ -9,8 +9,7 @@ main-size
 fiftyWidth*/
 
 
-/* generic styling */
-
+/* Generic Styling */
 @import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&display=swap');
 
 * {
@@ -123,7 +122,6 @@ button {
 }
 
 /* Load Page */
-
 .load-page {
     background-image: url(BackgroundImages/landbg.png);
     background-repeat: no-repeat;
@@ -149,6 +147,8 @@ button {
 
 .image-container {
     height: 70%;
+
+    /* Maybe change width to be fit-content? */
     width: 50%;
     background-color: rgb(202, 202, 202);
     display: flex;
@@ -163,6 +163,13 @@ button {
 
 .text-container {
     width: 97%;
+}
+
+.name-container {
+    width: fit-content;
+    margin: 0;
+    font-size: 2.5em;
+    /* Add something here to make to get name positioned correctly */
 }
 
 /* Inventory Page */

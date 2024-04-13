@@ -307,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
         removeHidden("home-page");
         document.getElementById("name-container").innerText = student.name;
 
-
+        
     });
 });
 
