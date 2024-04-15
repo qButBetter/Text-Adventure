@@ -295,6 +295,9 @@ function setBackground(input) {
 
 function displayInv() {
     //document.getElementById("image-container").classList.toggle(); 
+
+    hidePage("home-image");
+    hidePage();
 }
 
 function utilBackground(input) {
