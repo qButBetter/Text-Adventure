@@ -263,7 +263,7 @@ function setBackground(input) {
 }
 
 function displayInv() {
-    //    document.getElementById("image-container").classList.toggle(); 
+    //document.getElementById("image-container").classList.toggle(); 
 }
 
 function utilBackground(input) {
@@ -288,6 +288,9 @@ function npcFunct() {
 
             // Take ally dialogue as well
             setText(Ally[getRandomInt(2)].dialogue[getRandomInt(dialogue.length)]);
+
+            // Set button values
+
         }
         else if (ranNum == 1) {
             document.getElementById("home-image").innerHTML =
@@ -295,19 +298,27 @@ function npcFunct() {
 
             // Take enemey dialogue as well
             setText(NPC[getRandomInt(3)].dialogue[getRandomInt(dialogue.length)]);
+
+            // Set button values
+
         }
     }
     else {
         document.getElementById("home-image").innerHTML =
-            `<img src='(${svNPC.images[Math.random(0, 10)]})' alt="A generic person colored in black and white.">`;
+            `<img src='(${svNPC.guard.images[getRandomInt(3)]})' alt="A generic person colored in black and white.">`;
 
         // Take guard dialogue as well
-        
+        setText(svNPC.guard.dialogue[getRandomInt()]);
+
+        // Set button values
+
     }
 }
 
 // Moving Functions
-function move(playerX, playerY) {
+function move(playerX, playerY, btnVal) {
+
+    // Change player X and Y values
 
     // Random NPC Interaction
     let ranNum = getRandomInt(5);
@@ -315,9 +326,16 @@ function move(playerX, playerY) {
         npcFunct();
     }
 
+    // Change background depending on where you are
+
 }
 
 // Picking up functions
+function pickUp(playLocX = student.locationX, playLocY = student.locationY) {
+
+
+
+}
 
 
 // GAME STUFF DON'T TOUCH
