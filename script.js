@@ -310,7 +310,7 @@ function npcFunct() {
 function move(playerX, playerY) {
 
     // Random NPC Interaction
-    let ranNum = getRandomInt(10);
+    let ranNum = getRandomInt(5);
     if (ranNum == 0) {
         npcFunct();
     }
