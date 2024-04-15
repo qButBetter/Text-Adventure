@@ -28,7 +28,7 @@
         <section id="home-page" class="home-page hidden">
 
             <section id="name-container" class="name-container center">
-                
+
             </section>
 
             <section class="row">
@@ -40,27 +40,30 @@
 
                 </section>
 
-                <section class="map hidden" id="map">
+                <section class="map hidden centersize" id="map">
                     <img src="svImages/lady.png" alt="Grumple">
                 </section>
 
-                <section class="image-container" id="home-image">
+                <section class="image-container centersize" id="home-image">
                     <img src="mr-mog.png">
                     <!-- change the background using MAP object, change npc/item showing using NPC and item objects -->
                 </section>
 
-                <section id="inventory" class="inventory hidden">
+                <section id="inventory" class="inventory hidden centersize black border">
 
                     <section class="inventory-container">
-        
-                        <section class="invItem">
+
+                        <section class="invItem row black border">
                             <img src="MiscItemImages/pickleObj.png" alt="Pickle Object">
-                            <p>Pickle</p>
+                            <section class="column">
+                                <h3>Pickle</h3>
+                                <p>desc</p>
+                            </section>
                             <p id="invValue">1</p>
                         </section>
-        
+
                     </section>
-        
+
                 </section>
 
                 <section class="column">
@@ -98,13 +101,14 @@
             <section class="endingMessage column main-size seventyWidth" id="endingMessage">
 
                 <h3 class="center" id="endHead">CATASTROPHE ALERT: Loitering Detected!</h3>
-                <p class="left mid-size" id="endText">Alas, the echoes of your idle footsteps have shattered the very foundation of the Center for Advanced
+                <p class="left mid-size" id="endText">Alas, the echoes of your idle footsteps have shattered the very
+                    foundation of the Center for Advanced
                     Research and Technology (CART)! Your blatant disregard for the no-loitering policy has unleashed
                     chaos
                     and discord, disrupting the delicate balance required for scientific brilliance. The heavens weep,
                     and
                     the stars dim at the sight of such negligence, plunging the realm of innovation into darkness.</p>
-                    <!-- two span tags with these classes, content of span tags is held in an array with just the two which will iterate to give both the h3 and the p! -->
+                <!-- two span tags with these classes, content of span tags is held in an array with just the two which will iterate to give both the h3 and the p! -->
             </section>
             <section class="summary small-txt fiftyWidth left" id="summary">
                 <p>Your day at CART was like some kind of twisted fever dream. You (events to end route)[, even though

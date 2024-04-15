@@ -80,6 +80,11 @@ body {
     font-size: 2em;
 }
 
+.centersize{
+    width: 50%;
+    height:70%;
+}
+
 /* Universal */
 .text-container {
     height: 15em;
@@ -146,10 +151,6 @@ button {
 }
 
 .image-container {
-    height: 70%;
-
-    /* Maybe change width to be fit-content? */
-    width: 50%;
     background-color: rgb(202, 202, 202);
     display: flex;
     justify-content: center;
@@ -176,6 +177,7 @@ button {
     width: 6rem;
     margin: 0;
 }
+
 
 /* Map Page */
 .map img {
