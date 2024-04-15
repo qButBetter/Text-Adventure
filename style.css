@@ -218,3 +218,56 @@ button {
 .hidden {
     display: none;
 }
+
+/* Background Classes */
+    /* CART */
+.webEntry{
+    background-image: url(BackgroundImages/CART_webEntry.png);
+}
+
+.galleryEntry{
+    background-image: url(BackgroundImages/CART_gallery.png);
+}
+
+    /* SV */
+        /* Indoors */
+.indoorEntry{
+    background-image: url(BackgroundImages/SV_mall_hallway.jpg);
+}
+
+.gamestopEntry{
+    background-image: url(BackgroundImages/SV_gamestop.jpg);
+}
+
+.gamestop{
+    background-image: url(BackgroundImages/SV_gamestop_inside.jpg);
+}
+
+.evolutionEntry{
+    background-image: url(BackgroundImages/SV_evolution.jpg);
+}
+
+.evolution{
+    background-image: url(BackgroundImages/SV_evolution_inside.jpg);
+}
+        /* Outdoors */
+
+.outdoorEntry{
+    background-image: url(BackgroundImages/SV_outside_hallway.jpg);
+}
+
+.theaterEntry{
+    background-image: url(BackgroundImages/SV_theater.jpg);
+}
+
+.blartPoster{
+    background-image: url(BackgroundImages/blart-mall.png);
+}
+
+.doomPoster{
+    background-image: url(BackgroundImages/doom-mall.png);
+}
+
+.minecraftPoster{
+    background-image: url(BackgroundImages/minecraft-mall.png);
+}
