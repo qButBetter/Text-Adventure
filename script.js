@@ -251,11 +251,7 @@ var Map = {
 // }
 
 function hidePage(input) {
-    document.getElementById(input).classList.add("hidden");
-}
-
-function removeHidden(input) {
-    document.getElementById(input).classList.remove("hidden");
+    document.getElementById(input).classList.toggle("hidden");
 }
 
 function setText(input) {
@@ -264,6 +260,10 @@ function setText(input) {
 
 function setBackground(input) {
     document.getElementById("text-output").style.backgroundImage = `url(${input})`;
+}
+
+function displayInv() {
+   document.getElementById("image-container").classList.toggle(); 
 }
 
 function utilBackground(input) {
@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         hidePage("load-page");
-        removeHidden("home-page");
+        hidePage("home-page");
         document.getElementById("name-container").innerText = student.name;
 
         
