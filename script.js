@@ -4,13 +4,44 @@ class Player {
         this.inventory = [];
         this.money = 0;
         this.steps = 0;
-        this.locationX = 0;
+        // Should be on map with "s"
+        this.locationX = 1;
         this.locationY = 0;
     }
 
     updatePlayer() {
 
+        switch (Map.CART[this.locationX][this.locationY]) {
+
+            case "s":
+                break;
+
+            case "g":
+                break;
+
+            case "h":
+                break;
+
+            case "n100":
+                break;
+
+            case "n101":
+                break;
+
+            case "n104":
+                break;
+
+            case "n105":
+                break;
+
+            case "n107":
+                break;
+
+            case "n110":
+                break;
+        }
     }
+
 }
 
 var Ally = {
@@ -317,14 +348,20 @@ function npcFunct() {
 
 // Moving Functions
 function move(playerX, playerY, btnVal) {
-
     // Change player X and Y values
+    playerX += btnVal[0];
+    playerY += btnVal[1];
+
+    student.locationX = playerX;
+    student.locationY = playerY;
 
     // Random NPC Interaction
     let ranNum = getRandomInt(5);
     if (ranNum == 0) {
         npcFunct();
     }
+
+    updatePlayer();
 
     // Change background depending on where you are
 
