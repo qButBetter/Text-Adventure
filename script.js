@@ -242,6 +242,14 @@ var Map = {
 
 };
 
+// function iterateText(objName, objItem, itrBtn = 0) {
+
+//     for (i = itrBtn; i < objName.objItem.length; i++) {
+        
+//     }
+
+// }
+
 function hidePage(input) {
     document.getElementById(input).classList.add("hidden");
 }
