@@ -11,35 +11,8 @@ class Player {
 
     updatePlayer() {
 
-        switch (Map.CART[this.locationX][this.locationY]) {
 
-            case "s":
-                break;
 
-            case "g":
-                break;
-
-            case "h":
-                break;
-
-            case "n100":
-                break;
-
-            case "n101":
-                break;
-
-            case "n104":
-                break;
-
-            case "n105":
-                break;
-
-            case "n107":
-                break;
-
-            case "n110":
-                break;
-        }
     }
 
 }
@@ -50,8 +23,6 @@ var Ally = {
         reply: ["Thanks!"],
         atk: [1],
         drop: [1],
-        images: ["StudentImages/landon.png", "StudentImages/finn.png", "StudentImages/gamer.png",
-            "StudentImages/artist.png", "StudentImages/cybertruck.png", "StudentImages/eve.png", "StudentImages/tameem.png"]
     },
 
     biomed: {
@@ -59,28 +30,15 @@ var Ally = {
         reply: ["Thanks!"],
         atk: [1],
         drop: [1],
-        images: ["StudentImages/pearla.png", "StudentImages/jose.png",],
     },
 
-    steedle: {
-        dialogue: ["Baki is peak.", "Pickle is my favorite character, besides Biscuit Oliva.", "Cya."],
-        reply: ["Ok", "Here's Pickle!", "bye"],
-        atk: [1],
-        drop: [1],
-        images: ["StudentImages/steed.png"],
-    },
-
-    icaraga: {
-        dialogue: ["What's up?", "Wanna play UNO with us?", "Ok....."],
-        reply: [],
-        atk: [1],
-        drop: [1],
-        images: ["StudentImages/icaruy.png"],
-    },
+    images: ["StudentImages/landon.png", "StudentImages/finn.png", "StudentImages/gamer.png",
+        "StudentImages/artist.png", "StudentImages/cybertruck.png", "StudentImages/eve.png", "StudentImages/tameem.png", "StudentImages/pearla.png", "StudentImages/jose.png"],
 
     buttons: {
         good: 1,
-        exit: 1,
+        mid: 1,
+        bad: 1,
     }
 };
 
@@ -107,8 +65,6 @@ var NPC = {
             "Doge is the only true currency."],
         atk: [1],
         drop: [1],
-        images: ["StudentImages/an.png", "StudentImages/ryan.png"]
-
     },
 
     law: {
@@ -133,7 +89,6 @@ var NPC = {
             "I watch Judge Judy"],
         atk: [1],
         drop: [1],
-        images: ["StudentImages/sharon.png", "StudentImages/wpm.png"]
     },
 
     multimedia: {
@@ -141,9 +96,9 @@ var NPC = {
         reply: ["Your boom mic's broken.", "I already follow your film insta.", "Graphic design is mid", "I did theatre.", "Can you draw me?", "Digital art isn't real art.", "I can't draw a stickman.", "MM is easy, right?", "(silence)"],
         atk: [1],
         drop: [1],
-        image: ["StudentImages/peyton.png", "StudentImages/carl.png"]
     },
 
+    images: ["StudentImages/peyton.png", "StudentImages/carl.png", "StudentImages/sharon.png", "StudentImages/wpm.png", "StudentImages/an.png", "StudentImages/ryan.png"],
 
     buttons: {
         good: 0,
@@ -159,7 +114,25 @@ var svNPC = {
         reply: ["Sir, I'm not concealed carrying.", "Where's the bathroom?", "Garbage men get paid more than you.", "When's Santa coming?", "Chimpken Shacc.", "They should put a Nike store here.", "Do you want some Monster Energy.", "IS THAT PAUL BLART?!"],
         atk: [1],
         drop: [1],
-        images: [],
+        images: ["svImages/guardOne", "svImages/guardTwo", "svImages/guardThree"],
+    },
+}
+
+var staticNPC = {
+    steedle: {
+        dialogue: ["Baki is peak.", "Pickle is my favorite character, besides Biscuit Oliva.", "Cya."],
+        reply: ["Ok", "Here's Pickle!", "bye"],
+        atk: [1],
+        drop: [1],
+        images: ["StudentImages/steed.png"],
+    },
+
+    icaraga: {
+        dialogue: ["What's up?", "Wanna play UNO with us?", "Ok....."],
+        reply: [],
+        atk: [1],
+        drop: [1],
+        images: ["StudentImages/icaruy.png"],
     },
 
     lady: {
@@ -167,7 +140,7 @@ var svNPC = {
         reply: [],
         atk: [1],
         drop: [1],
-        images: [],
+        images: ["svImages/lady.png"],
     }
 }
 
@@ -294,10 +267,26 @@ function setBackground(input) {
 }
 
 function displayInv() {
-    //document.getElementById("image-container").classList.toggle(); 
+
+    let invArr = [];
+
+    for (i = 0; i < invArr.length; i++) {
+        // Iterates thru items, if the item in player inv is < 0, then it unhides.
+    }
 
     hidePage("home-image");
-    hidePage();
+    hidePage("button-container");
+    hidePage("text-output");
+
+    hidePage("inventory");
+}
+
+function displayMap() {
+    hidePage("home-image");
+    hidePage("button-container");
+    hidePage("text-output");
+
+    hidePage("map");
 }
 
 function utilBackground(input) {
@@ -399,12 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("locIcon").addEventListener("click", function () {
 
-        let counter = 0;
-
-        if (counter % 2 == 0) {
-            utilBackground("mr-mog.png");
-            counter++;
-        }
+        displayMap();
 
 
     });
@@ -414,13 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backIcon").addEventListener("click", function () {
 
-        let counter = 0;
-
-        if (counter % 2 == 0) {
-            utilBackground("sad.png");
-            counter++;
-        }
-
+        displayInv();
 
     });
 });
