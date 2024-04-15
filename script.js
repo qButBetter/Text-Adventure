@@ -11,7 +11,6 @@ class Player {
     updatePlayer() {
 
     }
-
 }
 
 var Ally = {
@@ -245,11 +244,12 @@ var Map = {
 // function iterateText(objName, objItem, itrBtn = 0) {
 
 //     for (i = itrBtn; i < objName.objItem.length; i++) {
-        
+
 //     }
 
 // }
 
+// General Functions
 function hidePage(input) {
     document.getElementById(input).classList.toggle("hidden");
 }
@@ -263,44 +263,80 @@ function setBackground(input) {
 }
 
 function displayInv() {
-   document.getElementById("image-container").classList.toggle(); 
+    //document.getElementById("image-container").classList.toggle(); 
 }
 
 function utilBackground(input) {
     document.getElementById("home-image").style.backgroundImage = `url(${input})`;
 }
 
-function npcImage() {
+// Random Function
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
 
-    let ranNum = Math.random();
-
+// NPC Function
+function npcFunct() {
+    let ranNum = getRandomInt(2);
     // Change #s in Math.random for the images!
 
     // Change to work, idea is here
     if (student.location != "SV") {
         if (ranNum == 0) {
             document.getElementById("home-image").innerHTML =
-                `<img src='(${Ally.images[Math.random(0, 10)]})' alt="A generic person colored in black and white.">`;
+                `<img src='(${Ally.images[getRandomInt(9)]})' alt="A generic person colored in black and white.">`;
 
             // Take ally dialogue as well
+            setText(Ally[getRandomInt(2)].dialogue[getRandomInt(dialogue.length)]);
+
+            // Set button values
+
         }
-        else {
+        else if (ranNum == 1) {
             document.getElementById("home-image").innerHTML =
-                `<img src='(${NPC.images[Math.random(0, 10)]})' alt="A generic person colored in black and white.">`;
+                `<img src='(${NPC.images[getRandomInt(6)]})' alt="A generic person colored in black and white.">`;
 
             // Take enemey dialogue as well
+            setText(NPC[getRandomInt(3)].dialogue[getRandomInt(dialogue.length)]);
+
+            // Set button values
+
         }
     }
     else {
         document.getElementById("home-image").innerHTML =
-            `<img src='(${svNPC.images[Math.random(0, 10)]})' alt="A generic person colored in black and white.">`;
+            `<img src='(${svNPC.guard.images[getRandomInt(3)]})' alt="A generic person colored in black and white.">`;
 
         // Take guard dialogue as well
+        setText(svNPC.guard.dialogue[getRandomInt()]);
+
+        // Set button values
+
+    }
+}
+
+// Moving Functions
+function move(playerX, playerY, btnVal) {
+
+    // Change player X and Y values
+
+    // Random NPC Interaction
+    let ranNum = getRandomInt(5);
+    if (ranNum == 0) {
+        npcFunct();
     }
 
+    // Change background depending on where you are
 
 }
 
+// Picking up functions
+function pickUp(playLocX = student.locationX, playLocY = student.locationY) {
+
+}
+
+
+// GAME STUFF DON'T TOUCH
 
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
@@ -315,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
         hidePage("home-page");
         document.getElementById("name-container").innerText = student.name;
 
-        
+
     });
 });
 
@@ -328,11 +364,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (counter % 2 == 0) {
             utilBackground("mr-mog.png");
             counter++;
-        }
-        else {
-            // // Access the current background from code.
-            // utilBackground("");
-            // counter++;
         }
 
 
@@ -348,11 +379,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (counter % 2 == 0) {
             utilBackground("sad.png");
             counter++;
-        }
-        else {
-            // // Access the current background from code.
-            // utilBackground("");
-            // counter++;
         }
 
 
