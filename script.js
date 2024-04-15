@@ -333,8 +333,6 @@ function move(playerX, playerY, btnVal) {
 // Picking up functions
 function pickUp(playLocX = student.locationX, playLocY = student.locationY) {
 
-
-
 }
 
 
