@@ -44,7 +44,7 @@ body {
 
 .column {
     display: flex;
-    flex-flow: column;
+    flex-flow: column wrap;
     justify-content: space-between;
     margin: 0;
 }
@@ -80,10 +80,7 @@ body {
     font-size: 2em;
 }
 
-.centersize{
-    width: 50%;
-    height:70%;
-}
+
 
 /* Universal */
 .text-container {
@@ -126,6 +123,17 @@ button {
     width: 70%;
 }
 
+.row .column {
+    width: 15%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.centersize{
+    width: 50%;
+    height:70%;
+}
+
 /* Load Page */
 .load-page {
     background-image: url(BackgroundImages/landbg.png);
@@ -156,11 +164,7 @@ button {
     justify-content: center;
 }
 
-.row .column {
-    width: 15%;
-    align-items: center;
-    justify-content: flex-start;
-}
+
 
 .text-container {
     width: 97%;
@@ -177,7 +181,57 @@ button {
     width: 6rem;
     margin: 0;
 }
+.inventory *{
+    margin: 0;
+}
 
+.inventory{
+    overflow-y: scroll;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inventory::-webkit-scrollbar{
+    display: none;
+}
+
+.inventory-container{
+    width:100%;
+}
+
+.invItem{
+    height: 20%;
+    width: 90%;
+    margin: .5em;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+}
+
+.invItem .column {
+    align-self: flex-start;
+    margin: 1em 0 0 1em;
+    align-items: flex-start;
+    width: 70%;
+}
+
+.invItem .column p{
+    margin-top: .7em;
+}
+
+.invItem img{
+   height: 15rem;
+}
+
+.objHold{
+    justify-content: flex-start;
+}
+
+.valHold{
+    margin-right: 3em;
+}
 
 /* Map Page */
 .map img {
