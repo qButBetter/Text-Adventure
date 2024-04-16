@@ -98,6 +98,12 @@ body {
     justify-content: space-around;
 }
 
+.button-container-home {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
 .loadEndBtn {
     margin-bottom: 2em;
 }
