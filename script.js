@@ -4,6 +4,7 @@ class Player {
         this.inventory = [];
         this.money = 0;
         this.steps = 0;
+
         // Should be on map with "s"
         this.locationX = 1;
         this.locationY = 0;
@@ -163,7 +164,7 @@ var GameOver = {
 };
 
 var Cutscene = {
-    beginning: [],
+    beginning: ["It's an early morning, and CART seems more dreary than ever. The sad, advil-like tones of Web Applications slowly fill your vision as you approach the sign in the computer.", "Everyone seems to be on edge; the air is tense and the keyboards are violently clacking beneath the fingers of every web student in the room.", "Sitting right in front of you is yesterday's assignment. 20 page website, with a prototype, competitive audit and all, which was due in a couple months. Now, it's due in 5 minutes.", "Despite everyone's panic, the due date does not change. Most everyone rushes to finish, but only manages to get down one function, which produces an undefined return.", "Right on cue at 7:45, Mr. Fast exclaims his frustration.", "With his calm demeanor overtaken by rage, Mr. (he wants it done) Fast starts grading furiously to get the horrible scores into the gradebook. He yells as he grades, which causes a sonic-like boom in the classroom, scattering his portraits across the CART space-time continuum. His rage—fuelled by the terrible, but legendary, Powerschool—slowly took a hold of him. The rare instances of his transformations had been rumored about by current Web students, overheard from the whispers of Web students long, long ago. He had transformed into what the e-folktales deemed as the horrible, dreadful… Mr. Slow.", "Mr. Slow utilizes his newfound abilities, granted by the PowerSchool grading system, to plague the classroom and give all the cowering students still in his sight a “SUPER F-”.", "This is even worse than the Budget Calculator; or the Dino Dossier!", "I need to get out of here! UX shares a wall, he'd probably still get me there! I need to get help! I know! I'll go to IGD", "IGD, filled with former Web students, seems to be standing on edge. A student sees your panic as you rush in and approaches you.", "'Do not grieve, wise warrior! It is better for each man that he avenge his friend than to mourn him much'. We can fix this for everyone; it's in the legend. Did you see all of his portraits get scattered during that blast? I think those are the key to turning him back into Mr. Fast. That boom was massive… I bet those papers could've gone virtually anywhere inside of CART. This one fell on my desk a few minutes ago, while I was designing a FNAF game with Beowulf characters. The only issue is, you'd probably have to sneak past him to get them back on the wall. He's definitely not safe to talk to right now. Maybe you should just do the failsafe thing and try to finish the project even though it's past due. Good luck, soldier.", "Thank you so much. Good luck with your FNAG game. I'll try to figure this out."],
     allen: ["Hey there! What are you doing out here?", "We're going to Sierra Vista Mall for a final field trip."],
     fast: ["What happened?", "I don't remember that.", "Since you're all so behind, I'll give you the weekend to finish."],
 };
@@ -203,6 +204,27 @@ var Map = {
 
     Outside: [["p"], ["e2"]],
 
+
+
+    // SV Map & Items
+    Vista:
+        [[0], ["c"], [0],
+        [0], ["h3"], ["h3"],
+        [0], ["m"], [0],
+        [0], ["h2"], [0],
+        ["e4"], ["h2"], ["h2"],
+        [0], ["h2"], [0],
+        [0], ["t"], [0],
+        [0], ["h4"], ["h4"],
+        [0], [0], [0]],
+
+
+    //  Road Map
+    Road: []
+
+};
+
+var ItemMap = {
     CartItem:
         [[0], [0], [0],
         [0], [0], [0],
@@ -218,17 +240,6 @@ var Map = {
 
     JanitorItem: [[0], ["i2"]],
 
-    // SV Map & Items
-    Vista:
-        [[0], ["c"], [0],
-        [0], ["h3"], ["h3"],
-        [0], ["m"], [0],
-        [0], ["h2"], [0],
-        ["e4"], ["h2"], ["h2"],
-        [0], ["h2"], [0],
-        [0], ["t"], [0],
-        [0], ["h4"], ["h4"],
-        [0], [0], [0]],
     VistaItem:
         [[0], ["i3"], [0],
         [0], [0], ["i3"],
@@ -239,19 +250,17 @@ var Map = {
         [0], [0], [0],
         [0], ["i3"], ["b"],
         [0], [0], [0]],
-
-    //  Road Map
-    Road: []
-
 };
 
-// function iterateText(objName, objItem, itrBtn = 0) {
+function iterateText(objName, objItem, itrBtn = 0) {
 
-//     for (i = itrBtn; i < objName.objItem.length; i++) {
+    if (itrBtn = 0) {
+        for (i = 0; i < objItem.length; i++) {
+            setText(objName.objItem[i]);
+        }
+    }
 
-//     }
-
-// }
+}
 
 // General Functions
 function hidePage(input) {
@@ -347,6 +356,33 @@ function move(playerX, playerY, btnVal) {
     student.locationX = playerX;
     student.locationY = playerY;
 
+    let btn1Element = document.getElementById("btn1");
+    let btn2Element = document.getElementById("btn2");
+    let btn3Element = document.getElementById("btn3");
+
+    if (Map.CART[playerY + 1] != 0) {
+        btn1Element.innerText = ("Go Forward");
+        btn1Element.value = "+Y1"
+    }
+    else {
+        btn1Element.innerText = ("Go Back");
+        btn1Element.value = "-Y1"
+    }
+
+    if (Map.CART[playerX + 1] != 0) {
+        btn2Element.innerText = ("Go Right");
+        btn2Element.value = "+X1";
+    }
+    else {
+        btn2Element.innerText = ("Go Left");
+        btn2Element.value = "-X1";
+    }
+
+    if (ItemMap.CART[student.locationX][student.locationYY] != 0) {
+        btn3Element.innerText = ("Pick up Item?");
+        btn3Element.value = 1;
+    }
+
     // Random NPC Interaction
     let ranNum = getRandomInt(5);
     if (ranNum == 0) {
@@ -374,6 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var student = new Player();
         let nameInput = prompt("What's your name?");
         student.name = nameInput;
+        console.log(Map.CART[student.locationX][student.locationY]);
 
 
         hidePage("load-page");
