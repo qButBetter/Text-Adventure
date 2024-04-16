@@ -12,11 +12,15 @@ class Player {
 
     updatePlayer() {
 
-
+        if (Map.CART[this.locationX][this.locationY] == "s") {
+            iterateText(Cutscene.beginning);
+        }
 
     }
 
 }
+
+let textIterator = 0;
 
 var Ally = {
     tech: {
@@ -187,8 +191,6 @@ var Inventory = {
 };
 
 var Map = {
-
-    // CART Map & Items
     CART:
         [[0], ["s"], [0],
         [0], [0], [0],
@@ -204,9 +206,6 @@ var Map = {
 
     Outside: [["p"], ["e2"]],
 
-
-
-    // SV Map & Items
     Vista:
         [[0], ["c"], [0],
         [0], ["h3"], ["h3"],
@@ -218,8 +217,6 @@ var Map = {
         [0], ["h4"], ["h4"],
         [0], [0], [0]],
 
-
-    //  Road Map
     Road: []
 
 };
@@ -252,12 +249,16 @@ var ItemMap = {
         [0], [0], [0]],
 };
 
-function iterateText(objName, objItem, itrBtn = 0) {
+function iterateText(objName, objItem) {
+    textIterator = 0;
+    let buttons = document.querySelectorAll("button-container").addEventListener("click", function(){
+        textIterator++;
+    });
 
-    if (itrBtn = 0) {
-        for (i = 0; i < objItem.length; i++) {
-            setText(objName.objItem[i]);
-        }
+
+    while (textIterator < objItem.length) {
+        setText(objName.objItem[i]);
+        // When button is pressed down, it adds to i.
     }
 
 }
@@ -389,7 +390,7 @@ function move(playerX, playerY, btnVal) {
         npcFunct();
     }
 
-    updatePlayer();
+    student.updatePlayer();
 
     // Change background depending on where you are
 
@@ -410,14 +411,11 @@ document.addEventListener("DOMContentLoaded", function () {
         var student = new Player();
         let nameInput = prompt("What's your name?");
         student.name = nameInput;
-        console.log(Map.CART[student.locationX][student.locationY]);
-
+        student.updatePlayer();
 
         hidePage("load-page");
         hidePage("home-page");
         document.getElementById("name-container").innerText = student.name;
-
-
     });
 });
 
