@@ -249,19 +249,19 @@ var ItemMap = {
         [0], [0], [0]],
 };
 
-function iterateText(objName, objItem) {
-    textIterator = 0;
-    let buttons = document.querySelectorAll("button-container").addEventListener("click", function(){
-        textIterator++;
-    });
+// function iterateText(objName, objItem) {
+//     textIterator = 0;
+//     let buttons = document.querySelectorAll("button-container").addEventListener("click", function(){
+//         textIterator++;
+//     });
 
 
-    while (textIterator < objItem.length) {
-        setText(objName.objItem[i]);
-        // When button is pressed down, it adds to i.
-    }
+//     while (textIterator < objItem.length) {
+//         setText(objName.objItem[i]);
+//         // When button is pressed down, it adds to i.
+//     }
 
-}
+// }
 
 // General Functions
 function hidePage(input) {
@@ -390,7 +390,7 @@ function move(playerX, playerY, btnVal) {
         npcFunct();
     }
 
-    student.updatePlayer();
+    // student.updatePlayer();
 
     // Change background depending on where you are
 
@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var student = new Player();
         let nameInput = prompt("What's your name?");
         student.name = nameInput;
-        student.updatePlayer();
+        // student.updatePlayer();
 
         hidePage("load-page");
         hidePage("home-page");
