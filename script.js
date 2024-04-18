@@ -194,10 +194,10 @@ var Map = {
     CART:
         [[0], ["s"], [0],
         [0], [0], [0],
-        ["e1"], ["g"], ["j"],
+        ["e1"],   ["g"], ["j"],
         ["n100"], ["h"], [0],
         ["n101"], ["h"], [0],
-        [0], ["h"], [0],
+        [0],      ["h"], [0],
         ["n104"], ["h"], ["b2"],
         ["n105"], ["h"], ["n110"],
         ["n107"], ["e3"], [0]],
@@ -278,10 +278,13 @@ function setBackground(input) {
 
 function displayInv() {
 
-    let invArr = [];
+    let invArr = student.inventory;
 
     for (i = 0; i < invArr.length; i++) {
-        // Iterates thru items, if the item in player inv is < 0, then it unhides.
+        if (invArr[i] > 0) {
+            // Iterates thru items, if the item in player inv is < 0, then it unhides.
+            // Will have to somehow reference the items in the array to the items in the HTML
+        }
     }
 
     hidePage("home-image");
@@ -350,39 +353,8 @@ function npcFunct() {
 
 // Moving Functions
 function move(playerX, playerY, btnVal) {
-    // Change player X and Y values
-    playerX += btnVal[0];
-    playerY += btnVal[1];
+    
 
-    student.locationX = playerX;
-    student.locationY = playerY;
-
-    let btn1Element = document.getElementById("btn1");
-    let btn2Element = document.getElementById("btn2");
-    let btn3Element = document.getElementById("btn3");
-
-    if (Map.CART[playerY + 1] != 0) {
-        btn1Element.innerText = ("Go Forward");
-        btn1Element.value = "+Y1"
-    }
-    else {
-        btn1Element.innerText = ("Go Back");
-        btn1Element.value = "-Y1"
-    }
-
-    if (Map.CART[playerX + 1] != 0) {
-        btn2Element.innerText = ("Go Right");
-        btn2Element.value = "+X1";
-    }
-    else {
-        btn2Element.innerText = ("Go Left");
-        btn2Element.value = "-X1";
-    }
-
-    if (ItemMap.CART[student.locationX][student.locationYY] != 0) {
-        btn3Element.innerText = ("Pick up Item?");
-        btn3Element.value = 1;
-    }
 
     // Random NPC Interaction
     let ranNum = getRandomInt(5);
