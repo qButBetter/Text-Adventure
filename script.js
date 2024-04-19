@@ -270,20 +270,14 @@ function setBackground(input) {
 
 function displayInv() {
 
-    pickle = document.getElementById("invValue1");
-    paper = document.getElementById("invValue2");
-    arson = document.getElementById("invValue3");
-    inspo = document.getElementById("invValue4");
-    cress = document.getElementById("invValue5");
+    let elements = document.getElementsByClassName("valHold");
 
-    let invArray = [pickle, paper, arson, inspo, cress];
-
-    for (i = 0; i < student.inventory.length; i++) {
-        if (invArray[i] == 0) {
+    for (i = 0; i < elements.length; i++) {
+        if (elements[i].children[0].innerText == 0) {
             // Iterates thru items, if the item in player inv is < 0, then it unhides.
             // Will have to somehow reference the items in the array to the items in the HTML
 
-            hidePage(invArray[i]);
+            hidePage(elements[i].parentElement.id);
         }
     }
 
