@@ -303,7 +303,7 @@ function displayMap() {
     switch (student.mapLocation) {
 
         case "CART":
-        document.getElementById("map").innerHTML = `<img src="mapImages/cart.png" alt="A map of CART"></img>`;
+            document.getElementById("map").innerHTML = `<img src="mapImages/cart.png" alt="A map of CART"></img>`;
 
         case "Vista":
             document.getElementById("map").innerHTML = `<img src="mapImages/sierra.png" alt="A map of CART"></img>`
@@ -369,20 +369,20 @@ function npcFunct() {
     }
 }
 
-function endDisplay(){
+function endDisplay() {
     let ranNum = getRandomInt(3);
 
-    switch (ranNum){
+    switch (ranNum) {
         case 0:
             document.getElementById("endHead").innerText(GameOver.endingOne[0]);
             document.getElementById("endText").innerText(GameOver.endingOne[1]);
             break;
-        
+
         case 1:
             document.getElementById("endHead").innerText(GameOver.endingTwo[0]);
             document.getElementById("endText").innerText(GameOver.endingTwo[1]);
             break;
-        
+
         case 2:
             document.getElementById("endHead").innerText(GameOver.endingThree[0]);
             document.getElementById("endText").innerText(GameOver.endingThree[1]);
