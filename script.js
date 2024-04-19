@@ -223,7 +223,7 @@ var ItemMap = {
         ["i"], [0], [0],
         ["i2"], ["i"], [0],
         [0], ["h"], [0],
-        [0], ["h"], ["0"],
+        [0], ["h"], ["p"],
         ["i"], [0], ["n110"],
         ["i"], [0], [0]],
 
@@ -415,26 +415,40 @@ function move(btnVal) {
 // Picking up functions
 function pickUp() {
 
+    let pickleCount = student.inventory[3];
+    let paperCount = student.inventory[0];
+    let inspoCount = student.inventory[2]
+    let arsonCount = student.inventory[1];
+
     // Reference actual location, not just CartItem
     switch (ItemMap.CartItem[student.locationX][student.locationY]) {
 
         case "i":
             // Portraits
-            student.inventory[1]++;
+            paperCount++;
+            document.getElementById("paperValue").innerText = paperCount;
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
         case "i2":
             // Arson
-            student.inventory[2]++;
+            arsonCount++;
+            document.getElementById("paperValue").innerText = arsonCount;
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
         case "i3":
             // Inspo
-            student.inventory[3]++;
+            inspoCount++;
+            document.getElementById("paperValue").innerText = inspoCount;
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
+
+            case "p":
+                pickleCount++;
+                document.getElementById("paperValue").innerText = pickleCount;
+                ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+                break;
     }
 
 }
