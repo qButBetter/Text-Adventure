@@ -289,6 +289,20 @@ function displayInv() {
 }
 
 function displayMap() {
+    // Functionality
+    switch (student.mapLocation) {
+
+        case "CART":
+        document.getElementById("map").innerHTML = `<img src="mapImages/cart.png" alt="A map of CART"></img>`;
+
+        case "Vista":
+            document.getElementById("map").innerHTML = `<img src="mapImages/sierra.png" alt="A map of CART"></img>`
+
+        case "Road":
+            document.getElementById("map").innerHTML = `<img src="mapImages/road.png" alt="A map of CART"></img>`
+
+    }
+
     hidePage("home-image");
     hidePage("button-container");
     hidePage("text-output");
