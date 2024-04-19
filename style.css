@@ -196,7 +196,7 @@ button {
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    height: 70vh;
 }
 
 .inventory::-webkit-scrollbar{
@@ -208,8 +208,7 @@ button {
 }
 
 .invItem{
-    height: 20%;
-    width: 90%;
+    width: 95%;
     margin: .5em;
     justify-content: space-between;
     align-items: center;
@@ -227,12 +226,20 @@ button {
     margin-top: .7em;
 }
 
+.invItem .row {
+    flex-wrap: nowrap;
+}
+
 .invItem img{
-   height: 15rem;
+   height: 10rem;
 }
 
 .objHold{
     justify-content: flex-start;
+}
+
+.objHold section {
+    width: 70%;
 }
 
 .valHold{
