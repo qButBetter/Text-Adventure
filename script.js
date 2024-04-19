@@ -6,6 +6,7 @@ class Player {
         this.steps = 0;
 
         // Should be on map with "s"
+        this.mapLocation = "CART";
         this.locationX = 1;
         this.locationY = 0;
     }
@@ -213,7 +214,7 @@ var Map = {
 };
 
 var ItemMap = {
-    CartItem:
+    CART:
         [[0], [0], [0],
         [0], [0], [0],
         [0], ["i"], [0],
@@ -224,11 +225,11 @@ var ItemMap = {
         ["i"], [0], ["n110"],
         ["i"], [0], [0]],
 
-    OutsideItem: [["i2"], [0]],
+    Outside: [["i2"], [0]],
 
-    JanitorItem: [[0], ["i2"]],
+    Janitor: [[0], ["i2"]],
 
-    VistaItem:
+    Vista:
         [[0], ["i3"], [0],
         [0], [0], ["i3"],
         [0], ["i3"], [0],
@@ -269,20 +270,14 @@ function setBackground(input) {
 
 function displayInv() {
 
-    pickle = document.getElementById("invValue1");
-    paper = document.getElementById("invValue2");
-    arson = document.getElementById("invValue3");
-    inspo = document.getElementById("invValue4");
-    cress = document.getElementById("invValue5");
+    let elements = document.getElementsByClassName("valHold");
 
-    let invArray = [pickle, paper, arson, inspo, cress];
-
-    for (i = 0; i < student.inventory.length; i++) {
-        if (invArray[i] == 0) {
+    for (i = 0; i < elements.length; i++) {
+        if (elements[i].children[0].innerText == 0) {
             // Iterates thru items, if the item in player inv is < 0, then it unhides.
             // Will have to somehow reference the items in the array to the items in the HTML
 
-            hidePage(invArray[i]);
+            hidePage(elements[i].parentElement.id);
         }
     }
 
@@ -316,7 +311,7 @@ function npcFunct() {
     // Change #s in Math.random for the images!
 
     // Change to work, idea is here
-    if (student.location != "SV") {
+    if (student.mapLocation != "Vista") {
         if (ranNum == 0) {
             document.getElementById("home-image").innerHTML =
                 `<img src='(${Ally.images[getRandomInt(9)]})' alt="A generic person colored in black and white.">`;
@@ -379,19 +374,19 @@ function pickUp() {
         case "i":
             // Portraits
             student.inventory[1]++;
-            ItemMap.CartItem[student.locationX][student.locationY] = 0;
+            ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
         case "i2":
             // Arson
             student.inventory[2]++;
-            ItemMap.CartItem[student.locationX][student.locationY] = 0;
+            ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
         case "i3":
             // Inspo
             student.inventory[3]++;
-            ItemMap.CartItem[student.locationX][student.locationY] = 0;
+            ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
     }
 
@@ -399,7 +394,7 @@ function pickUp() {
 
 
 // GAME STUFF DON'T TOUCH
-    var student = new Player();
+var student = new Player();
 
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
