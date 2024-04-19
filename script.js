@@ -165,11 +165,13 @@ var Descriptions = {
 };
 
 var GameOver = {
-
+    endingOne: ["The Wrath of Idleness Unleashed!", "In the hallowed halls of the Center for Advanced Research and Technology (CART), your loitering transgression has triggered a cataclysm of cosmic proportions! The fabric of reality itself quivers as the furies of idleness descend upon us, rending the very essence of innovation and progress. The heavens weep, and the earth trembles as the curse of idleness consumes all hope of enlightenment."],
+    endingTwo: ["The curse of loitering Unleashed!", "Oh, hapless wanderer! Your dalliance and loitering within the sacred halls of the Center for Advanced Research and Technology (CART) have invoked a curse of epic proportions! The very fabric of innovation trembles at your audacity. The curse of loitering, a blight upon the noble pursuit of discovery, has cast its shadow upon us all."],
+    endingThree: ["Catastrophe Alert:  Loitering Detected!", "Alas, the echoes of your idle footsteps have shattered the very foundation of the Center for Advanced Research and Technology (CART)! Your blatant disregard for the no-loitering policy has unleashed chaos and discord, disrupting the delicate balance required for scientific brilliance. The heavens weep, and the stars dim at the sight of such negligence, plunging the realm of innovation into darkness."]
 };
 
 var Cutscene = {
-    beginning: ["It's an early morning, and CART seems more dreary than ever. The sad, advil-like tones of Web Applications slowly fill your vision as you approach the sign in the computer.", "Everyone seems to be on edge; the air is tense and the keyboards are violently clacking beneath the fingers of every web student in the room.", "Sitting right in front of you is yesterday's assignment. 20 page website, with a prototype, competitive audit and all, which was due in a couple months. Now, it's due in 5 minutes.", "Despite everyone's panic, the due date does not change. Most everyone rushes to finish, but only manages to get down one function, which produces an undefined return.", "Right on cue at 7:45, Mr. Fast exclaims his frustration.", "With his calm demeanor overtaken by rage, Mr. (he wants it done) Fast starts grading furiously to get the horrible scores into the gradebook. He yells as he grades, which causes a sonic-like boom in the classroom, scattering his portraits across the CART space-time continuum. His rage—fuelled by the terrible, but legendary, Powerschool—slowly took a hold of him. The rare instances of his transformations had been rumored about by current Web students, overheard from the whispers of Web students long, long ago. He had transformed into what the e-folktales deemed as the horrible, dreadful… Mr. Slow.", "Mr. Slow utilizes his newfound abilities, granted by the PowerSchool grading system, to plague the classroom and give all the cowering students still in his sight a “SUPER F-”.", "This is even worse than the Budget Calculator; or the Dino Dossier!", "I need to get out of here! UX shares a wall, he'd probably still get me there! I need to get help! I know! I'll go to IGD", "IGD, filled with former Web students, seems to be standing on edge. A student sees your panic as you rush in and approaches you.", "'Do not grieve, wise warrior! It is better for each man that he avenge his friend than to mourn him much'. We can fix this for everyone; it's in the legend. Did you see all of his portraits get scattered during that blast? I think those are the key to turning him back into Mr. Fast. That boom was massive… I bet those papers could've gone virtually anywhere inside of CART. This one fell on my desk a few minutes ago, while I was designing a FNAF game with Beowulf characters. The only issue is, you'd probably have to sneak past him to get them back on the wall. He's definitely not safe to talk to right now. Maybe you should just do the failsafe thing and try to finish the project even though it's past due. Good luck, soldier.", "Thank you so much. Good luck with your FNAG game. I'll try to figure this out."],
+    beginning: [`It's an early morning, and CART seems more dreary than ever. The sad, advil-like tones of Web Applications slowly fill your vision as you approach the sign in the computer.", "Everyone seems to be on edge; the air is tense and the keyboards are violently clacking beneath the fingers of every web student in the room.", "Sitting right in front of you is yesterday's assignment. 20 page website, with a prototype, competitive audit and all, which was due in a couple months. Now, it's due in 5 minutes.", "Despite everyone's panic, the due date does not change. Most everyone rushes to finish, but only manages to get down one function, which produces an undefined return.", "Right on cue at 7:45, Mr. Fast exclaims his frustration.", "With his calm demeanor overtaken by rage, Mr. (he wants it done) Fast starts grading furiously to get the horrible scores into the gradebook. He yells as he grades, which causes a sonic-like boom in the classroom, scattering his portraits across the CART space-time continuum. His rage—fuelled by the terrible, but legendary, Powerschool—slowly took a hold of him. The rare instances of his transformations had been rumored about by current Web students, overheard from the whispers of Web students long, long ago. He had transformed into what the e-folktales deemed as the horrible, dreadful… Mr. Slow.", "Mr. Slow utilizes his newfound abilities, granted by the PowerSchool grading system, to plague the classroom and give all the cowering students still in his sight a “SUPER F-”.", "This is even worse than the Budget Calculator; or the Dino Dossier!", "I need to get out of here! UX shares a wall, he'd probably still get me there! I need to get help! I know! I'll go to IGD", "IGD, filled with former Web students, seems to be standing on edge. A student sees your panic as you rush in and approaches you.", "'Do not grieve, wise warrior! It is better for each man that he avenge his friend than to mourn him much'. We can fix this for everyone; it's in the legend. Did you see all of his portraits get scattered during that blast? I think those are the key to turning him back into Mr. Fast. That boom was massive… I bet those papers could've gone virtually anywhere inside of CART. This one fell on my desk a few minutes ago, while I was designing a FNAF game with Beowulf characters. The only issue is, you'd probably have to sneak past him to get them back on the wall. He's definitely not safe to talk to right now. Maybe you should just do the failsafe thing and try to finish the project even though it's past due. Good luck, soldier.", "Thank you so much. Good luck with your FNAG game. I'll try to figure this out.`],
     allen: ["Hey there! What are you doing out here?", "We're going to Sierra Vista Mall for a final field trip."],
     fast: ["What happened?", "I don't remember that.", "Since you're all so behind, I'll give you the weekend to finish."],
 };
@@ -342,6 +344,27 @@ function npcFunct() {
 
         // Set button values
 
+    }
+}
+
+function endDisplay(){
+    let ranNum = getRandomInt(3);
+
+    switch (ranNum){
+        case 0:
+            document.getElementById("endHead").innerText(GameOver.endingOne[0]);
+            document.getElementById("endText").innerText(GameOver.endingOne[1]);
+            break;
+        
+        case 1:
+            document.getElementById("endHead").innerText(GameOver.endingTwo[0]);
+            document.getElementById("endText").innerText(GameOver.endingTwo[1]);
+            break;
+        
+        case 2:
+            document.getElementById("endHead").innerText(GameOver.endingThree[0]);
+            document.getElementById("endText").innerText(GameOver.endingThree[1]);
+            break;
     }
 }
 
