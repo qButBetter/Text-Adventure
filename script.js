@@ -303,12 +303,15 @@ function displayMap() {
 
         case "CART":
             document.getElementById("map").innerHTML = `<img src="mapImages/cart.png" alt="A map of CART"></img>`;
+            break;
 
         case "Vista":
-            document.getElementById("map").innerHTML = `<img src="mapImages/sierra.png" alt="A map of CART"></img>`
+            document.getElementById("map").innerHTML = `<img src="mapImages/sierra.png" alt="A map of CART"></img>`;
+            break;
 
         case "Road":
-            document.getElementById("map").innerHTML = `<img src="mapImages/road.png" alt="A map of CART"></img>`
+            document.getElementById("map").innerHTML = `<img src="mapImages/road.png" alt="A map of CART"></img>`;
+            break;
 
     }
 
