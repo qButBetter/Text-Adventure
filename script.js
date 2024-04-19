@@ -1,7 +1,7 @@
 class Player {
     constructor() {
         this.name = "";
-        this.inventory = [];
+        this.inventory = [0, 0, 0, 0, 1];
         this.money = 0;
         this.steps = 0;
 
@@ -181,25 +181,16 @@ var Summary = {
 
 }
 
-var Inventory = {
-
-    pickle: 0,
-    papers: 0,
-    fire: 0,
-    inspire: 0
-
-};
-
 var Map = {
     CART:
         [[0], ["s"], [0],
         [0], [0], [0],
-        ["e1"],   ["g"], ["j"],
-        ["n100"], ["h"], [0],
-        ["n101"], ["h"], [0],
-        [0],      ["h"], [0],
-        ["n104"], ["h"], ["b2"],
-        ["n105"], ["h"], ["n110"],
+        ["e1",], ["g", "galleryEntry"], ["j", "mrMog"],
+        ["n100", "mrMog"], ["h", "mrMog"], [0],
+        ["n101", "mrMog"], ["h", "mrMog"], [0],
+        [0], ["h", "mrMog"], [0],
+        ["n104", ""], ["h", "mrMog"], ["b2"],
+        ["n105", ""], ["h", "mrMog"], ["n110"],
         ["n107"], ["e3"], [0]],
 
     Janitor: [["e5"], ["b3"]],
@@ -245,7 +236,7 @@ var ItemMap = {
         [0], [0], [0],
         [0], [0], [0],
         [0], [0], [0],
-        [0], ["i3"], ["b"],
+        [0], ["i3"], [0],
         [0], [0], [0]],
 };
 
@@ -278,12 +269,20 @@ function setBackground(input) {
 
 function displayInv() {
 
-    let invArr = student.inventory;
+    pickle = document.getElementById("invValue1");
+    paper = document.getElementById("invValue2");
+    arson = document.getElementById("invValue3");
+    inspo = document.getElementById("invValue4");
+    cress = document.getElementById("invValue5");
 
-    for (i = 0; i < invArr.length; i++) {
-        if (invArr[i] > 0) {
+    let invArray = [pickle, paper, arson, inspo, cress];
+
+    for (i = 0; i < student.inventory.length; i++) {
+        if (invArray[i] == 0) {
             // Iterates thru items, if the item in player inv is < 0, then it unhides.
             // Will have to somehow reference the items in the array to the items in the HTML
+
+            hidePage(invArray[i]);
         }
     }
 
@@ -352,9 +351,12 @@ function npcFunct() {
 }
 
 // Moving Functions
-function move(playerX, playerY, btnVal) {
-    
+function move(btnVal) {
 
+    // student.locationX = Map.CART[i];
+    // student.locationY = Map.CART[j];
+    // // Reference location to background
+    // utilBackground();
 
     // Random NPC Interaction
     let ranNum = getRandomInt(5);
@@ -369,18 +371,41 @@ function move(playerX, playerY, btnVal) {
 }
 
 // Picking up functions
-function pickUp(playLocX = student.locationX, playLocY = student.locationY) {
+function pickUp() {
+
+    // Reference actual location, not just CartItem
+    switch (ItemMap.CartItem[student.locationX][student.locationY]) {
+
+        case "i":
+            // Portraits
+            student.inventory[1]++;
+            ItemMap.CartItem[student.locationX][student.locationY] = 0;
+            break;
+
+        case "i2":
+            // Arson
+            student.inventory[2]++;
+            ItemMap.CartItem[student.locationX][student.locationY] = 0;
+            break;
+
+        case "i3":
+            // Inspo
+            student.inventory[3]++;
+            ItemMap.CartItem[student.locationX][student.locationY] = 0;
+            break;
+    }
 
 }
 
 
 // GAME STUFF DON'T TOUCH
+    var student = new Player();
 
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
 
-        var student = new Player();
+
         let nameInput = prompt("What's your name?");
         student.name = nameInput;
         // student.updatePlayer();

@@ -283,6 +283,10 @@ button {
 
 /* Background Classes */
     /* CART */
+.mrMog {
+    background-image: url(mr-mog.png);
+}
+
 .webEntry{
     background-image: url(BackgroundImages/CART_webEntry.png);
 }
