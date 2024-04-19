@@ -270,13 +270,12 @@ function setBackground(input) {
     document.getElementById("text-output").style.backgroundImage = `url(${input})`;
 }
 
-function textIterator(key){
-    // add event listener to buttons
-    //when a button is pressed, it continues to the next index in the array
+// function textIterator(key){
+//     // add event listener to buttons
+//     //when a button is pressed, it continues to the next index in the array
 
     
-    
-}
+// }
 
 function displayInv() {
 
