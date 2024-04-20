@@ -246,9 +246,13 @@ button:hover {
 }
 
 /* Map Page */
+.map{
+    display: flex;
+    justify-content: center;
+}
+
 .map img {
     width: 100%;
-    height: 100%;
 }
 
 .locIcon {
@@ -282,7 +286,7 @@ button:hover {
     margin: .3em;
 }
 
-.summary{
+.summary {
     padding: 1em;
 }
 
@@ -375,11 +379,11 @@ button:hover {
         font-size: 2em;
     }
 
-    #health{
+    #health {
         font-size: 2em;
     }
 
-    #money{
+    #money {
         font-size: 2em;
     }
 
@@ -413,8 +417,8 @@ button:hover {
         margin: .2em 0 .2em 0;
     }
 
-    .centersize{
-        width:70%;
+    .centersize {
+        width: 70%;
     }
 
     /* load page styling */
@@ -434,7 +438,7 @@ button:hover {
 
     /* Inventory Styling */
 
-    .inventory{
+    .inventory {
         height: 50vh;
     }
 
@@ -461,27 +465,71 @@ button:hover {
 
     /* Ending Screen */
 
-    .ending h1{
+    .ending h1 {
         font-size: 6em;
     }
 
-    .endingMessage{
+    .endingMessage {
         font-size: 1.4em;
     }
 
-    .endImgCont{
+    .endImgCont {
         width: 100%;
     }
 
-    .endImgCont img{
+    .endImgCont img {
         width: 50%;
     }
 
-    .seventyWidth{
+    .seventyWidth {
         width: 80%;
     }
 
-    .fiftyWidth{
+    .fiftyWidth {
         width: 80%;
+    }
+}
+
+
+/* laptop sizing */
+@media only screen and (max-width: 2200px) {
+    
+    /* end screen siziing */
+    .tenEm {
+        font-size: 7em;
+    }
+
+    #endHead {
+        font-size: 1em;
+    }
+
+    .endingMessage p {
+        font-size: .7em;
+    }
+
+    .summary{
+        width:70%;
+    }
+
+    .ending h2{
+        margin-top: .5em;
+    }
+
+    /* main interface sizing */
+
+    .text-container{
+        height: 20%;
+    }
+
+    .map img{
+        width: 55%;
+    }
+
+    .home-page{
+        margin: 0;
+    }
+
+    .inventory{
+        margin-top: 1em;
     }
 }
