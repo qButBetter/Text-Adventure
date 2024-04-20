@@ -13,7 +13,7 @@
 <body>
 
     <section class="wrapper">
-        <section id="load-page" class="load-page column">
+        <section id="load-page" class="load-page column hidden">
 
             <section class="title">
                 <h1 class="left tenEm">The Slow Saga: </br> Rise of Powerschool</h1>
@@ -34,14 +34,14 @@
             <section class="row">
                 <!-- this should be the left column w the map & time -->
                 <section class="column">
-                    <span id="health" class="tenEm">100</span>
                     <img id="locIcon" class="locIcon" src="Images/locationIcon.png" alt="Location Icon">
+                    <span id="health" class="tenEm">100</span>
                     <!-- map should add a hidden class to anything in the imgcont when clicked, add its own image, then remove its image and the hidden classes when unclicked -->
 
                 </section>
 
                 <section class="map hidden centersize" id="map">
-                    <img src="svImages/lady.png" alt="Grumple">
+                    
                 </section>
 
                 <section class="image-container centersize" id="home-image">
@@ -138,31 +138,31 @@
                 <button class="black border main-size continue" id="contBtn3" value = 0>Continue</button>
 
                 <!-- interaction button , use this to interact w the vending machine or objects-->
-                <button class="black border main-size" id="interact" value = 0>Interact</button>
+                <button class="black border main-size hidden" id="interact" value = 0>Interact</button>
                
                 <!--  Navigating CART-->
                     <!-- gallery access -->
-                <button class="black border main-size" id="s" value = 0>Go to the stairs</button>
-                <button class="black border main-size" id="g" value = 0>Go to the gallery</button>
-                <button class="black border main-size" id="j" value = 0>Go to the janitor's closet</button>
+                <button class="black border main-size hidden" id="s" value = 0>Go to the stairs</button>
+                <button class="black border main-size hidden" id="g" value = 0>Go to the gallery</button>
+                <button class="black border main-size hidden" id="j" value = 0>Go to the janitor's closet</button>
 
-                <button class="black border main-size" id="h" value = 0>Go down the hall</button>
-                <button class="black border main-size" id="n100" value = 0>Go into MultiMedia</button>
+                <button class="black border main-size hidden" id="h" value = 0>Go down the hall</button>
+                <button class="black border main-size hidden" id="n100" value = 0>Go into MultiMedia</button>
 
-                <button class="black border main-size" id="n104" value = 0>Go into Game Design</button>
-                <button class="black border main-size" id="n105" value = 0>Go into User Design</button>
-                <button class="black border main-size" id="n107" value = 0>Go into Web</button>
-                <button class="black border main-size" id="n110" value = 0>Go into English</button>
+                <button class="black border main-size hidden" id="n104" value = 0>Go into Game Design</button>
+                <button class="black border main-size hidden" id="n105" value = 0>Go into User Design</button>
+                <button class="black border main-size hidden" id="n107" value = 0>Go into Web</button>
+                <button class="black border main-size hidden" id="n110" value = 0>Go into English</button>
              
                 <!-- Vista -->
-                <button class="black border main-size" id="n110" value = 0>Go into English</button>
+                <button class="black border main-size hidden" id="n110" value = 0>vistar</button>
                 
                 
 
             </section>
         </section>
 
-        <section id="ending" class="ending column center hidden">
+        <section id="ending" class="ending column center ">
 
             <h1 class="tenEm">Game Over</h1>
             <section class="endImgCont fiftyWidth">
@@ -181,7 +181,7 @@
                     the stars dim at the sight of such negligence, plunging the realm of innovation into darkness.</p>
                 <!-- two span tags with these classes, content of span tags is held in an array with just the two which will iterate to give both the h3 and the p! -->
             </section>
-            <section class="summary small-txt fiftyWidth left" id="summary">
+            <section class="summary small-txt fiftyWidth left black border" id="summary">
                 <p>Your day at CART was like some kind of twisted fever dream. You (events to end route)[, even though
                     you
                     (other ending that the player had all items for)]. From 7:40 AM to 10:45 AM, you managed to collect

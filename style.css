@@ -121,7 +121,7 @@ button {
     padding: .5em;
 }
 
-button:hover{
+button:hover {
     background-color: white;
     color: black;
 }
@@ -140,9 +140,9 @@ button:hover{
     justify-content: flex-start;
 }
 
-.centersize{
+.centersize {
     width: 50%;
-    height:70%;
+    height: 70%;
 }
 
 /* Load Page */
@@ -155,7 +155,6 @@ button:hover{
 }
 
 .load-page h1 {
-    align-self: left;
     text-shadow: 15px 0 black;
 }
 
@@ -175,16 +174,12 @@ button:hover{
     justify-content: center;
 }
 
-
-
 .text-container {
     width: 97%;
 }
 
 .name-container {
-    width: fit-content;
     font-size: 3em;
-    /* Add something here to make to get name positioned correctly */
 }
 
 /* Inventory Page */
@@ -192,11 +187,12 @@ button:hover{
     width: 6rem;
     margin: 0;
 }
-.inventory *{
+
+.inventory * {
     margin: 0;
 }
 
-.inventory{
+.inventory {
     overflow-y: scroll;
     display: flex;
     flex-flow: column;
@@ -204,19 +200,17 @@ button:hover{
     height: 70vh;
 }
 
-.inventory::-webkit-scrollbar{
+.inventory::-webkit-scrollbar {
     display: none;
 }
 
-.inventory-container{
-    width:100%;
+.inventory-container {
+    width: 100%;
 }
 
-.invItem{
+.invItem {
     width: 95%;
     margin: .5em;
-    justify-content: space-between;
-    align-items: center;
     padding: .5em;
 }
 
@@ -227,7 +221,7 @@ button:hover{
     width: 70%;
 }
 
-.invItem .column p{
+.invItem .column p {
     margin-top: .7em;
 }
 
@@ -235,11 +229,11 @@ button:hover{
     flex-wrap: nowrap;
 }
 
-.invItem img{
-   height: 10rem;
+.invItem img {
+    height: 10rem;
 }
 
-.objHold{
+.objHold {
     justify-content: flex-start;
 }
 
@@ -247,7 +241,7 @@ button:hover{
     width: 70%;
 }
 
-.valHold{
+.valHold {
     margin-right: 3em;
 }
 
@@ -280,12 +274,16 @@ button:hover{
     color: red;
 }
 
-.endingMessage{
+.endingMessage {
     margin: .5em 0 .5em 0;
 }
 
-#endHead{
+#endHead {
     margin: .3em;
+}
+
+.summary{
+    padding: 1em;
 }
 
 /* Hidden Class */
@@ -294,58 +292,196 @@ button:hover{
 }
 
 /* Background Classes */
-    /* CART */
+/* CART */
 .mrMog {
     background-image: url(mr-mog.png);
 }
 
-.webEntry{
+.webEntry {
     background-image: url(BackgroundImages/CART_webEntry.png);
 }
 
-.galleryEntry{
+.galleryEntry {
     background-image: url(BackgroundImages/CART_gallery.png);
 }
 
-    /* SV */
-        /* Indoors */
-.indoorEntry{
+/* SV */
+/* Indoors */
+.indoorEntry {
     background-image: url(BackgroundImages/SV_mall_hallway.jpg);
 }
 
-.gamestopEntry{
+.gamestopEntry {
     background-image: url(BackgroundImages/SV_gamestop.jpg);
 }
 
-.gamestop{
+.gamestop {
     background-image: url(BackgroundImages/SV_gamestop_inside.jpg);
 }
 
-.evolutionEntry{
+.evolutionEntry {
     background-image: url(BackgroundImages/SV_evolution.jpg);
 }
 
-.evolution{
+.evolution {
     background-image: url(BackgroundImages/SV_evolution_inside.jpg);
 }
-        /* Outdoors */
 
-.outdoorEntry{
+/* Outdoors */
+
+.outdoorEntry {
     background-image: url(BackgroundImages/SV_outside_hallway.jpg);
 }
 
-.theaterEntry{
+.theaterEntry {
     background-image: url(BackgroundImages/SV_theater.jpg);
 }
 
-.blartPoster{
+.blartPoster {
     background-image: url(BackgroundImages/blart-mall.png);
 }
 
-.doomPoster{
+.doomPoster {
     background-image: url(BackgroundImages/doom-mall.png);
 }
 
-.minecraftPoster{
+.minecraftPoster {
     background-image: url(BackgroundImages/minecraft-mall.png);
+}
+
+/* Mobie Compatibility */
+
+@media only screen and (max-width: 600px) {
+
+
+    /* Universal font sizes */
+    .tenEm {
+        font-size: 3.5em;
+    }
+
+    .main-size {
+        font-size: 1.5em;
+    }
+
+    .midsize {
+        font-size: 2em;
+    }
+
+    .small-txt {
+        font-size: 1.3em;
+    }
+
+    .name-container {
+        font-size: 2em;
+    }
+
+    #health{
+        font-size: 2em;
+    }
+
+    #money{
+        font-size: 2em;
+    }
+
+    .button-container-home {
+        font-size: 3em;
+    }
+
+    /* Icon sizing */
+    .locIcon {
+        width: 3rem;
+    }
+
+    .backIcon {
+        width: 3rem;
+    }
+
+    /* Fixing content sizing*/
+    .image-container img {
+        width: 95%;
+    }
+
+    .button-container {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        width: 90%;
+        margin: .2em 0 .2em 0;
+    }
+
+    .centersize{
+        width:70%;
+    }
+
+    /* load page styling */
+
+    .load-page.column {
+        justify-content: space-around;
+    }
+
+    .title {
+        margin: 6em 0 0 1em;
+    }
+
+    .button-container-home .loadEndBtn {
+        margin-top: 2.5em;
+        text-decoration: underline;
+    }
+
+    /* Inventory Styling */
+
+    .inventory{
+        height: 50vh;
+    }
+
+    .invItem {
+        display: flex;
+        flex-flow: column;
+        width: 95%;
+        margin: .5em;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5em;
+    }
+
+    .invItem .row {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .valHold {
+        margin: 0;
+    }
+
+    /* Ending Screen */
+
+    .ending h1{
+        font-size: 6em;
+    }
+
+    .endingMessage{
+        font-size: 1.4em;
+    }
+
+    .endImgCont{
+        width: 100%;
+    }
+
+    .endImgCont img{
+        width: 50%;
+    }
+
+    .seventyWidth{
+        width: 80%;
+    }
+
+    .fiftyWidth{
+        width: 80%;
+    }
 }
