@@ -422,26 +422,31 @@ function addItem(id, num) {
         case "paperValue":
             counter += num;
             document.getElementById(id).innerText = counter;
+            student.inventory[0] += counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "arsonValue":
             counter += num;
             document.getElementById(id).innerText = counter;
+            student.inventory[1] += counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "inspoValue":
             counter += num;
             document.getElementById(id).innerText = counter;
+            student.inventory[2] += counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "pickleValue":
             counter += num;
             document.getElementById(id).innerText = counter;
+            student.inventory[3] += counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "cressValue":
             counter += num;
             document.getElementById(id).innerText = counter;
+            student.inventory[4] += counter;
             return ("Added " + num + " to an ID of " + id);
 
         default:
@@ -453,44 +458,30 @@ function addItem(id, num) {
 
 // Picking up functions
 function pickUp() {
-
-    let paperCount = student.inventory[0];
-    let arsonCount = student.inventory[1];
-    let inspoCount = student.inventory[2];
-    let pickleCount = student.inventory[3];
-
-
+    
     // Reference actual location, not just CartItem
     switch (ItemMap.CartItem[student.locationX][student.locationY]) {
 
         case "i":
             // Portraits
-            paperCount++;
-            student.inventory[0] = paperCount;
-            document.getElementById("paperValue").innerText = paperCount;
+            addItem("paperValue", 1);
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
         case "i2":
             // Arson
-            arsonCount++;
-            student.inventory[1] = arsonCount;
-            document.getElementById("arsonValue").innerText = arsonCount;
+            addItem("arsonValue", 1);
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
         case "i3":
             // Inspo
-            inspoCount++;
-            student.inventory[2] = inspoCount;
-            document.getElementById("inspoValue").innerText = inspoCount;
+            addItem("inspoValue", 1);
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
         case "p":
-            pickleCount++;
-            student.inventory[3] = pickleCount;
-            document.getElementById("pickleValue").innerText = pickleCount;
+            addItem("pickleValue", 1);
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
     }
