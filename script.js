@@ -274,7 +274,7 @@ function setBackground(input) {
 //     // add event listener to buttons
 //     //when a button is pressed, it continues to the next index in the array
 
-    
+
 // }
 
 function displayInv() {
@@ -412,13 +412,53 @@ function move(btnVal) {
 
 }
 
+// Debug functions
+function addItem(id, num) {
+
+    let counter = parseInt(document.getElementById(id).innerText);
+
+    switch (id) {
+
+        case "paperValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        case "arsonValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        case "inspoValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        case "pickleValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        case "cressValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        default:
+            console.log("Id not recognized, no item added");
+
+    }
+
+}
+
 // Picking up functions
 function pickUp() {
 
-    let pickleCount = student.inventory[3];
     let paperCount = student.inventory[0];
-    let inspoCount = student.inventory[2]
     let arsonCount = student.inventory[1];
+    let inspoCount = student.inventory[2];
+    let pickleCount = student.inventory[3];
+
 
     // Reference actual location, not just CartItem
     switch (ItemMap.CartItem[student.locationX][student.locationY]) {
@@ -426,6 +466,7 @@ function pickUp() {
         case "i":
             // Portraits
             paperCount++;
+            student.inventory[0] = paperCount;
             document.getElementById("paperValue").innerText = paperCount;
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
@@ -433,22 +474,25 @@ function pickUp() {
         case "i2":
             // Arson
             arsonCount++;
-            document.getElementById("paperValue").innerText = arsonCount;
+            student.inventory[1] = arsonCount;
+            document.getElementById("arsonValue").innerText = arsonCount;
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
         case "i3":
             // Inspo
             inspoCount++;
-            document.getElementById("paperValue").innerText = inspoCount;
+            student.inventory[2] = inspoCount;
+            document.getElementById("inspoValue").innerText = inspoCount;
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
             break;
 
-            case "p":
-                pickleCount++;
-                document.getElementById("paperValue").innerText = pickleCount;
-                ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
-                break;
+        case "p":
+            pickleCount++;
+            student.inventory[3] = pickleCount;
+            document.getElementById("pickleValue").innerText = pickleCount;
+            ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            break;
     }
 
 }
