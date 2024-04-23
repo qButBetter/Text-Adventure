@@ -259,7 +259,17 @@ var ItemMap = {
 
 // General Functions
 function hidePage(input) {
-    document.getElementById(input).classList.toggle("hidden");
+    if (input == "map") {
+        document.getElementById(input).classList.toggle("hidden");
+        document.getElementById("inventory").classList.add("hidden");
+
+    }
+    else if (input == "inventory") {
+
+    }
+    else {
+        document.getElementById(input).classList.toggle("hidden");
+    }
 }
 
 function setText(input) {
@@ -290,6 +300,9 @@ function displayInv() {
         }
     }
 
+document.getElementById("").classList.toggle("hidden");
+
+// Comment these out at some point
     hidePage("home-image");
     hidePage("button-container");
     hidePage("text-output");
