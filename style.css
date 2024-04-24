@@ -104,6 +104,7 @@ body {
 
 .buttons.four button{
     width: 30%;
+    margin: .2em;
 }
 
 .button-container-home {
@@ -174,6 +175,10 @@ button:hover {
 .home-page {
     height: 100%;
     margin-top: 3em;
+}
+
+.home-page img{
+    width: 50%;
 }
 
 .image-container {

@@ -259,17 +259,10 @@ var ItemMap = {
 
 // General Functions
 function hidePage(input) {
-    if (input == "map") {
+    
         document.getElementById(input).classList.toggle("hidden");
-        document.getElementById("inventory").classList.add("hidden");
+        console.log(input);
 
-    }
-    else if (input == "inventory") {
-
-    }
-    else {
-        document.getElementById(input).classList.toggle("hidden");
-    }
 }
 
 function setText(input) {
@@ -300,14 +293,8 @@ function displayInv() {
         }
     }
 
-document.getElementById("").classList.toggle("hidden");
-
-// Comment these out at some point
-    hidePage("home-image");
-    hidePage("button-container");
-    hidePage("text-output");
-
-    hidePage("inventory");
+    checkHidden("inventory");
+    console.log("wewe");
 }
 
 function displayMap() {
@@ -328,11 +315,63 @@ function displayMap() {
 
     }
 
+    checkHidden("map")
+}
+
+function isHidden(elementID) {
+    // console.log(document.getElementById(elementID).classList.contains("hidden"));
+    return document.getElementById(elementID).classList.contains("hidden");
+
+}
+
+function toggleElements() {
     hidePage("home-image");
     hidePage("button-container");
     hidePage("text-output");
+}
 
-    hidePage("map");
+function checkHidden(input) {
+    switch (input) {
+        case 'map':
+            if (isHidden("inventory") && isHidden("map")) { //open map, both are closed
+                hidePage("map");
+                toggleElements();
+                console.log(isHidden("inventory") && isHidden("map"));
+            }
+
+            else if (isHidden("inventory")) { //closing map
+                hidePage("map");
+                toggleElements();
+                console.log(isHidden("inventory"));
+            }
+
+            else if (!isHidden("inventory")) { //opening map if inv is open
+                hidePage("map");
+                hidePage("inventory");
+                console.log(!isHidden("inventory"));
+            }
+            break;
+
+        case 'inventory':
+            
+            if (isHidden("map") && isHidden("inventory")) { //open inv, both are closed
+                hidePage("inventory");
+                toggleElements();
+                console.log("collect inventory")
+            }
+
+            if (isHidden("map")) { //closing inv
+                hidePage("inventory");
+                toggleElements();
+            }
+
+            if (!isHidden("map")) { //opening inventory if map is open
+                hidePage("map");
+                hidePage("inventory");
+            }
+
+    }
+
 }
 
 function utilBackground(input) {
@@ -471,7 +510,7 @@ function addItem(id, num) {
 
 // Picking up functions
 function pickUp() {
-    
+
     // Reference actual location, not just CartItem
     switch (ItemMap.CartItem[student.locationX][student.locationY]) {
 
