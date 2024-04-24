@@ -21,8 +21,6 @@ class Player {
 
 }
 
-let textIterator = 0;
-
 var Ally = {
     tech: {
         dialogue: ["Hey, did you hear about what happened in Web today? Go get yourself a snack or something. We're all doomed.", "I'm on a streak in Laser Grids rn. Just take this and leave me alone.", "Schawlgalawg! My new simlish coding language is really takin' off! It goes something like this:  You not ooh rah dah en dahp ooh rah daht endaht en dik ah poo ra ta teek a poo rah doo rah do dik oh mumblio dah dah dosa pa errah sa de.", "Dude I did NOT sign up for this.. I've gotta get outta here.", "I shoulda stayed in theatre tech like the clown I am. Good luck, man. Could this help?", "(scream)", "UX is my passion.", "IGD is my passion.", "Don't get your panties in a twist, babe. Here.", "Yo tengo tu mama!", "Look under there! HAHAHAHAHAHAHAHAHAHAHAHAHA! You said underwear!", "Dont trip, chocolate chip.", "So BOOM!", "Bless!", "I'm totally Grending right now.", "*Metal pipe sound effects*", "Don't Violate Section 3", "My name is John.", "I've gyatt to get my work done.", "I pushed my fingers into my eyes.", "I'm totally Grending right now."],
@@ -288,26 +286,25 @@ function setBackground(input) {
 // }
 
 function displayInv() {
-
     let elements = document.getElementsByClassName("valHold");
 
     for (i = 0; i < elements.length; i++) {
-        if (elements[i].children[0].innerText == 0) {
+        document.getElementById(elements[i].parentElement.id).classList.add("hidden");
+        if (elements[i].children[0].innerText > 0) {
             // Iterates thru items, if the item in player inv is < 0, then it unhides.
             // Will have to somehow reference the items in the array to the items in the HTML
 
-            hidePage(elements[i].parentElement.id);
+            document.getElementById(elements[i].parentElement.id).classList.remove("hidden");
         }
     }
 
-document.getElementById("").classList.toggle("hidden");
+    document.getElementById("inventory").classList.toggle("hidden");
 
-// Comment these out at some point
+    // Comment these out at some point
     hidePage("home-image");
     hidePage("button-container");
     hidePage("text-output");
 
-    hidePage("inventory");
 }
 
 function displayMap() {
@@ -346,27 +343,56 @@ function getRandomInt(max) {
 
 // NPC Function
 function npcFunct() {
-    let ranNum = getRandomInt(2);
-    // Change #s in Math.random for the images!
 
     // Change to work, idea is here
     if (student.mapLocation != "Vista") {
+        let ranNum = getRandomInt(2);
+
         if (ranNum == 0) {
+
+            let ranLab = getRandomInt(2);
+            console.log("ranLab Before: " + ranLab);
+
+            if (ranLab == 0) {
+                ranLab = "tech";
+            }
+            else if (ranLab == 1) {
+                ranLab = "biomed";
+            }
+            console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
+
             document.getElementById("home-image").innerHTML =
-                `<img src='(${Ally.images[getRandomInt(9)]})' alt="A generic person colored in black and white.">`;
+                `<img src='${Ally.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
 
             // Take ally dialogue as well
-            setText(Ally[getRandomInt(2)].dialogue[getRandomInt(dialogue.length)]);
+            setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length)]);
 
             // Set button values
 
         }
         else if (ranNum == 1) {
+
+            let ranLab = getRandomInt(3);
+            console.log("ranLab Before: " + ranLab);
+
+            if (ranLab == 0) {
+                ranLab = "multimedia";
+            }
+            else if (ranLab == 1) {
+                ranLab = "law";
+            }
+            else if (ranLab == 2) {
+                ranLab = "business";
+            }
+
+            console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
+            console.log(NPC[ranLab])
             document.getElementById("home-image").innerHTML =
-                `<img src='(${NPC.images[getRandomInt(6)]})' alt="A generic person colored in black and white.">`;
+                `<img src='${NPC.images[getRandomInt(6)]}' alt="A generic person colored in black and white.">`;
 
             // Take enemey dialogue as well
-            setText(NPC[getRandomInt(3)].dialogue[getRandomInt(dialogue.length)]);
+            setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length)]);
+
 
             // Set button values
 
@@ -374,7 +400,7 @@ function npcFunct() {
     }
     else {
         document.getElementById("home-image").innerHTML =
-            `<img src='(${svNPC.guard.images[getRandomInt(3)]})' alt="A generic person colored in black and white.">`;
+            `<img src='${svNPC.guard.images[getRandomInt(3)]}' alt="A generic person colored in black and white.">`;
 
         // Take guard dialogue as well
         setText(svNPC.guard.dialogue[getRandomInt()]);
@@ -471,7 +497,7 @@ function addItem(id, num) {
 
 // Picking up functions
 function pickUp() {
-    
+
     // Reference actual location, not just CartItem
     switch (ItemMap.CartItem[student.locationX][student.locationY]) {
 
