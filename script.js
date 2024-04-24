@@ -259,7 +259,7 @@ var ItemMap = {
 function hidePage(input) {
     
         document.getElementById(input).classList.toggle("hidden");
-        console.log(input);
+        console.log(input + ' vis was toggled');
 
 }
 
@@ -292,7 +292,7 @@ function displayInv() {
     }
 
     checkHidden("inventory");
-    console.log("wewe");
+    console.log("displayInv was run");
 }
 
 function displayMap() {
@@ -334,39 +334,43 @@ function checkHidden(input) {
             if (isHidden("inventory") && isHidden("map")) { //open map, both are closed
                 hidePage("map");
                 toggleElements();
-                console.log(isHidden("inventory") && isHidden("map"));
+                // console.log(isHidden("inventory") && isHidden("map"));
             }
 
             else if (isHidden("inventory")) { //closing map
                 hidePage("map");
                 toggleElements();
-                console.log(isHidden("inventory"));
+                // console.log(isHidden("inventory"));
             }
 
             else if (!isHidden("inventory")) { //opening map if inv is open
                 hidePage("map");
                 hidePage("inventory");
-                console.log(!isHidden("inventory"));
+                // console.log(!isHidden("inventory"));
             }
             break;
 
         case 'inventory':
             
-            if (isHidden("map") && isHidden("inventory")) { //open inv, both are closed
+            if (isHidden("inventory") && isHidden("map")) { //open inv, both are closed
                 hidePage("inventory");
                 toggleElements();
-                console.log("collect inventory")
+                console.log("open inv, both are closed");
             }
 
-            if (isHidden("map")) { //closing inv
+            else if (isHidden("map")) { //closing inv
                 hidePage("inventory");
                 toggleElements();
+                console.log("closing inv");
             }
 
-            if (!isHidden("map")) { //opening inventory if map is open
+            else if (!isHidden("map")) { //opening inventory if map is open
                 hidePage("map");
                 hidePage("inventory");
+                console.log("opening inventory if map is open");
             }
+            break;
+            default: console.log('somethings busted');
 
     }
 
