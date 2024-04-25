@@ -268,7 +268,7 @@ function setText(input) {
 }
 
 function setBackground(input) {
-    document.getElementById("home-image").style.backgroundImage = `url("BackgroundImages/" + ${input} + ".png")`;
+    document.getElementById("home-image").classList.add(input);
 }
 
 // function textIterator(key){
@@ -475,6 +475,10 @@ function endDisplay() {
     }
 }
 
+function removeBg(input){
+    document.getElementById("home-image").classList.remove(input);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("button-container").addEventListener("click", function (e) {
 
@@ -503,6 +507,8 @@ document.addEventListener("DOMContentLoaded", function () {
             case "stairs":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("atStairs").classList.toggle("hidden");
+                setBackground("stairs");
+                removeBg('galleryEntry');
                 setText("You're at the stairs.");
                 student.locationX = 1;
                 student.locationY = 0;
@@ -511,6 +517,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("atJanitor").classList.toggle("hidden");
                 setText("You're in the janitor's closet.");
+                removeBg('galleryEntry');
                 student.locationX = 2;
                 student.locationY = 2;
                 break;
@@ -518,6 +525,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("outsideGal").classList.toggle("hidden");
                 setText("You're outside.");
+                removeBg("galleryEntry");
                 student.locationX = 0;
                 student.locationY = 2;
                 break;
@@ -529,8 +537,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 else if(!isHidden('atGallery')){
                     document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("inHall").classList.toggle("hidden");
+                    removeBg("galleryEntry");
                 }
                     setText("You're in the hall.");
+                    
                     student.locationX = 1;
                     student.locationY = 3;
                 break;
@@ -555,6 +565,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("inHall").classList.toggle("hidden");
                 setText("You're in the gallery.");
+                setBackground("galleryEntry");
                 student.locationX = 1;
                 student.locationY = 2;
                 break;
