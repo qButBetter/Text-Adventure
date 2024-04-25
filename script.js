@@ -491,12 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Call npcFunct() first to have it change the button values first
         // Random NPC Interaction
-        let ranNum = getRandomInt(5);
-        if (ranNum == 0) {
-
-            // Promise this to go first
-            npcFunct();
-        }
+        
 
         // Grabs value from the button clicked
         // Awaits the npcFunct()
@@ -624,12 +619,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 8;
                 // Make sure to set background
-                document.getElementById("home-image").style.backgroundImage = `url("sad.png")`;
                 break;
 
             default:
                 console.log("Button not Assigned a Value");
 
+        }
+
+        let ranNum = getRandomInt(5);
+        if (ranNum == 0) {
+
+            // Promise this to go first
+            npcFunct();
         }
 
     });
