@@ -489,10 +489,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Random NPC Interaction
         let ranNum = getRandomInt(5);
         if (ranNum == 0) {
+
+            // Promise this to go first
             npcFunct();
         }
 
         // Grabs value from the button clicked
+        // Awaits the npcFunct()
         let btnVal = e.target.value;
 
         switch (btnVal) {
@@ -596,6 +599,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 8;
                 // Make sure to set background
+                document.getElementById("home-image").style.backgroundImage = `url("sad.png")`;
                 break;
 
             default:
