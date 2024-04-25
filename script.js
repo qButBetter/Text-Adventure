@@ -257,9 +257,9 @@ var ItemMap = {
 
 // General Functions
 function hidePage(input) {
-    
-        document.getElementById(input).classList.toggle("hidden");
-        console.log(input + ' vis was toggled');
+
+    document.getElementById(input).classList.toggle("hidden");
+    console.log(input + ' vis was toggled');
 
 }
 
@@ -268,7 +268,7 @@ function setText(input) {
 }
 
 function setBackground(input) {
-    document.getElementById("text-output").style.backgroundImage = `url(${input})`;
+    document.getElementById("home-image").style.backgroundImage = `url("BackgroundImages/" + ${input} + ".png")`;
 }
 
 // function textIterator(key){
@@ -351,7 +351,7 @@ function checkHidden(input) {
             break;
 
         case 'inventory':
-            
+
             if (isHidden("inventory") && isHidden("map")) { //open inv, both are closed
                 hidePage("inventory");
                 toggleElements();
@@ -370,7 +370,7 @@ function checkHidden(input) {
                 console.log("opening inventory if map is open");
             }
             break;
-            default: console.log('somethings busted');
+        default: console.log('somethings busted');
 
     }
 
@@ -475,25 +475,78 @@ function endDisplay() {
     }
 }
 
-// Moving Functions
-function move(btnVal) {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("button-container").addEventListener("click", function (e) {
 
-    // student.locationX = Map.CART[i];
-    // student.locationY = Map.CART[j];
-    // // Reference location to background
-    // utilBackground();
+        console.log("button was clicked");
 
-    // Random NPC Interaction
-    let ranNum = getRandomInt(5);
-    if (ranNum == 0) {
-        npcFunct();
-    }
+        // Get value of button pressed
+        // Change background / text depending on where you are using switch statement
+        // Update player location in 2D array
+        // Unhide section for place you're in
 
-    // student.updatePlayer();
+        // Call npcFunct() first to have it change the button values first
+        // Random NPC Interaction
+        let ranNum = getRandomInt(5);
+        if (ranNum == 0) {
+            npcFunct();
+        }
 
-    // Change background depending on where you are
+        // Grabs value from the button clicked
+        let btnVal = e.target.value;
 
-}
+        switch (btnVal) {
+
+            case "stairs":
+                // Whateva
+                break;
+            case "janitor":
+                // Whateva
+                break;
+            case "outside":
+                // Whateva
+                break;
+            case "hall":
+                // Whateva
+                break;
+            case "gallery":
+                // Whateva
+                break;
+            case "multimedia":
+                // Whateva
+                break;
+            case "ux":
+                // Whateva
+                break;
+            case "web":
+                // Whateva
+                break;
+            case "web2":
+                // Whateva
+                break;
+            case "eng":
+                // Whateva
+                break;
+            case "0":
+                console.log("Picked up Item");
+                break;
+            case "continue":
+                document.getElementById("inWeb").classList.toggle("hidden");
+                document.getElementById("cutscene").classList.toggle("hidden");
+                setText("You in Web Design");
+                student.locationX = 0;
+                student.locationY = 8;
+                // Make sure to set background
+                break;
+
+            default:
+                console.log("Button not Assigned a Value");
+
+        }
+
+    });
+});
+
 
 // Debug functions
 function addItem(id, num) {

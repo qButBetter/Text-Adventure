@@ -177,6 +177,12 @@ button:hover {
     margin-top: 3em;
 }
 
+.home-image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
 .home-page img{
     width: 50%;
 }
