@@ -85,7 +85,7 @@ body {
 /* Universal */
 .text-container {
     height: 15em;
-    margin-bottom: 1em;
+    margin-bottom: .2em;
 }
 
 .wrapper {
@@ -103,7 +103,7 @@ body {
 }
 
 .buttons.four button{
-    width: 30%;
+    width: 20%;
     margin: .2em;
 }
 
