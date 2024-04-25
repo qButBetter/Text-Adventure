@@ -102,11 +102,6 @@ body {
     width: 100%;
 }
 
-.buttons.four button{
-    width: 20%;
-    margin: .2em;
-}
-
 .button-container-home {
     display: flex;
     flex-flow: row wrap;
@@ -126,8 +121,8 @@ body {
 }
 
 button {
-    width: 30%;
-    padding: .5em;
+    width: 20%;
+    padding: .2em;
 }
 
 button:hover {
