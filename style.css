@@ -100,6 +100,8 @@ body {
 
 .buttons{
     width: 100%;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .button-container-home {
@@ -190,8 +192,13 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 97%;
+    overflow-y: scroll;
+       width: 97%;
     padding: 1em;
+}
+
+.text-container::-webkit-scrollbar{
+    display: none;
 }
 
 .name-container {
@@ -317,8 +324,8 @@ button:hover {
     background-image: url(mr-mog.png);
 }
 
-.webEntry {
-    background-image: url(BackgroundImages/CART_webEntry.png);
+.web {
+    background-image: url(BackgroundImages/inWeb.png);
 }
 
 .galleryEntry {
@@ -327,6 +334,30 @@ button:hover {
 
 .stairs {
     background-image: url(BackgroundImages/stairs.png);
+}
+
+.hall{
+    background-image: url(BackgroundImages/hall.png);
+}
+
+.multimedia{
+    background-image: url(BackgroundImages/inmm.png);
+}
+
+.atrium{
+    background-image: url(BackgroundImages/atrium.png);
+}
+
+.english{
+    background-image: url(BackgroundImages/english.png);
+}
+
+.ux{
+    background-image: url(BackgroundImages/ux.png);
+}
+
+.janitor {
+    background-image: url(BackgroundImages/janitor-closet.png);
 }
 
 /* SV */
