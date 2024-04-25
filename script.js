@@ -409,7 +409,7 @@ function npcFunct() {
                 `<img src='${Ally.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
 
             // Take ally dialogue as well
-            setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length)]);
+            setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)]);
 
             // Set button values
 
@@ -435,7 +435,7 @@ function npcFunct() {
                 `<img src='${NPC.images[getRandomInt(6)]}' alt="A generic person colored in black and white.">`;
 
             // Take enemey dialogue as well
-            setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length)]);
+            setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)]);
 
 
             // Set button values
@@ -489,10 +489,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Random NPC Interaction
         let ranNum = getRandomInt(5);
         if (ranNum == 0) {
+
+            // Promise this to go first
             npcFunct();
         }
 
         // Grabs value from the button clicked
+        // Awaits the npcFunct()
         let btnVal = e.target.value;
 
         switch (btnVal) {
@@ -610,6 +613,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 8;
                 // Make sure to set background
+                document.getElementById("home-image").style.backgroundImage = `url("sad.png")`;
                 break;
 
             default:
