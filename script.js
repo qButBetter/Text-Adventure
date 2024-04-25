@@ -519,20 +519,34 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationY = 2;
                 break;
             case "hall":
-                if (isHidden('atrium') === true) {
+                    if(!isHidden('atrium')){
+                    document.getElementById("atrium").classList.toggle("hidden");
+                    document.getElementById("inHall").classList.toggle("hidden");
+                }
+                else if(!isHidden('atGallery')){
                     document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("inHall").classList.toggle("hidden");
+                }
                     setText("You're in the hall.");
                     student.locationX = 1;
                     student.locationY = 3;
-                }
-                else if (isHidden('atGallery') === true) {
+                break;
+            case "atrium":
+                if(!isHidden('inUX')){
+                document.getElementById("inUX").classList.toggle("hidden");
                     document.getElementById("atrium").classList.toggle("hidden");
-                    document.getElementById("inHall").classList.toggle("hidden");
-                    setText("You're in the hall.");
-                    student.locationX = 1;
-                    student.locationY = 7;
+                    }
+                else if(!isHidden('inWeb')){
+                    document.getElementById("inWeb").classList.toggle("hidden");
+                    document.getElementById("atrium").classList.toggle("hidden");
+                }   
+                else if(!isHidden('inEnglish')){
+                    document.getElementById("inEnglish").classList.toggle("hidden");
+                    document.getElementById("atrium").classList.toggle("hidden");
                 }
+                setText("You're in the atrium.");
+                    student.locationX = 1;
+                    student.locationY = 6;
                 break;
             case "gallery":
                 document.getElementById("atGallery").classList.toggle("hidden");
