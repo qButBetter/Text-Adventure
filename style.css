@@ -194,7 +194,12 @@ button:hover {
 }
 
 .text-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 97%;
+    padding: 1em;
 }
 
 .name-container {

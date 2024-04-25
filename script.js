@@ -498,34 +498,93 @@ document.addEventListener("DOMContentLoaded", function () {
         switch (btnVal) {
 
             case "stairs":
-                // Whateva
+                document.getElementById("atGallery").classList.toggle("hidden");
+                document.getElementById("atStairs").classList.toggle("hidden");
+                setText("You're at the stairs.");
+                student.locationX = 1;
+                student.locationY = 0;
                 break;
             case "janitor":
-                // Whateva
+                document.getElementById("atGallery").classList.toggle("hidden");
+                document.getElementById("atJanitor").classList.toggle("hidden");
+                setText("You're in the janitor's closet.");
+                student.locationX = 2;
+                student.locationY = 2;
                 break;
             case "outside":
-                // Whateva
+                document.getElementById("atGallery").classList.toggle("hidden");
+                document.getElementById("outsideGal").classList.toggle("hidden");
+                setText("You're outside.");
+                student.locationX = 0;
+                student.locationY = 2;
                 break;
             case "hall":
-                // Whateva
+                if (isHidden('atrium') === true) {
+                    document.getElementById("atGallery").classList.toggle("hidden");
+                    document.getElementById("inHall").classList.toggle("hidden");
+                    setText("You're in the hall.");
+                    student.locationX = 1;
+                    student.locationY = 3;
+                }
+                else if (isHidden('atGallery') === true) {
+                    document.getElementById("atrium").classList.toggle("hidden");
+                    document.getElementById("inHall").classList.toggle("hidden");
+                    setText("You're in the hall.");
+                    student.locationX = 1;
+                    student.locationY = 7;
+                }
                 break;
             case "gallery":
-                // Whateva
+                document.getElementById("atGallery").classList.toggle("hidden");
+                document.getElementById("inHall").classList.toggle("hidden");
+                setText("You're in the gallery.");
+                student.locationX = 1;
+                student.locationY = 2;
                 break;
             case "multimedia":
-                // Whateva
+                document.getElementById("inHall").classList.toggle("hidden");
+                document.getElementById("inMultimedia").classList.toggle("hidden");
+                setText("You're in multimedia.");
+                student.locationX = 0;
+                student.locationY = 3;
                 break;
             case "ux":
-                // Whateva
+                if (isHidden('inWeb') === true) {
+                    document.getElementById("inUX").classList.toggle("hidden");
+                    document.getElementById("atrium").classList.toggle("hidden");
+                    setText("You're in UX.");
+                }
+                else if (isHidden('atrium') === true) {
+                    document.getElementById("inUX").classList.toggle("hidden");
+                    document.getElementById("inWeb").classList.toggle("hidden");
+                    setText("You're in UX.");
+                }
+                student.locationX = 0;
+                student.locationY = 7;
                 break;
             case "web":
-                // Whateva
+                if (isHidden('inUX') === true) {
+                    document.getElementById("inWeb").classList.toggle("hidden");
+                    document.getElementById("atrium").classList.toggle("hidden");
+                    setText("You're in Web.");
+                }
+                else if (isHidden('atrium') === true) {
+                    document.getElementById("inWeb").classList.toggle("hidden");
+                    document.getElementById("inUX").classList.toggle("hidden");
+                    setText("You're in Web.");
+                }
+                student.locationX = 0;
+                student.locationY = 8;
                 break;
             case "web2":
                 // Whateva
                 break;
             case "eng":
-                // Whateva
+                document.getElementById("atrium").classList.toggle("hidden");
+                document.getElementById("inEnglish").classList.toggle("hidden");
+                setText("You're in English.");
+                student.locationX = 2;
+                student.locationY = 6;
                 break;
             case "0":
                 console.log("Picked up Item");
@@ -533,7 +592,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case "continue":
                 document.getElementById("inWeb").classList.toggle("hidden");
                 document.getElementById("cutscene").classList.toggle("hidden");
-                setText("You in Web Design");
+                setText("You're in Web Design.");
                 student.locationX = 0;
                 student.locationY = 8;
                 // Make sure to set background
