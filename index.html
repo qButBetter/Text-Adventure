@@ -45,7 +45,7 @@
                 </section>
 
                 <section class="image-container centersize" id="home-image">
-                    <img src="mr-mog.png">
+                    <img src="MiscItemImages/transpartns.png" id="transparent">
                     <!-- change the background using MAP object, change npc/item showing using NPC and item objects -->
                 </section>
 
@@ -168,11 +168,21 @@
                 <!--  Navigating CART-->
                 <!-- Gallery access -->
                 <section class="buttons four row hidden" id="atGallery">
-                    <button class="black border main-size" id="s" value="stairs">Go to the stairs</button>
-                    <button class="black border main-size" id="j" value="janitor">Go to the janitor's closet</button>
-                    <button class="black border main-size" id="e1" value="outside">Go outside the gallery</button>
-                    <button class="black border main-size" id="h" value="atrium">Go to the atrium</button>
+                    <section class="butcolumn">
+
+                        <button class="black border main-size" id="s" value="stairs">Go to the stairs</button>
+                        <button class="black border main-size" id="j" value="janitor">Go to the janitor's closet</button>
+
+                    </section>
+
                     <button class="black border main-size" id="interact" value="0" onclick="pickUp()">Interact</button>
+                    
+                    <section class="butcolumn">
+
+                        <button class="black border main-size" id="e1" value="outside">Go outside the gallery</button>
+                        <button class="black border main-size" id="h" value="h">Go down the hall</button>
+
+                    </section>
                 </section>
 
                 <section class="buttons row hidden" id="inHall">

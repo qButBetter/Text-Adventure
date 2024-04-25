@@ -110,6 +110,16 @@ body {
     justify-content: space-around;
 }
 
+.butcolumn{
+    display: flex;
+    flex-flow: column wrap;
+    width: 30%;
+}
+
+.butcolumn button{
+    width: 100%;
+}
+
 .loadEndBtn {
     margin-bottom: 2em;
 }
@@ -185,6 +195,10 @@ button:hover {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+#transparent{
+    width: 100%;
 }
 
 .text-container {

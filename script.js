@@ -608,15 +608,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationY = 3;
                 break;
             case "ux":
-                if (isHidden('inWeb') === true) {
+                if (!isHidden('inWeb')) {
                     document.getElementById("inUX").classList.toggle("hidden");
-                    document.getElementById("atrium").classList.toggle("hidden");
+                    document.getElementById("inWeb").classList.toggle("hidden");
                     removeBg('web');
                 }
-                else if (isHidden('atrium') === true) {
+                else if (!isHidden('atrium')) {
                     document.getElementById("inUX").classList.toggle("hidden");
-                    document.getElementById("inWeb").classList.toggle("hidden");  
-                    removeBg('atrium')
+                    document.getElementById("atrium").classList.toggle("hidden");  
+                    removeBg('atrium');
                 }
                 setBackground('ux');
                 setText("You're in UX.");
@@ -624,14 +624,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationY = 7;
                 break;
             case "web":
-                if (isHidden('inUX') === true) {
-                    document.getElementById("inWeb").classList.toggle("hidden");
-                    document.getElementById("atrium").classList.toggle("hidden");
-                    removeBg('ux');
-                }
-                else if (isHidden('atrium') === true) {
+                if (!isHidden('inUX')) {
                     document.getElementById("inWeb").classList.toggle("hidden");
                     document.getElementById("inUX").classList.toggle("hidden");
+                    removeBg('ux');
+                }
+                else if (!isHidden('atrium')) {
+                    document.getElementById("inWeb").classList.toggle("hidden");
+                    document.getElementById("atrium").classList.toggle("hidden");
                     removeBg('atrium');
                 }
                 setText("You're in Web.");
