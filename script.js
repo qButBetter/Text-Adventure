@@ -409,7 +409,7 @@ function npcFunct() {
                 `<img src='${Ally.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
 
             // Take ally dialogue as well
-            setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length)]);
+            setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)]);
 
             // Set button values
 
@@ -435,7 +435,7 @@ function npcFunct() {
                 `<img src='${NPC.images[getRandomInt(6)]}' alt="A generic person colored in black and white.">`;
 
             // Take enemey dialogue as well
-            setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length)]);
+            setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)]);
 
 
             // Set button values
