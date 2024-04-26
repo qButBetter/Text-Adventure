@@ -225,6 +225,11 @@ var ItemMap = {
         ["i"], [0], ["n110"],
         ["i"], [0], [0]],
 
+    toodee: [
+        [0,0,0],
+        [0,0,0],
+    ],
+
     Outside: [["i2"], [0]],
 
     Janitor: [[0], ["i2"]],
@@ -675,8 +680,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "pickup":
+
+            // if (ItemMap.CART[student.locationX][student.locationY] == "i") {
+
+            // }
+            // else if () {
+
+            // }
+            // else if () {
+
+            // }
+            // else if () {
+
+            // }
+
+                pickUp();
                 console.log("Picked up Item");
-                return (console.log("Skipped npcFunct()!"));
+                return ("");
 
             case "continue":
                 document.getElementById("inWeb").classList.toggle("hidden");
@@ -687,10 +707,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationY = 8;
 
                 // Stop npcFunct() from running
-                return (console.log("Skipped npcFunct()!"));
+                return ("");
 
             default:
-                return (console.log("Button not Assigned a Value"));
+                return ("");
 
         }
 
@@ -752,6 +772,7 @@ function addItem(id, num) {
 function pickUp() {
 
     let itemPlace = ItemMap.CART[student.locationX][student.locationY];
+    console.log(itemPlace);
 
     // Reference actual location, not just CartItem
     switch (itemPlace) {
@@ -793,25 +814,49 @@ function pickUp() {
 function checkItems() {
 
     // Checks paper value
-    if (student.inventory[0] >= 4) {
+    if (student.inventory[0] >= 5) {
         // Display a given ending
+        endingScreen("paper");
     }
     // Then checks arson value
     else if (student.inventory[1] >= 3) {
         // Display a given ending
+        endingScreen("arson");
     }
     // Then checks inspo value
     else if (student.inventory[2] >= 5) {
         // Display a given ending
+        endingScreen("inspo");
     }
     else if (student.inventory[3] >= 1) {
         // Do the pickle ending
+        endingScreen("pickle");
     }
 
 }
 
 // Helper function for checkItems
-function endingScreen() {
+function endingScreen(input) {
+
+    switch (input) {
+
+        case "paper":
+            // G
+            break;
+
+        case "arson":
+            // G
+            break;
+
+        case "inspo":
+            // G
+            break;
+
+        case "pickle":
+            // G
+            break;
+
+    }
 
 }
 

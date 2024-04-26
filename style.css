@@ -98,7 +98,7 @@ body {
     justify-content: space-around;
 }
 
-.buttons{
+.buttons {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -110,13 +110,13 @@ body {
     justify-content: space-around;
 }
 
-.butcolumn{
+.butcolumn {
     display: flex;
     flex-flow: column wrap;
     width: 30%;
 }
 
-.butcolumn button{
+.butcolumn button {
     width: 100%;
 }
 
@@ -184,7 +184,7 @@ button:hover {
     margin-top: 3em;
 }
 
-.home-page img{
+.home-page img {
     width: 50%;
 }
 
@@ -197,7 +197,7 @@ button:hover {
     background-size: cover;
 }
 
-#transparent{
+#transparent {
     width: 100%;
 }
 
@@ -207,11 +207,11 @@ button:hover {
     justify-content: center;
     align-items: center;
     overflow-y: scroll;
-       width: 97%;
+    width: 97%;
     padding: 1em;
 }
 
-.text-container::-webkit-scrollbar{
+.text-container::-webkit-scrollbar {
     display: none;
 }
 
@@ -283,7 +283,7 @@ button:hover {
 }
 
 /* Map Page */
-.map{
+.map {
     display: flex;
     justify-content: center;
 }
@@ -350,23 +350,23 @@ button:hover {
     background-image: url(BackgroundImages/stairs.png);
 }
 
-.hall{
+.hall {
     background-image: url(BackgroundImages/hall.png);
 }
 
-.multimedia{
+.multimedia {
     background-image: url(BackgroundImages/inmm.png);
 }
 
-.atrium{
+.atrium {
     background-image: url(BackgroundImages/atrium.png);
 }
 
-.english{
+.english {
     background-image: url(BackgroundImages/english.png);
 }
 
-.ux{
+.ux {
     background-image: url(BackgroundImages/ux.png);
 }
 
@@ -558,7 +558,7 @@ button:hover {
 
 /* laptop sizing */
 @media only screen and (max-width: 2200px) {
-    
+
     /* end screen siziing */
     .tenEm {
         font-size: 7em;
@@ -572,29 +572,29 @@ button:hover {
         font-size: .7em;
     }
 
-    .summary{
-        width:70%;
+    .summary {
+        width: 70%;
     }
 
-    .ending h2{
+    .ending h2 {
         margin-top: .5em;
     }
 
     /* main interface sizing */
 
-    .text-container{
+    .text-container {
         height: 20%;
     }
 
-    .map img{
+    .map img {
         width: 55%;
     }
 
-    .home-page{
+    .home-page {
         margin: 0;
     }
 
-    .inventory{
+    .inventory {
         margin-top: 1em;
     }
 }
