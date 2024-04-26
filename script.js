@@ -426,6 +426,26 @@ function npcFunct() {
         // Set button values
 
     }
+
+    let ranBut = getRandomInt(4);
+
+    document.getElementById("button-container").classList.add("hidden");
+
+    switch (ranBut) {
+        case 0:
+            document.getElementById('NPCtalk1').classList.remove('hidden');
+            break;
+        case 1:
+            document.getElementById('NPCtalk2').classList.remove('hidden');
+            break;
+        case 2:
+            document.getElementById('NPCtalk3').classList.remove('hidden');
+            break;
+        case 3:
+            document.getElementById('NPCtalk4').classList.remove('hidden');
+            break;
+    }
+
 }
 
 function endDisplay() {
@@ -474,6 +494,8 @@ document.addEventListener("DOMContentLoaded", function () {
             case "stairs":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("atStairs").classList.toggle("hidden");
+                // document.getElementById("atGallery").classList.remove("current");
+                // document.getElementById("atStairs").classList.add("current");
                 setBackground("stairs");
                 removeBg('galleryEntry');
                 setText("You're at the stairs.");
@@ -484,6 +506,8 @@ document.addEventListener("DOMContentLoaded", function () {
             case "janitor":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("atJanitor").classList.toggle("hidden");
+                // document.getElementById("atGallery").classList.remove("current");
+                // document.getElementById("atJanitor").classList.add("current");
                 setText("You're in the janitor's closet.");
                 setBackground('janitor')
                 removeBg('galleryEntry');
@@ -494,6 +518,8 @@ document.addEventListener("DOMContentLoaded", function () {
             case "outside":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("outsideGal").classList.toggle("hidden");
+                // document.getElementById("atGallery").classList.remove("current");
+                // document.getElementById("outsideGal").classList.add("current");
                 setText("You're outside.");
                 removeBg("galleryEntry");
                 student.locationX = 0;
@@ -503,19 +529,21 @@ document.addEventListener("DOMContentLoaded", function () {
             case "hall":
                 if (!isHidden('atrium')) {
                     document.getElementById("atrium").classList.toggle("hidden");
-                    document.getElementById("inHall").classList.toggle("hidden");
+                    // document.getElementById("atrium").classList.remove("current");
                     removeBg('atrium');
                 }
                 else if (!isHidden('atGallery')) {
                     document.getElementById("atGallery").classList.toggle("hidden");
-                    document.getElementById("inHall").classList.toggle("hidden");
+                    // document.getElementById("atGallery").classList.remove("current");
                     removeBg("galleryEntry");
                 }
                 else if (!isHidden('inMultimedia')) {
                     document.getElementById("inMultimedia").classList.toggle("hidden");
-                    document.getElementById("inHall").classList.toggle("hidden");
+                    // document.getElementById("inMultimedia").classList.remove("current");
                     removeBg('multimedia');
                 }
+                document.getElementById("inHall").classList.toggle("hidden");
+                document.getElementById("inHall").classList.add("current");
                 setBackground('hall');
                 setText("You're in the hall.");
 
@@ -526,24 +554,25 @@ document.addEventListener("DOMContentLoaded", function () {
             case "atrium":
                 if (!isHidden('inUX')) {
                     document.getElementById("inUX").classList.toggle("hidden");
-                    document.getElementById("atrium").classList.toggle("hidden");
+                    // document.getElementById("inUX").classList.remove("current");
                     removeBg('ux');
                 }
                 else if (!isHidden('inWeb')) {
                     document.getElementById("inWeb").classList.toggle("hidden");
-                    document.getElementById("atrium").classList.toggle("hidden");
+                    // document.getElementById("inWeb").classList.remove("current");
                     removeBg('web');
                 }
                 else if (!isHidden('inEnglish')) {
                     document.getElementById("inEnglish").classList.toggle("hidden");
-                    document.getElementById("atrium").classList.toggle("hidden");
+                    // document.getElementById("inEnglish").classList.remove("current");
                     removeBg('english');
                 }
                 else if (!isHidden('inHall')) {
-                    document.getElementById("atrium").classList.toggle("hidden");
                     document.getElementById("inHall").classList.toggle("hidden");
                     removeBg('hall');
                 }
+                document.getElementById("atrium").classList.toggle("hidden");
+                // document.getElementById("atrium").classList.add("current");
                 setText("You're in the atrium.");
                 setBackground('atrium');
                 student.locationX = 1;
@@ -552,24 +581,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
             case "gallery":
                 if (!isHidden('inHall')) {
-                    document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("inHall").classList.toggle("hidden");
+                    // document.getElementById("inHall").classList.remove("current");
                     removeBg('hall');
                 }
                 else if (!isHidden('atStairs')) {
-                    document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("atStairs").classList.toggle("hidden");
+                    // document.getElementById("atStairs").classList.remove("current");
                     removeBg('stairs');
                 }
                 else if (!isHidden('atJanitor')) {
-                    document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("atJanitor").classList.toggle("hidden");
+                    // document.getElementById("atJanitor").classList.remove("current");
                     removeBg('janitor');
                 }
-                else if (!isHidden('outsideGal')) {
-                    document.getElementById("atGallery").classList.toggle("hidden");
+                else if (!isHidden('outsideGal')) { 
                     document.getElementById("outsideGal").classList.toggle("hidden");
+                    // document.getElementById("current").classList.remove("current");
                 }
+                document.getElementById("atGallery").classList.toggle("hidden");
+                // document.getElementById("gallery").classList.add("current");
                 setText("You're in the gallery.");
                 setBackground("galleryEntry");
                 student.locationX = 1;
@@ -579,6 +610,8 @@ document.addEventListener("DOMContentLoaded", function () {
             case "multimedia":
                 document.getElementById("inHall").classList.toggle("hidden");
                 document.getElementById("inMultimedia").classList.toggle("hidden");
+                // document.getElementById("inHall").classList.remove("current");
+                // document.getElementById("inMultimedia").classList.add("current");
                 removeBg('hall');
                 setBackground('multimedia');
                 setText("You're in multimedia.");
@@ -588,15 +621,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             case "ux":
                 if (!isHidden('inWeb')) {
-                    document.getElementById("inUX").classList.toggle("hidden");
+                    
                     document.getElementById("inWeb").classList.toggle("hidden");
+                    // document.getElementById("inWeb").classList.remove("current");
                     removeBg('web');
                 }
                 else if (!isHidden('atrium')) {
-                    document.getElementById("inUX").classList.toggle("hidden");
                     document.getElementById("atrium").classList.toggle("hidden");
+                    // document.getElementById("atrium").classList.remove("current");
                     removeBg('atrium');
                 }
+                document.getElementById("inUX").classList.toggle("hidden");
+                // document.getElementById("inUX").classList.add("current");
                 setBackground('ux');
                 setText("You're in UX.");
                 student.locationX = 0;
@@ -605,28 +641,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
             case "web":
                 if (!isHidden('inUX')) {
-                    document.getElementById("inWeb").classList.toggle("hidden");
+                    // document.getElementById("inUX").classList.remove("current");
                     document.getElementById("inUX").classList.toggle("hidden");
                     removeBg('ux');
                 }
                 else if (!isHidden('atrium')) {
-                    document.getElementById("inWeb").classList.toggle("hidden");
+                    // document.getElementById("atrium").classList.remove("current");
                     document.getElementById("atrium").classList.toggle("hidden");
                     removeBg('atrium');
                 }
+                document.getElementById("inWeb").classList.toggle("hidden");
+                // document.getElementById("inWeb").classList.add("current");
                 setText("You're in Web.");
                 setBackground('web')
                 student.locationX = 0;
                 student.locationY = 8;
                 break;
 
-            case "web2":
-                // Whateva
-                break;
+            // case "web2":
+            //     // Whateva
+            //     break;
 
             case "eng":
                 document.getElementById("atrium").classList.toggle("hidden");
                 document.getElementById("inEnglish").classList.toggle("hidden");
+                // document.getElementById("atrium").classList.remove("current");
+                // document.getElementById("inEnglish").classList.add("current");
                 removeBg('atrium');
                 setBackground('english');
                 setText("You're in English.");
