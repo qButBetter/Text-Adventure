@@ -241,26 +241,10 @@ var ItemMap = {
         [0], [0], [0]],
 };
 
-// function iterateText(objName, objItem) {
-//     textIterator = 0;
-//     let buttons = document.querySelectorAll("button-container").addEventListener("click", function(){
-//         textIterator++;
-//     });
-
-
-//     while (textIterator < objItem.length) {
-//         setText(objName.objItem[i]);
-//         // When button is pressed down, it adds to i.
-//     }
-
-// }
 
 // General Functions
 function hidePage(input) {
-
     document.getElementById(input).classList.toggle("hidden");
-    console.log(input + ' vis was toggled');
-
 }
 
 function setText(input) {
@@ -271,12 +255,6 @@ function setBackground(input) {
     document.getElementById("home-image").classList.add(input);
 }
 
-// function textIterator(key){
-//     // add event listener to buttons
-//     //when a button is pressed, it continues to the next index in the array
-
-
-// }
 
 function displayInv() {
     let elements = document.getElementsByClassName("valHold");
@@ -292,7 +270,6 @@ function displayInv() {
     }
 
     checkHidden("inventory");
-    console.log("displayInv was run");
 }
 
 function displayMap() {
@@ -355,19 +332,16 @@ function checkHidden(input) {
             if (isHidden("inventory") && isHidden("map")) { //open inv, both are closed
                 hidePage("inventory");
                 toggleElements();
-                console.log("open inv, both are closed");
             }
 
             else if (isHidden("map")) { //closing inv
                 hidePage("inventory");
                 toggleElements();
-                console.log("closing inv");
             }
 
             else if (!isHidden("map")) { //opening inventory if map is open
                 hidePage("map");
                 hidePage("inventory");
-                console.log("opening inventory if map is open");
             }
             break;
         default: console.log('somethings busted');
@@ -482,8 +456,6 @@ function removeBg(input) {
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("button-container").addEventListener("click", function (e) {
 
-        console.log("button was clicked");
-
         // Get value of button pressed
         // Change background / text depending on where you are using switch statement
         // Update player location in 2D array
@@ -508,6 +480,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 1;
                 student.locationY = 0;
                 break;
+
             case "janitor":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("atJanitor").classList.toggle("hidden");
@@ -517,6 +490,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 2;
                 student.locationY = 2;
                 break;
+
             case "outside":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("outsideGal").classList.toggle("hidden");
@@ -525,6 +499,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 2;
                 break;
+
             case "hall":
                 if (!isHidden('atrium')) {
                     document.getElementById("atrium").classList.toggle("hidden");
@@ -547,6 +522,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 1;
                 student.locationY = 3;
                 break;
+
             case "atrium":
                 if (!isHidden('inUX')) {
                     document.getElementById("inUX").classList.toggle("hidden");
@@ -563,7 +539,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("atrium").classList.toggle("hidden");
                     removeBg('english');
                 }
-                else if(!isHidden('inHall')){
+                else if (!isHidden('inHall')) {
                     document.getElementById("atrium").classList.toggle("hidden");
                     document.getElementById("inHall").classList.toggle("hidden");
                     removeBg('hall');
@@ -573,23 +549,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 1;
                 student.locationY = 6;
                 break;
+
             case "gallery":
                 if (!isHidden('inHall')) {
                     document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("inHall").classList.toggle("hidden");
                     removeBg('hall');
                 }
-                else if(!isHidden('atStairs')){
+                else if (!isHidden('atStairs')) {
                     document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("atStairs").classList.toggle("hidden");
                     removeBg('stairs');
                 }
-                else if(!isHidden('atJanitor')){
+                else if (!isHidden('atJanitor')) {
                     document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("atJanitor").classList.toggle("hidden");
                     removeBg('janitor');
                 }
-                else if(!isHidden('outsideGal')){
+                else if (!isHidden('outsideGal')) {
                     document.getElementById("atGallery").classList.toggle("hidden");
                     document.getElementById("outsideGal").classList.toggle("hidden");
                 }
@@ -598,6 +575,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 1;
                 student.locationY = 2;
                 break;
+
             case "multimedia":
                 document.getElementById("inHall").classList.toggle("hidden");
                 document.getElementById("inMultimedia").classList.toggle("hidden");
@@ -607,6 +585,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 3;
                 break;
+
             case "ux":
                 if (!isHidden('inWeb')) {
                     document.getElementById("inUX").classList.toggle("hidden");
@@ -615,7 +594,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 else if (!isHidden('atrium')) {
                     document.getElementById("inUX").classList.toggle("hidden");
-                    document.getElementById("atrium").classList.toggle("hidden");  
+                    document.getElementById("atrium").classList.toggle("hidden");
                     removeBg('atrium');
                 }
                 setBackground('ux');
@@ -623,6 +602,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 7;
                 break;
+
             case "web":
                 if (!isHidden('inUX')) {
                     document.getElementById("inWeb").classList.toggle("hidden");
@@ -639,9 +619,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 8;
                 break;
+
             case "web2":
                 // Whateva
                 break;
+
             case "eng":
                 document.getElementById("atrium").classList.toggle("hidden");
                 document.getElementById("inEnglish").classList.toggle("hidden");
@@ -651,9 +633,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 2;
                 student.locationY = 6;
                 break;
-            case "0":
+
+            case "pickup":
                 console.log("Picked up Item");
-                break;
+                return (console.log("Skipped npcFunct()!"));
+
             case "continue":
                 document.getElementById("inWeb").classList.toggle("hidden");
                 document.getElementById("cutscene").classList.toggle("hidden");
@@ -661,10 +645,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You're in Web Design.");
                 student.locationX = 0;
                 student.locationY = 8;
-                break;
+
+                // Stop npcFunct() from running
+                return (console.log("Skipped npcFunct()!"));
 
             default:
-                console.log("Button not Assigned a Value");
+                return (console.log("Button not Assigned a Value"));
 
         }
 
@@ -720,41 +706,74 @@ function addItem(id, num) {
             console.log("Id not recognized, no item added");
 
     }
-
 }
 
 // Picking up functions
 function pickUp() {
 
+    let itemPlace = ItemMap.CART[student.locationX][student.locationY];
+
     // Reference actual location, not just CartItem
-    switch (ItemMap.CartItem[student.locationX][student.locationY]) {
+    switch (itemPlace) {
 
         case "i":
             // Portraits
             addItem("paperValue", 1);
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            console.log("Paper Location");
+            checkItems();
             break;
 
         case "i2":
             // Arson
             addItem("arsonValue", 1);
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            console.log("Arson Location");
+            checkItems();
             break;
 
         case "i3":
             // Inspo
             addItem("inspoValue", 1);
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            console.log("Inspo Location");
+            checkItems();
             break;
 
         case "p":
             addItem("pickleValue", 1);
             ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            console.log("Pickle Location");
+            checkItems();
             break;
     }
 
 }
 
+function checkItems() {
+
+    // Checks paper value
+    if (student.inventory[0] >= 4) {
+        // Display a given ending
+    }
+    // Then checks arson value
+    else if (student.inventory[1] >= 3) {
+        // Display a given ending
+    }
+    // Then checks inspo value
+    else if (student.inventory[2] >= 5) {
+        // Display a given ending
+    }
+    else if (student.inventory[3] >= 1) {
+        // Do the pickle ending
+    }
+
+}
+
+// Helper function for checkItems
+function endingScreen() {
+
+}
 
 // GAME STUFF DON'T TOUCH
 var student = new Player();
