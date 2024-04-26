@@ -35,6 +35,10 @@ body {
     border: 3px solid white;
 }
 
+#health, #money {
+    display: none;
+}
+
 
 .around {
     display: flex;
@@ -446,10 +450,12 @@ button:hover {
 
     #health {
         font-size: 2em;
+        display: none;
     }
 
     #money {
         font-size: 2em;
+        display: none;
     }
 
     .button-container-home {

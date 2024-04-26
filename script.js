@@ -217,16 +217,18 @@ var Map = {
 };
 
 var ItemMap = {
-    CART:
-        [[0], [0], [0],
-        [0], [0], [0],
-        [0], ["i"], [0],
-        ["i"], [0], [0],
-        ["i2"], ["i"], [0],
-        [0], ["h"], [0],
-        [0], ["h"], ["p"],
-        ["i"], [0], ["n110"],
-        ["i"], [0], [0]],
+        CART: [
+
+            [0, "i", 0],
+            [0, 0, 0],
+            ["i2", "i", "i2"],
+            ["i2", "p", 0],
+            ["i", "i", 0],
+            [0, 0, 0],
+            [0, 0, "i"],
+            ["i", 0, 0],
+            ["i", 0, 0]
+        ],
 
     toodee: [
         [0, 0, 0],
@@ -553,6 +555,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You're at the stairs.");
                 student.locationX = 1;
                 student.locationY = 0;
+                console.log("[ " + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "janitor":
@@ -565,6 +568,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeBg('galleryEntry');
                 student.locationX = 2;
                 student.locationY = 2;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "outside":
@@ -576,6 +580,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeBg("galleryEntry");
                 student.locationX = 0;
                 student.locationY = 2;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "hall":
@@ -601,6 +606,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 student.locationX = 1;
                 student.locationY = 3;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "atrium":
@@ -629,6 +635,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setBackground('atrium');
                 student.locationX = 1;
                 student.locationY = 6;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "gallery":
@@ -657,6 +664,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setBackground("galleryEntry");
                 student.locationX = 1;
                 student.locationY = 2;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "multimedia":
@@ -669,6 +677,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You're in multimedia.");
                 student.locationX = 0;
                 student.locationY = 3;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "ux":
@@ -689,6 +698,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You're in UX.");
                 student.locationX = 0;
                 student.locationY = 7;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "web":
@@ -708,6 +718,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 setBackground('web')
                 student.locationX = 0;
                 student.locationY = 8;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             // case "web2":
@@ -724,22 +735,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You're in English.");
                 student.locationX = 2;
                 student.locationY = 6;
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
             case "pickup":
-
-                // if (ItemMap.CART[student.locationX][student.locationY] == "i") {
-
-                // }
-                // else if () {
-
-                // }
-                // else if () {
-
-                // }
-                // else if () {
-
-                // }
 
                 pickUp();
                 console.log("Picked up Item");
@@ -753,6 +752,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 8;
 
+                console.log("[" + student.locationX + ", " + student.locationY + "]")
+
                 // Stop npcFunct() from running
                 return ("");
 
@@ -761,12 +762,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        let ranNum = getRandomInt(5);
-        if (ranNum == 0) {
+        // let ranNum = getRandomInt(5);
+        // if (ranNum == 0) {
 
-            // Promise this to go first
-            npcFunct();
-        }
+        //     // Promise this to go first
+        //     npcFunct();
+        // }
 
     });
 });
@@ -818,8 +819,7 @@ function addItem(id, num) {
 // Picking up functions
 function pickUp() {
 
-    let itemPlace = ItemMap.CART[student.locationX][student.locationY];
-    console.log(itemPlace);
+    let itemPlace = ItemMap.CART[student.locationY][student.locationX];
 
     // Reference actual location, not just CartItem
     switch (itemPlace) {
@@ -827,7 +827,7 @@ function pickUp() {
         case "i":
             // Portraits
             addItem("paperValue", 1);
-            ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Paper Location");
             checkItems();
             break;
@@ -835,7 +835,7 @@ function pickUp() {
         case "i2":
             // Arson
             addItem("arsonValue", 1);
-            ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Arson Location");
             checkItems();
             break;
@@ -843,14 +843,14 @@ function pickUp() {
         case "i3":
             // Inspo
             addItem("inspoValue", 1);
-            ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Inspo Location");
             checkItems();
             break;
 
         case "p":
             addItem("pickleValue", 1);
-            ItemMap.student.mapLocation[student.locationX][student.locationY] = 0;
+            ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Pickle Location");
             checkItems();
             break;
