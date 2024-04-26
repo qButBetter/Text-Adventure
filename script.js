@@ -748,7 +748,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("inWeb").classList.toggle("hidden");
                 document.getElementById("cutscene").classList.toggle("hidden");
                 setBackground('web');
-                setText("You're in Web Design.");
+                setText("You walk into Web Applications. The room is very gray and dull, along with the dimly lit lights. There are 3 long tables with computers for every workstation, along with chairs and monitors. A poster on the far wall says “Tech Lab'' with 80's video game memorabilia. Web Application's room number reads N105.");
                 student.locationX = 0;
                 student.locationY = 8;
 
