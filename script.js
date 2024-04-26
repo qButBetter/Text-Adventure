@@ -217,18 +217,18 @@ var Map = {
 };
 
 var ItemMap = {
-        CART: [
+    CART: [
 
-            [0, "i", 0],
-            [0, 0, 0],
-            ["i2", "i", "i2"],
-            ["i2", "p", 0],
-            ["i", "i", 0],
-            [0, 0, 0],
-            [0, 0, "i"],
-            ["i", 0, 0],
-            ["i", 0, 0]
-        ],
+        [0, "i", 0],
+        [0, 0, 0],
+        ["i2", "i", "i2"],
+        ["i2", "p", 0],
+        ["i", "i", 0],
+        [0, 0, 0],
+        [0, 0, "i"],
+        ["i", 0, 0],
+        ["i", 0, 0]
+    ],
 
     toodee: [
         [0, 0, 0],
@@ -445,6 +445,7 @@ function npcFunct() {
     let ranBut = getRandomInt(4);
 
     document.getElementById("button-container").classList.add("hidden");
+    document.getElementById('npc-buttons').classList.remove("hidden");
 
     switch (ranBut) {
         case 0:
@@ -461,46 +462,45 @@ function npcFunct() {
             break;
     }
 
-
-    function generateResponse() {
-        let responses = [];
-        let lab = null;
-
-        if (NPC[randomLab] == undefined) {
-            lab = Ally;
-        }
-
-        else {
-            lab = NPC;
-        }
-
-        while (responses.length < 4) {
-            let randomReply = getRandomInt(lab[randomLab].reply.length - 1);
-            if (responses.includes(randomReply)) {
-                continue;
-            } else {
-                responses.push(randomReply);
-            }
-        }
-
-        return responses;
-
-    };
-
-    function buttonText() {
-        let responses = generateResponse();
-
-        let responseOne = document.getElementById('NPCtalk1');
-        let responseTwo = document.getElementById('NPCtalk2');
-        let responseThree = document.getElementById('NPCtalk3');
-        responseOne.innerText(responses[0]);
-        responseTwo.innerText(responses[1]);
-        responseThree.innerText(responses[2]);
-    };
-
-    buttonText();
+    // buttonText();
 }
 
+// function generateResponse() {
+
+//     let responses = [];
+//     let lab = null;
+
+//     if (NPC[randomLab] == undefined) {
+//         lab = Ally;
+//     }
+//     else {
+//         lab = NPC;
+//     }
+
+// // Infinite Loop right here
+// do {
+//     let randomReply = getRandomInt(lab[randomLab].reply.length - 1);
+//     console.log(randomReply);
+//     if (responses.includes(randomReply)) {
+//         continue;
+//     } else {
+//         responses.push(randomReply);
+//     }
+// } while (responses.length < 4);
+
+// return responses;
+// };
+
+// function buttonText() {
+//     let responses = generateResponse();
+
+//     let responseOne = document.getElementById('NPCtalk1').innerText;
+//     let responseTwo = document.getElementById('NPCtalk2').innerText;
+//     let responseThree = document.getElementById('NPCtalk3').innerText;
+//     responseOne.innerText = (responses[0]);
+//     responseTwo.innerText = (responses[1]);
+//     responseThree.innerText = (responses[2]);
+// };
 
 function endDisplay() {
     let ranNum = getRandomInt(3);
@@ -721,10 +721,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("[" + student.locationX + ", " + student.locationY + "]")
                 break;
 
-            // case "web2":
-            //     // Whateva
-            //     break;
-
             case "eng":
                 document.getElementById("atrium").classList.toggle("hidden");
                 document.getElementById("inEnglish").classList.toggle("hidden");
@@ -762,16 +758,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        // let ranNum = getRandomInt(5);
-        // if (ranNum == 0) {
+        let ranNum = getRandomInt(5);
+        if (ranNum == 0) {
 
-        //     // Promise this to go first
-        //     npcFunct();
-        // }
+            // Promise this to go first
+            npcFunct();
+        }
 
     });
 });
-
 
 // Debug functions
 function addItem(id, num) {
@@ -885,14 +880,20 @@ function checkItems() {
 // Helper function for checkItems
 function endingScreen(input) {
 
+    hidePage("load-page");
+    hidePage("home-page");
+    hidePage("load-page");
+
     switch (input) {
 
         case "paper":
             // G
+            hidePage("ending1");
             break;
 
         case "arson":
             // G
+            hidePage("ending2");
             break;
 
         case "inspo":
@@ -901,6 +902,12 @@ function endingScreen(input) {
 
         case "pickle":
             // G
+            hidePage("ending3");
+            break;
+
+        case "dead":
+            // G
+            hidePage("ending4");
             break;
 
     }
@@ -944,4 +951,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
 
+    let buttons = document.getElementById("npc-buttons");
+
+    for (i = 0; i < buttons.length; i++) {
+        console.log(buttons[i]);
+        if (buttons[i].target.value == "die") {
+            buttons[i].addEventListener("click", function () {
+                endingScreen("dead");
+            });
+        }
+    }
+});
