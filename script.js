@@ -578,6 +578,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // document.getElementById("outsideGal").classList.add("current");
                 setText("You're outside.");
                 removeBg("galleryEntry");
+                setBackground('outsideGal');
                 student.locationX = 0;
                 student.locationY = 2;
                 console.log("[" + student.locationX + ", " + student.locationY + "]")
@@ -656,6 +657,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 else if (!isHidden('outsideGal')) {
                     document.getElementById("outsideGal").classList.toggle("hidden");
+                    removeBg('outsideGal');
                     // document.getElementById("current").classList.remove("current");
                 }
                 document.getElementById("atGallery").classList.toggle("hidden");
@@ -747,7 +749,6 @@ document.addEventListener("DOMContentLoaded", function () {
             case "continue":
                 document.getElementById("inWeb").classList.toggle("hidden");
                 document.getElementById("cutscene").classList.toggle("hidden");
-                setBackground('web');
                 setText("You're in Web Design.");
                 student.locationX = 0;
                 student.locationY = 8;
@@ -830,6 +831,7 @@ function pickUp() {
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Paper Location");
             checkItems();
+            setText('you found a portrait!')
             break;
 
         case "i2":
@@ -837,6 +839,7 @@ function pickUp() {
             addItem("arsonValue", 1);
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Arson Location");
+            setText(`you found.... something you definitely shouldn't have.`)
             checkItems();
             break;
 
@@ -852,6 +855,7 @@ function pickUp() {
             addItem("pickleValue", 1);
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Pickle Location");
+            setText(`bro....... you found pickle.`)
             checkItems();
             break;
     }
