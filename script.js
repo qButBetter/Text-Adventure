@@ -563,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("atJanitor").classList.toggle("hidden");
                 // document.getElementById("atGallery").classList.remove("current");
                 // document.getElementById("atJanitor").classList.add("current");
-                setText("You're in the janitor's closet.");
+                setText("As you walk through the hall, you see an unfamiliar door ajar. Upon closer inspection, it seems to be the janitor's closet. The room is fairly small, but not too crowded. There are many shelves, stacked with supplies. Bigger cleaning tools, such as brooms and mops, are stored near the dimly lit back wall.");
                 setBackground('janitor')
                 removeBg('galleryEntry');
                 student.locationX = 2;
@@ -576,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("outsideGal").classList.toggle("hidden");
                 // document.getElementById("atGallery").classList.remove("current");
                 // document.getElementById("outsideGal").classList.add("current");
-                setText("You're outside.");
+                setText("You make your way outside from the exit of the Gallery. You see 2 big solar panels angled at the preferred degree. There's a couple wires hanging from the solar cells.");
                 removeBg("galleryEntry");
                 setBackground('outsideGal');
                 student.locationX = 0;
@@ -603,7 +603,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("inHall").classList.toggle("hidden");
                 document.getElementById("inHall").classList.add("current");
                 setBackground('hall');
-                setText("You're in the hall.");
+                setText("You make your way to the hallway, there's nothing too special about it, other than the yellow walls and brown-ish carpet on the floor. Where would you like to go?");
 
                 student.locationX = 1;
                 student.locationY = 3;
@@ -632,7 +632,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById("atrium").classList.toggle("hidden");
                 // document.getElementById("atrium").classList.add("current");
-                setText("You're in the atrium.");
+                setText("You're in the atrium connecting UX, English, Web, and the Gallery. Where would you like to go?");
                 setBackground('atrium');
                 student.locationX = 1;
                 student.locationY = 6;
@@ -662,7 +662,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById("atGallery").classList.toggle("hidden");
                 // document.getElementById("gallery").classList.add("current");
-                setText("You're in the gallery.");
+                setText("The gallery is now in your view. It's a very large, open space to compensate for the large amounts of students during their breaks throughout the day. A group of six people sit at one of the tables, playing a very violent Uno game. There's tables everywhere, some with tabletop games on them. Closer to the exit, there's an abundance of vending machines and appliances. There seems to be something flimsy inside one of the vending machines.");
                 setBackground("galleryEntry");
                 student.locationX = 1;
                 student.locationY = 2;
@@ -676,7 +676,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // document.getElementById("inMultimedia").classList.add("current");
                 removeBg('hall');
                 setBackground('multimedia');
-                setText("You're in multimedia.");
+                setText("You walk into a big room, all filled with dispersed tables. On the wall, there's old short-film posters. It's a lot more colorful than most of the other labs at CART. From what you see, there's definitely more people in this lab than Tech Lab ever will.");
                 student.locationX = 0;
                 student.locationY = 3;
                 console.log("[" + student.locationX + ", " + student.locationY + "]")
@@ -697,7 +697,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("inUX").classList.toggle("hidden");
                 // document.getElementById("inUX").classList.add("current");
                 setBackground('ux');
-                setText("You're in UX.");
+                setText("You trek your way to the User Experience Lab, or UX for short. It's the middle child of the Tech Lab, in terms of space in the room. The room is a lot brighter and more colorful than Web Applications. The overall vibe is a lot more lively than the other Tech Labs. At the back of the classroom, there's a phone holder with numbers for every student. The tables have the occasional bouncy-ball or seat different from a chair.");
                 student.locationX = 0;
                 student.locationY = 7;
                 console.log("[" + student.locationX + ", " + student.locationY + "]")
@@ -716,7 +716,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById("inWeb").classList.toggle("hidden");
                 // document.getElementById("inWeb").classList.add("current");
-                setText("You're in Web.");
+                setText("You walk into Web Applications. The room is very gray and dull, along with the dimly lit lights. There are 3 long tables with computers for every workstation, along with chairs and monitors. A poster on the far wall says “Tech Lab'' with 80's video game memorabilia. Web Application's room number reads N105.");
                 setBackground('web')
                 student.locationX = 0;
                 student.locationY = 8;
@@ -734,7 +734,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // document.getElementById("inEnglish").classList.add("current");
                 removeBg('atrium');
                 setBackground('english');
-                setText("You're in English.");
+                setText("You trudge your way into N110, the English classroom for the Tech Labs. The tables are oriented to be in the middle, and the edges of the classroom. The tables use the same chairs as Web Applications, but they have different tables. On one wall, there's a Jurassic Park poster, and on the other there's a Ready Player One poster. A DC lineup canvas of the Flash, Batman, Superman, and Wonder Woman swings from one of the walls precariously, looking like it's about to fall.");
                 student.locationX = 2;
                 student.locationY = 6;
                 console.log("[" + student.locationX + ", " + student.locationY + "]")
@@ -749,7 +749,8 @@ document.addEventListener("DOMContentLoaded", function () {
             case "continue":
                 document.getElementById("inWeb").classList.toggle("hidden");
                 document.getElementById("cutscene").classList.toggle("hidden");
-                setText("You're in Web Design.");
+                setBackground('web');
+                setText("You walk into Web Applications. The room is very gray and dull, along with the dimly lit lights. There are 3 long tables with computers for every workstation, along with chairs and monitors. A poster on the far wall says “Tech Lab'' with 80's video game memorabilia. Web Application's room number reads N105.");
                 student.locationX = 0;
                 student.locationY = 8;
 
