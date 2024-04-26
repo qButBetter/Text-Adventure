@@ -1,3 +1,6 @@
+let randomLab = null;
+
+
 class Player {
     constructor() {
         this.name = "";
@@ -228,8 +231,8 @@ var ItemMap = {
         ],
 
     toodee: [
-        [0,0,0],
-        [0,0,0],
+        [0, 0, 0],
+        [0, 0, 0],
     ],
 
     Outside: [["i2"], [0]],
@@ -380,9 +383,11 @@ function npcFunct() {
 
             if (ranLab == 0) {
                 ranLab = "tech";
+                randomLab = 'tech';
             }
             else if (ranLab == 1) {
                 ranLab = "biomed";
+                randomLab = 'biomed';
             }
             console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
 
@@ -402,18 +407,21 @@ function npcFunct() {
 
             if (ranLab == 0) {
                 ranLab = "multimedia";
+                randomLab = "multimedia";
             }
             else if (ranLab == 1) {
                 ranLab = "law";
+                randomLab = 'law';
             }
             else if (ranLab == 2) {
                 ranLab = "business";
+                randomLab = 'business';
             }
 
             console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
             console.log(NPC[ranLab])
             document.getElementById("home-image").innerHTML =
-                `<img src='${NPC.images[getRandomInt(6)]}' alt="A generic person colored in black and white.">`;
+                `<img src='${NPC.images[getRandomInt(10)]}' alt="A generic person colored in black and white.">`;
 
             // Take enemey dialogue as well
             setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)]);
@@ -453,7 +461,46 @@ function npcFunct() {
             break;
     }
 
+
+    function generateResponse() {
+        let responses = [];
+        let lab = null;
+
+        if (NPC[randomLab] == undefined) {
+            lab = Ally;
+        }
+
+        else {
+            lab = NPC;
+        }
+
+        while (responses.length < 4) {
+            let randomReply = getRandomInt(lab[randomLab].reply.length - 1);
+            if (responses.includes(randomReply)) {
+                continue;
+            } else {
+                responses.push(randomReply);
+            }
+        }
+
+        return responses;
+
+    };
+
+    function buttonText() {
+        let responses = generateResponse();
+
+        let responseOne = document.getElementById('NPCtalk1');
+        let responseTwo = document.getElementById('NPCtalk2');
+        let responseThree = document.getElementById('NPCtalk3');
+        responseOne.innerText(responses[0]);
+        responseTwo.innerText(responses[1]);
+        responseThree.innerText(responses[2]);
+    };
+
+    buttonText();
 }
+
 
 function endDisplay() {
     let ranNum = getRandomInt(3);
@@ -607,7 +654,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     // document.getElementById("atJanitor").classList.remove("current");
                     removeBg('janitor');
                 }
-                else if (!isHidden('outsideGal')) { 
+                else if (!isHidden('outsideGal')) {
                     document.getElementById("outsideGal").classList.toggle("hidden");
                     // document.getElementById("current").classList.remove("current");
                 }
@@ -635,7 +682,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             case "ux":
                 if (!isHidden('inWeb')) {
-                    
+
                     document.getElementById("inWeb").classList.toggle("hidden");
                     // document.getElementById("inWeb").classList.remove("current");
                     removeBg('web');
