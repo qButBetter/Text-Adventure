@@ -130,16 +130,7 @@
             </section>
 
 
-            <section class="button-container" id="button-container">
-
-                <!-- continue buttons have the continue class so they can be retrieved using ClassList query -->
-                <section class="buttons row" id="cutscene">
-                    <button class="black border main-size continue" id="contBtn1" value="continue">Continue</button>
-                </section>
-
-                <!-- interaction button , use this to interact w the vending machine or objects-->
-                <button class="black border main-size hidden" id="interact" onclick="pickUp()">Interact</button>
-
+            <section class="npc-buttons" id="npc-buttons">
                 <!-- npc attack thing -->
                 <section class="buttons row hidden" id="NPCtalk1">
                     <button class="black border main-size continue" id="NPCint1" value="win">Win</button>
@@ -164,6 +155,17 @@
                     <button class="black border main-size continue" id="NPCint1" value="win"></button>
                     <button class="black border main-size continue" id="NPCint3" value="die"></button>
                 </section>
+            </section>
+
+            <section class="button-container" id="button-container">
+
+                <!-- continue buttons have the continue class so they can be retrieved using ClassList query -->
+                <section class="buttons row" id="cutscene">
+                    <button class="black border main-size continue" id="contBtn1" value="continue">Continue</button>
+                </section>
+
+                <!-- interaction button , use this to interact w the vending machine or objects
+                <button class="black border main-size hidden" id="interact" onclick="pickUp()">Interact</button> -->
 
                 <!--  Navigating CART-->
                 <!-- Gallery access -->
