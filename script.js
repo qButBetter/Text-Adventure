@@ -225,6 +225,11 @@ var ItemMap = {
         ["i"], [0], ["n110"],
         ["i"], [0], [0]],
 
+    toodee: [
+        [0,0,0],
+        [0,0,0],
+    ],
+
     Outside: [["i2"], [0]],
 
     Janitor: [[0], ["i2"]],
@@ -635,8 +640,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "pickup":
+
+            // if (ItemMap.CART[student.locationX][student.locationY] == "i") {
+
+            // }
+            // else if () {
+
+            // }
+            // else if () {
+
+            // }
+            // else if () {
+
+            // }
+
+                pickUp();
                 console.log("Picked up Item");
-                return (console.log("Skipped npcFunct()!"));
+                return ("");
 
             case "continue":
                 document.getElementById("inWeb").classList.toggle("hidden");
@@ -647,10 +667,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationY = 8;
 
                 // Stop npcFunct() from running
-                return (console.log("Skipped npcFunct()!"));
+                return ("");
 
             default:
-                return (console.log("Button not Assigned a Value"));
+                return ("");
 
         }
 
@@ -712,6 +732,7 @@ function addItem(id, num) {
 function pickUp() {
 
     let itemPlace = ItemMap.CART[student.locationX][student.locationY];
+    console.log(itemPlace);
 
     // Reference actual location, not just CartItem
     switch (itemPlace) {
