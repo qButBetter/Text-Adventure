@@ -448,15 +448,19 @@ function npcFunct() {
     switch (ranBut) {
         case 0:
             document.getElementById('NPCtalk1').classList.remove('hidden');
+            document.getElementById('NPCtalk1').classList.add('curNPC');
             break;
         case 1:
             document.getElementById('NPCtalk2').classList.remove('hidden');
+            document.getElementById('NPCtalk2').classList.add('curNPC');
             break;
         case 2:
             document.getElementById('NPCtalk3').classList.remove('hidden');
+            document.getElementById('NPCtalk3').classList.add('curNPC');
             break;
         case 3:
             document.getElementById('NPCtalk4').classList.remove('hidden');
+            document.getElementById('NPCtalk4').classList.add('curNPC');
             break;
     }
 
@@ -851,7 +855,7 @@ function checkItems() {
         endingScreen("paper");
     }
     // Then checks arson value
-    else if (student.inventory[1] >= 3) {
+    else if (student.inventory[1] >= 2) {
         // Display a given ending
         endingScreen("arson");
     }
@@ -912,8 +916,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
 
 
-        let nameInput = prompt("What's your name?");
-        student.name = nameInput;
+        // let nameInput = prompt("What's your name?");
+        // student.name = nameInput;
         // student.updatePlayer();
 
         hidePage("load-page");
@@ -948,6 +952,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("npc-buttons").addEventListener("click", function (e) {
 
         let npcVal = e.target.value;
+        
 
         console.log(npcVal);
 
@@ -956,9 +961,11 @@ document.addEventListener("DOMContentLoaded", function () {
             case "win":
                 // Change to transparent img
                 document.getElementById("home-image").innerHTML =
-                    `<img src='MiscItemImages/transpartns.png' alt="Nothin">`;
+                    `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
                 // Unhide buttons that npcFunct() hid
                 hidePage("npc-buttons");
+                let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
+                // curNPC.classList.add('hidden');
                 // Set text back to locational text
                 document.getElementById("text-output").innerText = locoText;
 
@@ -971,18 +978,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "mid":
-                // Change to transparent img
-                document.getElementById("home-image").innerHTML =
-                    `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
-                // Unhide buttons that npcFunct() hid
-                hidePage("npc-buttons");
-                // Set text back to locational text
-                document.getElementById("text-output").innerText = locoText;
 
-                if (document.getElementById("button-container").classList.contains("current")) {
-                    document.getElementById("button-container").classList.remove("current");
-                    document.getElementById("button-container").classList.remove("hidden");
-                }
+                npcFunct();
+                // Change to transparent img
+                // document.getElementById("home-image").innerHTML =
+                //     `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
+                // Unhide buttons that npcFunct() hid
+                // hidePage("npc-buttons");
+                // curNPCbut.classList.add('hidden');
+                // // Set text back to locational text
+                // document.getElementById("text-output").innerText = locoText;
+
+                // if (document.getElementById("button-container").classList.contains("current")) {
+                //     document.getElementById("button-container").classList.remove("current");
+                //     document.getElementById("button-container").classList.remove("hidden");
+                // }
 
                 break;
 

@@ -162,7 +162,10 @@ button:hover {
 
 .centersize {
     width: 50%;
-    height: 70%;
+}
+
+.sideIcons{
+    margin-top: 1em;
 }
 
 /* Load Page */
@@ -326,7 +329,7 @@ button:hover {
 }
 
 .endImg {
-    width: 30%;
+    width: 45%;
 }
 
 #end-btn {

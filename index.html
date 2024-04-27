@@ -35,9 +35,9 @@
 
             <section class="row">
                 <!-- this should be the left column w the map & time -->
-                <section class="column">
+                <section class="column sideIcons">
                     <img id="locIcon" class="locIcon" src="Images/locationIcon.png" alt="Location Icon">
-                    <span id="health" class="tenEm">100</span>
+                    <!-- <span id="health" class="tenEm">100</span> -->
                     <!-- map should add a hidden class to anything in the imgcont when clicked, add its own image, then remove its image and the hidden classes when unclicked -->
 
                 </section>
@@ -121,9 +121,9 @@
 
                 </section>
 
-                <section class="column">
+                <section class="column sideIcons">
                     <img id="backIcon" class="backIcon" src="Images/backpackIcon.png" alt="Backpack Icon">
-                    <span id="money" class="tenEm">100</span>
+                    <!-- <span id="money" class="tenEm">100</span> -->
                 </section>
             </section>
 
@@ -205,15 +205,15 @@
 
                 <section class="buttons row hidden" id="NPCtalk3">
                     <button class="black border main-size continue" id="NPCint2" value="mid">(Shhhh!)</button>
-                    <button class="black border main-size continue" id="NPCint3" value="die">New Vegas is the Worst
+                    <button class="black border main-size continue" id="NPCint3" value="die" style="width:45%">New Vegas is the Worst
                         Fallout</button>
                     <button class="black border main-size continue" id="NPCint1" value="win">Mr. Fast is here</button>
                 </section>
 
                 <section class="buttons row hidden" id="NPCtalk4">
-                    <button class="black border main-size continue" id="NPCint2" value="mid">Middle</button>
-                    <button class="black border main-size continue" id="NPCint1" value="win">Die</button>
-                    <button class="black border main-size continue" id="NPCint3" value="die">Win</button>
+                    <button class="black border main-size continue" id="NPCint2" value="mid">We're so cooked</button>
+                    <button class="black border main-size continue" id="NPCint1" value="win" style="width:45%">I love Final Fantasy Type-0</button>
+                    <button class="black border main-size continue" id="NPCint3" value="die">bro...</button>
                 </section>
             </section>
 
@@ -265,7 +265,7 @@
                 <section class="buttons row hidden" id="inWeb">
                     <button class="black border main-size" id="n105" value="ux">Go into User Design</button>
                     <button class="black border main-size" id="h" value="atrium">Go into atrium</button>
-                    <button class="black border main-size" id="n107" value="web2">Wander deeper into Web</button>
+                    <button class="black border main-size hidden" id="n107" value="web2">Wander deeper into Web</button>
                     <button class="black border main-size" id="interact" value="pickup"
                         onclick="pickUp()">Interact</button>
                 </section>
