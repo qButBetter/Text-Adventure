@@ -760,18 +760,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        let ranNum = getRandomInt(5);
-        if (ranNum == 0) {
+        // let ranNum = getRandomInt(5);
+        // if (ranNum == 0) {
 
-            // Promise this to go first
-            npcFunct();
-        }
+        //     // Promise this to go first
+        //     npcFunct();
+        // }
 
     });
 });
 
 // Debug functions
-function addItem(id, num) {
+function addItem(id, num = 1) {
 
     let counter = parseInt(document.getElementById(id).innerText);
 
@@ -780,31 +780,31 @@ function addItem(id, num) {
         case "paperValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[0] += counter;
+            student.inventory[0] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "arsonValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[1] += counter;
+            student.inventory[0] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "inspoValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[2] += counter;
+            student.inventory[0] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "pickleValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[3] += counter;
+            student.inventory[0] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "cressValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[4] += counter;
+            student.inventory[0] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         default:
@@ -823,7 +823,7 @@ function pickUp() {
 
         case "i":
             // Portraits
-            addItem("paperValue", 1);
+            addItem("paperValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Paper Location");
             checkItems();
@@ -832,7 +832,7 @@ function pickUp() {
 
         case "i2":
             // Arson
-            addItem("arsonValue", 1);
+            addItem("arsonValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Arson Location");
             setText(`you found.... something you definitely shouldn't have.`)
@@ -841,14 +841,14 @@ function pickUp() {
 
         case "i3":
             // Inspo
-            addItem("inspoValue", 1);
+            addItem("inspoValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Inspo Location");
             checkItems();
             break;
 
         case "p":
-            addItem("pickleValue", 1);
+            addItem("pickleValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Pickle Location");
             setText(`bro....... you found pickle.`)
@@ -861,21 +861,21 @@ function pickUp() {
 function checkItems() {
 
     // Checks paper value
-    if (student.inventory[0] >= 5) {
+    if (student.inventory[0] >= 6) {
         // Display a given ending
         endingScreen("paper");
     }
     // Then checks arson value
-    else if (student.inventory[1] >= 3) {
+    else if (student.inventory[1] >= 4) {
         // Display a given ending
         endingScreen("arson");
     }
     // Then checks inspo value
-    else if (student.inventory[2] >= 5) {
+    else if (student.inventory[2] >= 6) {
         // Display a given ending
         endingScreen("inspo");
     }
-    else if (student.inventory[3] >= 1) {
+    else if (student.inventory[3] >= 2) {
         // Do the pickle ending
         endingScreen("pickle");
     }
