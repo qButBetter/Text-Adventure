@@ -369,6 +369,8 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+let locoText = null;
+
 // NPC Function
 function npcFunct() {
 
@@ -392,13 +394,11 @@ function npcFunct() {
             console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
 
             document.getElementById("home-image").innerHTML =
-                `<img src='${Ally.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
+                `<img src='${Ally.images[getRandomInt(8)]}' alt="A generic person colored in black and white.">`;
 
             // Take ally dialogue as well
+            locoText = document.getElementById("text-output").innerText;
             setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)]);
-
-            // Set button values
-
         }
         else if (ranNum == 1) {
 
@@ -421,14 +421,11 @@ function npcFunct() {
             console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
             console.log(NPC[ranLab])
             document.getElementById("home-image").innerHTML =
-                `<img src='${NPC.images[getRandomInt(10)]}' alt="A generic person colored in black and white.">`;
+                `<img src='${NPC.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
 
             // Take enemey dialogue as well
+            locoText = document.getElementById("text-output").innerText;
             setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)]);
-
-
-            // Set button values
-
         }
     }
     else {
@@ -445,6 +442,7 @@ function npcFunct() {
     let ranBut = getRandomInt(4);
 
     document.getElementById("button-container").classList.add("hidden");
+    document.getElementById("button-container").classList.add("current");
     document.getElementById('npc-buttons').classList.remove("hidden");
 
     switch (ranBut) {
@@ -529,18 +527,6 @@ function removeBg(input) {
 
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("button-container").addEventListener("click", function (e) {
-
-        // Get value of button pressed
-        // Change background / text depending on where you are using switch statement
-        // Update player location in 2D array
-        // Unhide section for place you're in
-
-        // Call npcFunct() first to have it change the button values first
-        // Random NPC Interaction
-
-
-        // Grabs value from the button clicked
-        // Awaits the npcFunct()
         let btnVal = e.target.value;
 
         switch (btnVal) {
@@ -760,12 +746,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        // let ranNum = getRandomInt(5);
-        // if (ranNum == 0) {
+        let ranNum = getRandomInt(5);
+        if (ranNum == 0) {
 
-        //     // Promise this to go first
-        //     npcFunct();
-        // }
+            npcFunct();
+        }
 
     });
 });
@@ -827,7 +812,7 @@ function pickUp() {
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Paper Location");
             checkItems();
-            setText('you found a portrait!')
+            setText('You found a portrait!')
             break;
 
         case "i2":
@@ -835,7 +820,7 @@ function pickUp() {
             addItem("arsonValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Arson Location");
-            setText(`you found.... something you definitely shouldn't have.`)
+            setText(`You found.... something you definitely shouldn't have.`)
             checkItems();
             break;
 
@@ -851,7 +836,7 @@ function pickUp() {
             addItem("pickleValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Pickle Location");
-            setText(`bro....... you found pickle.`)
+            setText(`Bro....... you found pickle.`)
             checkItems();
             break;
     }
@@ -861,21 +846,21 @@ function pickUp() {
 function checkItems() {
 
     // Checks paper value
-    if (student.inventory[0] >= 6) {
+    if (student.inventory[0] >= 5) {
         // Display a given ending
         endingScreen("paper");
     }
     // Then checks arson value
-    else if (student.inventory[1] >= 4) {
+    else if (student.inventory[1] >= 3) {
         // Display a given ending
         endingScreen("arson");
     }
     // Then checks inspo value
-    else if (student.inventory[2] >= 6) {
+    else if (student.inventory[2] >= 5) {
         // Display a given ending
         endingScreen("inspo");
     }
-    else if (student.inventory[3] >= 2) {
+    else if (student.inventory[3] >= 1) {
         // Do the pickle ending
         endingScreen("pickle");
     }
@@ -958,14 +943,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    let buttons = document.getElementById("npc-buttons");
 
-    for (i = 0; i < buttons.length; i++) {
-        console.log(buttons[i]);
-        if (buttons[i].target.value == "die") {
-            buttons[i].addEventListener("click", function () {
+
+    document.getElementById("npc-buttons").addEventListener("click", function (e) {
+
+        let npcVal = e.target.value;
+
+        console.log(npcVal);
+
+        switch (npcVal) {
+
+            case "win":
+                // Change to transparent img
+                document.getElementById("home-image").innerHTML =
+                    `<img src='MiscItemImages/transpartns.png' alt="Nothin">`;
+                // Unhide buttons that npcFunct() hid
+                hidePage("npc-buttons");
+                // Set text back to locational text
+                document.getElementById("text-output").innerText = locoText;
+
+
+                if (document.getElementById("button-container").classList.contains("current")) {
+                    document.getElementById("button-container").classList.remove("current");
+                    document.getElementById("button-container").classList.remove("hidden");
+                }
+
+                break;
+
+            case "mid":
+                // Change to transparent img
+                document.getElementById("home-image").innerHTML =
+                    `<img src='MiscItemImages/transpartns.png' alt="Nothin">`;
+                // Unhide buttons that npcFunct() hid
+                hidePage("npc-buttons");
+                // Set text back to locational text
+                document.getElementById("text-output").innerText = locoText;
+
+                if (document.getElementById("button-container").classList.contains("current")) {
+                    document.getElementById("button-container").classList.remove("current");
+                    document.getElementById("button-container").classList.remove("hidden");
+                }
+
+                break;
+
+            case "die":
+
+                var endSound = new Audio("Sounds/taco.mp3");
                 endingScreen("dead");
-            });
+                endSound.play();
+                break;
+
         }
-    }
+
+    });
 });
+
