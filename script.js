@@ -973,7 +973,7 @@ document.addEventListener("DOMContentLoaded", function () {
             case "mid":
                 // Change to transparent img
                 document.getElementById("home-image").innerHTML =
-                    `<img src='MiscItemImages/transpartns.png' alt="Nothin">`;
+                    `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
                 // Unhide buttons that npcFunct() hid
                 hidePage("npc-buttons");
                 // Set text back to locational text
