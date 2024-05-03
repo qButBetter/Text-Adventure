@@ -581,6 +581,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     removeBg('atrium');
                 }
                 else if (!isHidden('atGallery')) {
+                    // Dis not working
                     document.getElementById("atGallery").classList.toggle("hidden");
                     // document.getElementById("atGallery").classList.remove("current");
                     removeBg("galleryEntry");
@@ -747,7 +748,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             default:
                 return ("");
-
         }
 
         let ranNum = getRandomInt(5);
