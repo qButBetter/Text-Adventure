@@ -775,25 +775,25 @@ function addItem(id, num = 1) {
         case "arsonValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[0] = counter;
+            student.inventory[1] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "inspoValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[0] = counter;
+            student.inventory[2] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "pickleValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[0] = counter;
+            student.inventory[3] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         case "cressValue":
             counter += num;
             document.getElementById(id).innerText = counter;
-            student.inventory[0] = counter;
+            student.inventory[4] = counter;
             return ("Added " + num + " to an ID of " + id);
 
         default:
@@ -855,7 +855,7 @@ function checkItems() {
         endingScreen("paper");
     }
     // Then checks arson value
-    else if (student.inventory[1] >= 2) {
+    else if (student.inventory[1] >= 3) {
         // Display a given ending
         endingScreen("arson");
     }
