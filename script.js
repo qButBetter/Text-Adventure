@@ -498,6 +498,178 @@ function removeBg(input) {
     document.getElementById("home-image").classList.remove(input);
 }
 
+// Debug functions
+function addItem(id, num = 1) {
+
+    let counter = parseInt(document.getElementById(id).innerText);
+
+    switch (id) {
+
+        case "paperValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            student.inventory[0] = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        case "arsonValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            student.inventory[1] = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        case "inspoValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            student.inventory[2] = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        case "pickleValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            student.inventory[3] = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        case "cressValue":
+            counter += num;
+            document.getElementById(id).innerText = counter;
+            student.inventory[4] = counter;
+            return ("Added " + num + " to an ID of " + id);
+
+        default:
+            console.log("Id not recognized, no item added");
+
+    }
+}
+
+// Picking up functions
+function pickUp() {
+
+    let itemPlace = ItemMap.CART[student.locationY][student.locationX];
+
+    // Reference actual location, not just CartItem
+    switch (itemPlace) {
+
+        case "i":
+            // Portraits
+            addItem("paperValue");
+            ItemMap.CART[student.locationY][student.locationX] = 0;
+            console.log("Paper Location");
+            checkItems();
+            setText('You found a portrait!')
+            break;
+
+        case "i2":
+            // Arson
+            addItem("arsonValue");
+            ItemMap.CART[student.locationY][student.locationX] = 0;
+            console.log("Arson Location");
+            setText(`You found.... something you definitely shouldn't have.`)
+            checkItems();
+            break;
+
+        case "i3":
+            // Inspo
+            addItem("inspoValue");
+            ItemMap.CART[student.locationY][student.locationX] = 0;
+            console.log("Inspo Location");
+            checkItems();
+            break;
+
+        case "p":
+            addItem("pickleValue");
+            ItemMap.CART[student.locationY][student.locationX] = 0;
+            console.log("Pickle Location");
+            setText(`Bro....... you found pickle.`)
+            checkItems();
+            break;
+    }
+
+}
+
+function checkItems() {
+
+    // Checks paper value
+    if (student.inventory[0] >= 5) {
+        // Display a given ending
+        endingScreen("paper");
+    }
+    // Then checks arson value
+    else if (student.inventory[1] >= 3) {
+        // Display a given ending
+        endingScreen("arson");
+    }
+    // Then checks inspo value
+    else if (student.inventory[2] >= 5) {
+        // Display a given ending
+        endingScreen("inspo");
+    }
+    else if (student.inventory[3] >= 1) {
+        // Do the pickle ending
+        endingScreen("pickle");
+    }
+
+}
+
+// Helper function for checkItems
+function endingScreen(input) {
+
+    hidePage("load-page");
+    hidePage("home-page");
+    hidePage("load-page");
+
+    switch (input) {
+
+        case "paper":
+            // G
+            hidePage("ending1");
+            break;
+
+        case "arson":
+            // G
+            hidePage("ending2");
+            break;
+
+        case "inspo":
+            // G
+            break;
+
+        case "pickle":
+            // G
+            hidePage("ending3");
+            break;
+
+        case "dead":
+            // G
+            hidePage("ending4");
+            break;
+
+    }
+}
+
+function curCheck() {
+    let elements = document.getElementsByClassName("curNPC");
+    [...elements].forEach(part => {
+        part.classList.add("hidden");
+        part.classList.remove("curNPC");
+    });
+}
+
+// GAME STUFF DON'T TOUCH
+var student = new Player();
+
+// After start button is pressed
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("start-btn").addEventListener("click", function () {
+        // let nameInput = prompt("What's your name?");
+        // student.name = nameInput;
+        // student.updatePlayer();
+
+        hidePage("load-page");
+        hidePage("home-page");
+        document.getElementById("name-container").innerText = student.name;
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("button-container").addEventListener("click", function (e) {
         let btnVal = e.target.value;
@@ -727,171 +899,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Debug functions
-function addItem(id, num = 1) {
-
-    let counter = parseInt(document.getElementById(id).innerText);
-
-    switch (id) {
-
-        case "paperValue":
-            counter += num;
-            document.getElementById(id).innerText = counter;
-            student.inventory[0] = counter;
-            return ("Added " + num + " to an ID of " + id);
-
-        case "arsonValue":
-            counter += num;
-            document.getElementById(id).innerText = counter;
-            student.inventory[1] = counter;
-            return ("Added " + num + " to an ID of " + id);
-
-        case "inspoValue":
-            counter += num;
-            document.getElementById(id).innerText = counter;
-            student.inventory[2] = counter;
-            return ("Added " + num + " to an ID of " + id);
-
-        case "pickleValue":
-            counter += num;
-            document.getElementById(id).innerText = counter;
-            student.inventory[3] = counter;
-            return ("Added " + num + " to an ID of " + id);
-
-        case "cressValue":
-            counter += num;
-            document.getElementById(id).innerText = counter;
-            student.inventory[4] = counter;
-            return ("Added " + num + " to an ID of " + id);
-
-        default:
-            console.log("Id not recognized, no item added");
-
-    }
-}
-
-// Picking up functions
-function pickUp() {
-
-    let itemPlace = ItemMap.CART[student.locationY][student.locationX];
-
-    // Reference actual location, not just CartItem
-    switch (itemPlace) {
-
-        case "i":
-            // Portraits
-            addItem("paperValue");
-            ItemMap.CART[student.locationY][student.locationX] = 0;
-            console.log("Paper Location");
-            checkItems();
-            setText('You found a portrait!')
-            break;
-
-        case "i2":
-            // Arson
-            addItem("arsonValue");
-            ItemMap.CART[student.locationY][student.locationX] = 0;
-            console.log("Arson Location");
-            setText(`You found.... something you definitely shouldn't have.`)
-            checkItems();
-            break;
-
-        case "i3":
-            // Inspo
-            addItem("inspoValue");
-            ItemMap.CART[student.locationY][student.locationX] = 0;
-            console.log("Inspo Location");
-            checkItems();
-            break;
-
-        case "p":
-            addItem("pickleValue");
-            ItemMap.CART[student.locationY][student.locationX] = 0;
-            console.log("Pickle Location");
-            setText(`Bro....... you found pickle.`)
-            checkItems();
-            break;
-    }
-
-}
-
-function checkItems() {
-
-    // Checks paper value
-    if (student.inventory[0] >= 5) {
-        // Display a given ending
-        endingScreen("paper");
-    }
-    // Then checks arson value
-    else if (student.inventory[1] >= 3) {
-        // Display a given ending
-        endingScreen("arson");
-    }
-    // Then checks inspo value
-    else if (student.inventory[2] >= 5) {
-        // Display a given ending
-        endingScreen("inspo");
-    }
-    else if (student.inventory[3] >= 1) {
-        // Do the pickle ending
-        endingScreen("pickle");
-    }
-
-}
-
-// Helper function for checkItems
-function endingScreen(input) {
-
-    hidePage("load-page");
-    hidePage("home-page");
-    hidePage("load-page");
-
-    switch (input) {
-
-        case "paper":
-            // G
-            hidePage("ending1");
-            break;
-
-        case "arson":
-            // G
-            hidePage("ending2");
-            break;
-
-        case "inspo":
-            // G
-            break;
-
-        case "pickle":
-            // G
-            hidePage("ending3");
-            break;
-
-        case "dead":
-            // G
-            hidePage("ending4");
-            break;
-
-    }
-
-}
-
-// GAME STUFF DON'T TOUCH
-var student = new Player();
-
-// After start button is pressed
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("start-btn").addEventListener("click", function () {
-        // let nameInput = prompt("What's your name?");
-        // student.name = nameInput;
-        // student.updatePlayer();
-
-        hidePage("load-page");
-        hidePage("home-page");
-        document.getElementById("name-container").innerText = student.name;
-    });
-});
-
 // After Location button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("locIcon").addEventListener("click", function () {
@@ -911,20 +918,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function curCheck() {
-    let elements = document.getElementsByClassName("curNPC");
-    [...elements].forEach(part => {
-        part.classList.add("hidden");
-        part.classList.remove("curNPC");
-    });
-}
-
 document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("npc-buttons").addEventListener("click", function (e) {
 
         let npcVal = e.target.value;
-
 
         console.log(npcVal);
 
@@ -969,4 +967,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 });
-
