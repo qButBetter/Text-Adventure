@@ -297,7 +297,6 @@ function displayMap() {
         case "Road":
             document.getElementById("map").innerHTML = `<img src="mapImages/road.png" alt="A map of CART"></img>`;
             break;
-
     }
 
     checkHidden("map")
@@ -355,7 +354,6 @@ function checkHidden(input) {
             }
             break;
         default: console.log('somethings busted');
-
     }
 
 }
@@ -439,8 +437,6 @@ function npcFunct() {
 
         // Take guard dialogue as well
         setText(svNPC.guard.dialogue[getRandomInt()]);
-
-        // Set button values
 
     }
 
@@ -925,8 +921,6 @@ function curCheck() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
-
     document.getElementById("npc-buttons").addEventListener("click", function (e) {
 
         let npcVal = e.target.value;
@@ -960,9 +954,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             case "mid":
                 // Hides all dialogue, then reassigns a randome dialogue option
-
                 curCheck();
-
                 ranDia();
 
                 break;
@@ -973,7 +965,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 endingScreen("dead");
                 endSound.play();
                 break;
-
         }
 
     });
