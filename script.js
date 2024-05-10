@@ -396,9 +396,12 @@ function npcFunct() {
             document.getElementById("home-image").innerHTML =
                 `<img src='${Ally.images[getRandomInt(8)]}' alt="A generic person colored in black and white.">`;
 
+            curNPC = `<img src='${Ally.images[getRandomInt(8)]}' alt="A generic person colored in black and white.">`;
+
             // Take ally dialogue as well
             locoText = document.getElementById("text-output").innerText;
             setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)]);
+            curDia = Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)];
         }
         else if (ranNum == 1) {
 
@@ -419,13 +422,15 @@ function npcFunct() {
             }
 
             console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
-            console.log(NPC[ranLab])
+            console.log(NPC[ranLab]);
             document.getElementById("home-image").innerHTML =
                 `<img src='${NPC.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
+            curNPC = `<img src='${NPC.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
 
             // Take enemey dialogue as well
             locoText = document.getElementById("text-output").innerText;
             setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)]);
+            curDia = NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)];
         }
     }
     else {
@@ -439,11 +444,18 @@ function npcFunct() {
 
     }
 
+    ranDia();
+}
+
+function ranDia() {
     let ranBut = getRandomInt(4);
 
     document.getElementById("button-container").classList.add("hidden");
     document.getElementById("button-container").classList.add("current");
     document.getElementById('npc-buttons').classList.remove("hidden");
+
+    document.getElementById("locIcon").classList.add("hidden");
+    document.getElementById("backIcon").classList.add("hidden");
 
     switch (ranBut) {
         case 0:
@@ -463,46 +475,7 @@ function npcFunct() {
             document.getElementById('NPCtalk4').classList.add('curNPC');
             break;
     }
-
-    // buttonText();
 }
-
-// function generateResponse() {
-
-//     let responses = [];
-//     let lab = null;
-
-//     if (NPC[randomLab] == undefined) {
-//         lab = Ally;
-//     }
-//     else {
-//         lab = NPC;
-//     }
-
-// // Infinite Loop right here
-// do {
-//     let randomReply = getRandomInt(lab[randomLab].reply.length - 1);
-//     console.log(randomReply);
-//     if (responses.includes(randomReply)) {
-//         continue;
-//     } else {
-//         responses.push(randomReply);
-//     }
-// } while (responses.length < 4);
-
-// return responses;
-// };
-
-// function buttonText() {
-//     let responses = generateResponse();
-
-//     let responseOne = document.getElementById('NPCtalk1').innerText;
-//     let responseTwo = document.getElementById('NPCtalk2').innerText;
-//     let responseThree = document.getElementById('NPCtalk3').innerText;
-//     responseOne.innerText = (responses[0]);
-//     responseTwo.innerText = (responses[1]);
-//     responseThree.innerText = (responses[2]);
-// };
 
 function endDisplay() {
     let ranNum = getRandomInt(3);
@@ -913,8 +886,6 @@ var student = new Player();
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
-
-
         // let nameInput = prompt("What's your name?");
         // student.name = nameInput;
         // student.updatePlayer();
@@ -944,6 +915,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+function curCheck() {
+    let elements = document.getElementsByClassName("curNPC");
+    [...elements].forEach(part => {
+        part.classList.add("hidden");
+        part.classList.remove("curNPC");
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
 
@@ -951,7 +930,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("npc-buttons").addEventListener("click", function (e) {
 
         let npcVal = e.target.value;
-        
+
 
         console.log(npcVal);
 
@@ -963,35 +942,28 @@ document.addEventListener("DOMContentLoaded", function () {
                     `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
                 // Unhide buttons that npcFunct() hid
                 hidePage("npc-buttons");
-                let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
+                curCheck();
+                // let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
                 // curNPC.classList.add('hidden');
                 // Set text back to locational text
                 document.getElementById("text-output").innerText = locoText;
-
 
                 if (document.getElementById("button-container").classList.contains("current")) {
                     document.getElementById("button-container").classList.remove("current");
                     document.getElementById("button-container").classList.remove("hidden");
                 }
 
+
+                document.getElementById("locIcon").classList.remove("hidden");
+                document.getElementById("backIcon").classList.remove("hidden");
                 break;
 
             case "mid":
+                // Hides all dialogue, then reassigns a randome dialogue option
 
-                npcFunct();
-                // Change to transparent img
-                // document.getElementById("home-image").innerHTML =
-                //     `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
-                // Unhide buttons that npcFunct() hid
-                // hidePage("npc-buttons");
-                // curNPCbut.classList.add('hidden');
-                // // Set text back to locational text
-                // document.getElementById("text-output").innerText = locoText;
+                curCheck();
 
-                // if (document.getElementById("button-container").classList.contains("current")) {
-                //     document.getElementById("button-container").classList.remove("current");
-                //     document.getElementById("button-container").classList.remove("hidden");
-                // }
+                ranDia();
 
                 break;
 
