@@ -258,7 +258,7 @@ function hidePage(input) {
 }
 
 function setText(input) {
-    document.getElementById("text-output").innerText = input;
+    document.getElementById("text-output").innerHTML = `<p>${input}</p>`;
 }
 
 function setBackground(input) {

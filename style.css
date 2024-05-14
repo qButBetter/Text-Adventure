@@ -35,7 +35,8 @@ body {
     border: 3px solid white;
 }
 
-#health, #money {
+#health,
+#money {
     display: none;
 }
 
@@ -84,9 +85,8 @@ body {
     font-size: 2em;
 }
 
-
-
 /* Universal */
+
 .text-container {
     height: 15em;
     margin-bottom: .2em;
@@ -94,6 +94,10 @@ body {
 
 .wrapper {
     height: 100vh;
+}
+
+#home-page {
+    margin-top: 5em;
 }
 
 .button-container {
@@ -164,7 +168,7 @@ button:hover {
     width: 50%;
 }
 
-.sideIcons{
+.sideIcons {
     margin-top: 1em;
 }
 
@@ -421,7 +425,7 @@ button:hover {
     background-image: url(BackgroundImages/SV_evolution_inside.jpg);
 }
 
-.outsideGal{
+.outsideGal {
     background-image: url(BackgroundImages/outside.png);
 }
 
