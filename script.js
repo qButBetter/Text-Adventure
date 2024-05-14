@@ -541,6 +541,10 @@ function addItem(id, num = 1) {
     }
 }
 
+let arsonImg = ["bucket", "gasTank", "styrofoam"];
+let paperImg = ["fastArt1", "fastArt2", "fastArt3", "fastArt4", "fastArt5", "fastArt6"];
+let inspoImg = ["doomPost", "finSix", "mallCop", "minMov", "pokePost"];
+
 // Picking up functions
 function pickUp() {
 
@@ -555,7 +559,10 @@ function pickUp() {
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Paper Location");
             checkItems();
-            setText('You found a portrait!')
+            setText('You found a portrait!');
+            document.getElementById("home-image").innerHTML = `<img src='PortraitImages/${paperImg[paperImg.length - 1]}.jpeg' alt="One of the portraits needed for Slowversal!">`;
+            paperImg.pop();
+
             break;
 
         case "i2":
@@ -563,8 +570,10 @@ function pickUp() {
             addItem("arsonValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Arson Location");
-            setText(`You found.... something you definitely shouldn't have.`)
+            setText(`You found.... something you definitely shouldn't have.`);
             checkItems();
+            document.getElementById("home-image").innerHTML = `<img src='arsonImages/${arsonImg[arsonImg.length - 1]}.png' alt="One of the portraits needed for Slowversal!">`;
+            arsonImg.pop();
             break;
 
         case "i3":
@@ -573,13 +582,15 @@ function pickUp() {
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Inspo Location");
             checkItems();
+            document.getElementById("home-image").innerHTML = `<img src='InspoImages/${inspoImg[inspoImg.length - 1]}.png' alt="One of the portraits needed for Slowversal!">`;
+            inspoImg.pop();
             break;
 
         case "p":
             addItem("pickleValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Pickle Location");
-            setText(`Bro....... you found pickle.`)
+            setText(`Bro....... you found pickle.`);
             checkItems();
             break;
     }
@@ -618,7 +629,6 @@ function endingScreen(input) {
     hidePage("load-page");
 
     switch (input) {
-
         case "paper":
             // G
             hidePage("ending1");
@@ -654,6 +664,10 @@ function curCheck() {
     });
 }
 
+function setImg () {
+    document.getElementById("home-image").innerHTML = `<img src="MiscItemImages/transpartns.png" id="transparent">`;
+}
+
 // GAME STUFF DON'T TOUCH
 var student = new Player();
 
@@ -686,7 +700,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You're at the stairs.");
                 student.locationX = 1;
                 student.locationY = 0;
-                console.log("[ " + student.locationX + ", " + student.locationY + "]")
+                console.log("[ " + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "janitor":
@@ -699,7 +714,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeBg('galleryEntry');
                 student.locationX = 2;
                 student.locationY = 2;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "outside":
@@ -712,7 +728,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setBackground('outsideGal');
                 student.locationX = 0;
                 student.locationY = 2;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "hall":
@@ -738,7 +755,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 student.locationX = 1;
                 student.locationY = 3;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "atrium":
@@ -767,7 +785,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setBackground('atrium');
                 student.locationX = 1;
                 student.locationY = 6;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "gallery":
@@ -797,7 +816,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setBackground("galleryEntry");
                 student.locationX = 1;
                 student.locationY = 2;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "multimedia":
@@ -810,7 +830,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You walk into a big room, all filled with dispersed tables. On the wall, there's old short-film posters. It's a lot more colorful than most of the other labs at CART. From what you see, there's definitely more people in this lab than Tech Lab ever will.");
                 student.locationX = 0;
                 student.locationY = 3;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "ux":
@@ -831,7 +852,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You trek your way to the User Experience Lab, or UX for short. It's the middle child of the Tech Lab, in terms of space in the room. The room is a lot brighter and more colorful than Web Applications. The overall vibe is a lot more lively than the other Tech Labs. At the back of the classroom, there's a phone holder with numbers for every student. The tables have the occasional bouncy-ball or seat different from a chair.");
                 student.locationX = 0;
                 student.locationY = 7;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "web":
@@ -851,7 +873,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setBackground('web')
                 student.locationX = 0;
                 student.locationY = 8;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "eng":
@@ -864,7 +887,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You trudge your way into N110, the English classroom for the Tech Labs. The tables are oriented to be in the middle, and the edges of the classroom. The tables use the same chairs as Web Applications, but they have different tables. On one wall, there's a Jurassic Park poster, and on the other there's a Ready Player One poster. A DC lineup canvas of the Flash, Batman, Superman, and Wonder Woman swings from one of the walls precariously, looking like it's about to fall.");
                 student.locationX = 2;
                 student.locationY = 6;
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
                 break;
 
             case "pickup":
@@ -881,7 +905,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.locationX = 0;
                 student.locationY = 8;
 
-                console.log("[" + student.locationX + ", " + student.locationY + "]")
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
 
                 // Stop npcFunct() from running
                 return ("");
