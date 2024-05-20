@@ -1,4 +1,5 @@
 let randomLab = null;
+let time = 180;
 
 
 class Player {
@@ -15,26 +16,23 @@ class Player {
     }
 
     updatePlayer() {
-
         if (Map.CART[this.locationX][this.locationY] == "s") {
             iterateText(Cutscene.beginning);
         }
-
     }
-
 }
 
 var Ally = {
     tech: {
         dialogue: ["Hey, did you hear about what happened in Web today? Go get yourself a snack or something. We're all doomed.", "I'm on a streak in Laser Grids rn.", "Schawlgalawg! My new simlish coding language is really takin' off! It goes something like this:  You not ooh rah dah en dahp ooh rah daht endaht en dik ah poo ra ta teek a poo rah doo rah do dik oh mumblio dah dah dosa pa errah sa de.", "Dude I did NOT sign up for this.. I've gotta get outta here.", "I shoulda stayed in theatre tech like the clown I am. Good luck, man. Could this help?", "(scream)", "UX is my passion.", "IGD is my passion.", "Don't get your panties in a twist, babe. Here.", "Yo tengo tu mama!", "Look under there! HAHAHAHAHAHAHAHAHAHAHAHAHA! You said underwear!", "Dont trip, chocolate chip.", "So BOOM!", "Bless!", "I'm totally Grending right now.", "*Metal pipe sound effects*", "Don't Violate Section 3", "My name is John.", "I've gyatt to get my work done.", "I pushed my fingers into my eyes.", "I'm totally Grending right now."],
-        reply: ["Thanks!"],
+        good: ["Thanks!"],
         atk: [1],
         drop: [1],
     },
 
     biomed: {
         dialogue: ["Slouching is actually really bad for 16.5 of your internal organs as well as your upper spine. If I give you this will you sit up straighter?", "It's actually really interesting seeing how computer light affects retinal processing and circadian rhythm. Study sesh sometime? About what? Well, you'd be the subject. Here, just. Think about it.", "I didn't know that tech students could actually walk' I thought the chairs were, like, a part of the anatomy. Now that I think about it, it makes sense why I'm failing.", "Dude I know more about computers from playing Valorant than I will ever learn in this class.", "Biomed is my passion."],
-        reply: ["Thanks!"],
+        good: ["Thanks!"],
         atk: [1],
         drop: [1],
     },
@@ -42,11 +40,6 @@ var Ally = {
     images: ["StudentImages/landon.png", "StudentImages/finn.png", "StudentImages/gamer.png",
         "StudentImages/artist.png", "StudentImages/cybertruck.png", "StudentImages/eve.png", "StudentImages/tameem.png", "StudentImages/pearla.png", "StudentImages/jose.png"],
 
-    buttons: {
-        good: 1,
-        mid: 1,
-        bad: 1,
-    }
 };
 
 var NPC = {
@@ -59,17 +52,10 @@ var NPC = {
             "DME kids are SO stuck up. What do you mean you're from the tech labs? What's a 'web application'?",
             "Business is my passion.",
             "Hey bro."],
-        reply: ["OK.",
-            "I'm busy.",
-            "Isn't crypto cool?",
-            "How's your stocks?",
-            "Bitcoin is up by 0.1%.",
-            "Tesla went bankrupt.",
-            "Leave me alone.",
-            "You're obsessed with being rich.",
-            "I only invest in crypto.",
-            "(Silence).",
-            "Doge is the only true currency."],
+
+        good: ["Isn't crypto cool?", "Bitcoin is up by 0.1%.", "I only invest in crypto.",],
+        mid: ["Leave me alone.", "I'm busy.", "(Silence).", "OK."],
+        bad: ["How's your stocks?", "Tesla went bankrupt.", "You're obsessed with being rich.", "Doge is the only true currency."],
         atk: [1],
         drop: [1],
     },
@@ -84,41 +70,35 @@ var NPC = {
             "Take my survey now!!",
             "You look like you love freedom. Care to talk to me about the American dream?",
             "Law is my passion."],
-        reply: ["I love George Washington!",
-            "OK.",
-            "Law is so underappreciated!",
-            "I rewatched Top Gun recently.",
-            "I love your tie!",
-            "Heck yeah America!",
-            "I'm busy right now.",
-            "I'm right wing.",
-            "Trump 2024.",
-            "I watch Judge Judy"],
+
+        good: ["I love George Washington!", "Law is so underappreciated!", "Trump 2024."],
+        mid: ["OK.", "I'm right wing.", "Heck yeah America!", "I love your tie!",],
+        bad: ["I'm busy right now.", "I rewatched Top Gun recently.", "I watch Judge Judy"],
         atk: [1],
         drop: [1],
     },
 
     multimedia: {
         dialogue: ["Quick, take my survey! If I don't look busy Mr. Love will drop me from the class!", "WATCH MY SHORT FILM NOW.", "FOLLOW MY SHORT FILM'S INSTAGRAM PLEASE PLEASE PLEASE PLEASE PLE-", "Graphic design is my passion.", "Ever heard of Adobe photoshop?", "You're a web kid?? I hate you guys! I won't remember beating you by dinner.", "You're scared of failing your web class? Typical. Not even worth my time.", "Will you join me in this dance?", "Don't worry. This'll only hurt A LOT.", "This is gonna be fun!", "You best kneel before this gets ugly.", "First we crack the shell, then we crack the nuts inside!", "Finally! An opponent! Can't wait to tell Mr. Love about this!", "Multimedia is my passion."],
-        reply: ["Your boom mic's broken.", "I already follow your film insta.", "Graphic design is mid", "I did theatre.", "Can you draw me?", "Digital art isn't real art.", "I can't draw a stickman.", "MM is easy, right?", "(silence)"],
+
+        good: ["Your boom mic's broken.", "I already follow your film insta.", "I can't draw a stickman."],
+        mid: ["I did theatre.", "MM is easy, right?", "(silence)"],
+        bad: ["Graphic design is mid", "Can you draw me?", "Digital art isn't real art."],
         atk: [1],
         drop: [1],
     },
 
     images: ["StudentImages/peyton.png", "StudentImages/carl.png", "StudentImages/sharon.png", "StudentImages/wpm.png", "StudentImages/an.png", "StudentImages/ryan.png", "StudentImages/miles.png", "StudentImages/dylan.png"],
 
-    buttons: {
-        good: 0,
-        mid: 0,
-        bad: 0,
-        // good ends battle, mid takes no damage but doesnt end battle, bad takes damage
-    }
 };
 
 var svNPC = {
     guard: {
         dialogue: ["Where do you think you're going?", "Lemme see some ID.", "Area's off limits.", "I can't wait to be paid tomorrow.", "Have you seen a person with a lot of makeup on?", "What are you even doing?", "Have you tried that new corndog place yet?", "Finally, I get to use my baton."],
         reply: ["Sir, I'm not concealed carrying.", "Where's the bathroom?", "Garbage men get paid more than you.", "When's Santa coming?", "Chimpken Shacc.", "They should put a Nike store here.", "Do you want some Monster Energy.", "IS THAT PAUL BLART?!"],
+        good: [],
+        mid: [],
+        bad: [],
         atk: [1],
         drop: [1],
         images: ["svImages/guardOne", "svImages/guardTwo", "svImages/guardThree"],
@@ -444,7 +424,40 @@ function npcFunct() {
 }
 
 function ranDia() {
-    let ranBut = getRandomInt(4);
+    // let buttons = document.getElementById("npc-buttons");
+
+    // //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
+    // if (randomLab != ("tech" || "biomed")) {
+
+    //     let starter = getRandomInt(2);
+
+    //     if (starter == 0) {
+    //         part.innerText = NPC.randomLab.good[getRandomInt(NPC.randomLab.good.length)];
+    //     }
+    //     else if (starter == 1) {
+    //         part.innerText = NPC.randomLab.mid[getRandomInt(NPC.randomLab.mid.length)];
+    //     }
+    //     else if (starter == 2) {
+    //         part.innerText = NPC.randomLab.bad[getRandomInt(NPC.randomLab.bad.length)];
+    //     }
+
+    //     [...buttons].forEach(part => {
+            
+            
+    //         starter--;
+    //         part.classList.add("currentBtn");
+    //     });
+
+    // }
+    // else {
+    //     // Makes all buttons good if ally encounter and add money
+        
+    //     [...buttons].forEach(part => {
+    //         part.innerText = "Thanks!";
+    //         part.value = "good";
+    //         // Add money here
+    //     });
+    // }
 
     document.getElementById("button-container").classList.add("hidden");
     document.getElementById("button-container").classList.add("current");
@@ -453,22 +466,12 @@ function ranDia() {
     document.getElementById("locIcon").classList.add("hidden");
     document.getElementById("backIcon").classList.add("hidden");
 
+let ranBut = 0;
+
     switch (ranBut) {
         case 0:
             document.getElementById('NPCtalk1').classList.remove('hidden');
             document.getElementById('NPCtalk1').classList.add('curNPC');
-            break;
-        case 1:
-            document.getElementById('NPCtalk2').classList.remove('hidden');
-            document.getElementById('NPCtalk2').classList.add('curNPC');
-            break;
-        case 2:
-            document.getElementById('NPCtalk3').classList.remove('hidden');
-            document.getElementById('NPCtalk3').classList.add('curNPC');
-            break;
-        case 3:
-            document.getElementById('NPCtalk4').classList.remove('hidden');
-            document.getElementById('NPCtalk4').classList.add('curNPC');
             break;
     }
 }
@@ -664,7 +667,7 @@ function curCheck() {
     });
 }
 
-function setImg () {
+function setImg() {
     document.getElementById("home-image").innerHTML = `<img src="MiscItemImages/transpartns.png" id="transparent">`;
 }
 
@@ -927,21 +930,37 @@ document.addEventListener("DOMContentLoaded", function () {
 // After Location button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("locIcon").addEventListener("click", function () {
-
         displayMap();
-
-
     });
 });
 
 // After Backpack button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("backIcon").addEventListener("click", function () {
-
         displayInv();
-
     });
 });
+
+function afterNPC() {
+    // Change to transparent img
+    document.getElementById("home-image").innerHTML =
+        `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
+    // Unhide buttons that npcFunct() hid
+    hidePage("npc-buttons");
+    curCheck();
+    // let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
+    // curNPC.classList.add('hidden');
+    // Set text back to locational text
+    document.getElementById("text-output").innerText = locoText;
+
+    if (document.getElementById("button-container").classList.contains("current")) {
+        document.getElementById("button-container").classList.remove("current");
+        document.getElementById("button-container").classList.remove("hidden");
+    }
+
+    document.getElementById("locIcon").classList.remove("hidden");
+    document.getElementById("backIcon").classList.remove("hidden");
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -954,29 +973,11 @@ document.addEventListener("DOMContentLoaded", function () {
         switch (npcVal) {
 
             case "win":
-                // Change to transparent img
-                document.getElementById("home-image").innerHTML =
-                    `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
-                // Unhide buttons that npcFunct() hid
-                hidePage("npc-buttons");
-                curCheck();
-                // let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
-                // curNPC.classList.add('hidden');
-                // Set text back to locational text
-                document.getElementById("text-output").innerText = locoText;
-
-                if (document.getElementById("button-container").classList.contains("current")) {
-                    document.getElementById("button-container").classList.remove("current");
-                    document.getElementById("button-container").classList.remove("hidden");
-                }
-
-
-                document.getElementById("locIcon").classList.remove("hidden");
-                document.getElementById("backIcon").classList.remove("hidden");
+                afterNPC();
                 break;
 
             case "mid":
-                // Hides all dialogue, then reassigns a randome dialogue option
+                // Hides all dialogue, then reassigns a random dialogue option
                 curCheck();
                 ranDia();
 
@@ -985,10 +986,16 @@ document.addEventListener("DOMContentLoaded", function () {
             case "die":
 
                 var endSound = new Audio("Sounds/taco.mp3");
-                endingScreen("dead");
                 endSound.play();
+                time -= 15;
+                document.getElementById("health").innerHTML = `<span id="health" class="tenEm">${time + " minutes"}</span>`;
+                afterNPC();
+
+                if (time <= 0) {
+                    endingScreen("dead");
+                }
+
                 break;
         }
-
     });
 });
