@@ -38,7 +38,7 @@ var Ally = {
     },
 
     images: ["StudentImages/landon.png", "StudentImages/finn.png", "StudentImages/gamer.png",
-        "StudentImages/artist.png", "StudentImages/cybertruck.png", "StudentImages/eve.png", "StudentImages/tameem.png", "StudentImages/pearla.png", "StudentImages/jose.png"],
+        "StudentImages/artist.png", "StudentImages/cybertruck.png", "StudentImages/eve.png", "StudentImages/tameem.png", "StudentImages/pearla.png", "StudentImages/jose.png", "StudentImages/leo.png"],
 
 };
 
@@ -147,7 +147,9 @@ var Descriptions = {
 
 var GameOver = {
     endingOne: ["The Wrath of Idleness Unleashed!", "In the hallowed halls of the Center for Advanced Research and Technology (CART), your loitering transgression has triggered a cataclysm of cosmic proportions! The fabric of reality itself quivers as the furies of idleness descend upon us, rending the very essence of innovation and progress. The heavens weep, and the earth trembles as the curse of idleness consumes all hope of enlightenment."],
+
     endingTwo: ["The curse of loitering Unleashed!", "Oh, hapless wanderer! Your dalliance and loitering within the sacred halls of the Center for Advanced Research and Technology (CART) have invoked a curse of epic proportions! The very fabric of innovation trembles at your audacity. The curse of loitering, a blight upon the noble pursuit of discovery, has cast its shadow upon us all."],
+
     endingThree: ["Catastrophe Alert:  Loitering Detected!", "Alas, the echoes of your idle footsteps have shattered the very foundation of the Center for Advanced Research and Technology (CART)! Your blatant disregard for the no-loitering policy has unleashed chaos and discord, disrupting the delicate balance required for scientific brilliance. The heavens weep, and the stars dim at the sight of such negligence, plunging the realm of innovation into darkness."]
 };
 
@@ -503,23 +505,64 @@ function ranDia() {
 
 }
 
+
+function endImg() {
+
+    let ranUs = getRandomInt(9);
+
+    console.log(`img picker got: ` + ranUs);
+
+    if (ranUs % 2 == 0) {
+        console.log(`jamber selected`);
+        document.getElementById("endImgCont").innerHTML = `<img class="endImg" src="Images/jamesDead.png" alt="Game Over Screen">`;
+    }
+
+    else if (ranUs % 2 !== 0) {
+        console.log(`icnog selected`);
+        document.getElementById("endImgCont").innerHTML = `<img class="endImg" src="Images/icDead.png" alt="Game Over Screen">`;
+    }
+}
+
+
 function endDisplay() {
     let ranNum = getRandomInt(3);
 
+    if (document.getElementById("endHead") != undefined) {
+        console.log(`head element found`);
+        if (document.getElementById("endText") != undefined) {
+            console.log(`text & head elements found`);
+        }
+    }
+    else{
+        console.log(`we're so cooked.`);
+    }
+
+
+
+
     switch (ranNum) {
         case 0:
-            document.getElementById("endHead").innerText(GameOver.endingOne[0]);
-            document.getElementById("endText").innerText(GameOver.endingOne[1]);
+            console.log(`display one`);
+            console.log(`Head: ${GameOver.endingOne[0]}, Text: ${GameOver.endingOne[1]}`);
+            document.getElementById("endHead").innerText = GameOver.endingOne[0];
+            document.getElementById("endText").innerText = GameOver.endingOne[1];
+            endImg();
             break;
 
         case 1:
-            document.getElementById("endHead").innerText(GameOver.endingTwo[0]);
-            document.getElementById("endText").innerText(GameOver.endingTwo[1]);
+            console.log(`display two`);
+            console.log(`Head: ${GameOver.endingTwo[0]}, Text: ${GameOver.endingTwo[1]}`);
+            document.getElementById("endHead").innerText = GameOver.endingTwo[0];
+            document.getElementById("endText").innerText = GameOver.endingTwo[1];
+            endImg();
             break;
 
         case 2:
-            document.getElementById("endHead").innerText(GameOver.endingThree[0]);
-            document.getElementById("endText").innerText(GameOver.endingThree[1]);
+            console.log(`display three`);
+            console.log(`Head: ${GameOver.endingThree[0]}, Text: ${GameOver.endingThree[1]}`);
+            document.getElementById("endHead").innerText = GameOver.endingThree[0];
+            document.getElementById("endText").innerText = GameOver.endingThree[1];
+            endImg();
             break;
     }
 }
@@ -680,6 +723,7 @@ function endingScreen(input) {
 
         case "dead":
             // G
+            endDisplay();
             hidePage("ending4");
             break;
 

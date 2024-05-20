@@ -332,7 +332,6 @@ button:hover {
 /* Ending Page */
 .ending {
     align-items: center;
-    margin-top: 2em;
 }
 
 .endImg {
@@ -351,7 +350,7 @@ button:hover {
     margin: .5em 0 .5em 0;
 }
 
-#endHead {
+.endHead {
     margin: .3em;
 }
 
@@ -601,7 +600,7 @@ button:hover {
         font-size: 7em;
     }
 
-    #endHead {
+    .endHead {
         font-size: 1em;
     }
 
