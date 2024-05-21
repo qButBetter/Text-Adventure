@@ -25,6 +25,7 @@ class Player {
 var Ally = {
     tech: {
         dialogue: ["Hey, did you hear about what happened in Web today? Go get yourself a snack or something. We're all doomed.", "I'm on a streak in Laser Grids rn.", "Schawlgalawg! My new simlish coding language is really takin' off! It goes something like this:  You not ooh rah dah en dahp ooh rah daht endaht en dik ah poo ra ta teek a poo rah doo rah do dik oh mumblio dah dah dosa pa errah sa de.", "Dude I did NOT sign up for this.. I've gotta get outta here.", "I shoulda stayed in theatre tech like the clown I am. Good luck, man. Could this help?", "(scream)", "UX is my passion.", "IGD is my passion.", "Don't get your panties in a twist, babe. Here.", "Yo tengo tu mama!", "Look under there! HAHAHAHAHAHAHAHAHAHAHAHAHA! You said underwear!", "Dont trip, chocolate chip.", "So BOOM!", "Bless!", "I'm totally Grending right now.", "*Metal pipe sound effects*", "Don't Violate Section 3", "My name is John.", "I've gyatt to get my work done.", "I pushed my fingers into my eyes.", "I'm totally Grending right now."],
+        
         good: ["Thanks!"],
         atk: [1],
         drop: [1],
@@ -32,6 +33,7 @@ var Ally = {
 
     biomed: {
         dialogue: ["Slouching is actually really bad for 16.5 of your internal organs as well as your upper spine. If I give you this will you sit up straighter?", "It's actually really interesting seeing how computer light affects retinal processing and circadian rhythm. Study sesh sometime? About what? Well, you'd be the subject. Here, just. Think about it.", "I didn't know that tech students could actually walk' I thought the chairs were, like, a part of the anatomy. Now that I think about it, it makes sense why I'm failing.", "Dude I know more about computers from playing Valorant than I will ever learn in this class.", "Biomed is my passion."],
+        
         good: ["Thanks!"],
         atk: [1],
         drop: [1],
@@ -460,10 +462,9 @@ function shuffle(arr) {
 
 function ranDia() {
     let buttons = document.querySelectorAll("#npc-buttons button");
-    shuffle(buttons);
 
     //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
-    if (randomLab != ("tech" || "biomed")) {
+    if (randomLab != ("tech" && "biomed")) {
 
         let pointer = 2;
 
@@ -477,7 +478,7 @@ function ranDia() {
                     randomThing = getRandomInt(NPC[randomLab].good.length - 1);
                     console.log(randomThing);
                     part.innerText = NPC[randomLab].good[randomThing];
-                    part.attributes.value = "good";
+                    part.attributes.value = "win";
                     pointer--;
                     break;
 
@@ -496,31 +497,30 @@ function ranDia() {
                     part.attributes.value = "die";
                     break;
             }
-        });
 
+            shuffle(buttons);
+        });
     }
     else {
         // Makes all buttons good if ally encounter and add money
-
         buttons.forEach(part => {
             part.innerText = "Thanks!";
-            part.value = "good";
+            part.attributes.value = "win";
             // Add money here
         });
     }
 
     buttons.forEach(part => {
         console.log(part.innerText);
+        console.log(part.value);
     });
 
-    document.getElementById("button-container").classList.add("hidden");
-    document.getElementById("button-container").classList.add("current");
     document.getElementById('npc-buttons').classList.remove("hidden");
+    document.getElementById("button-container").classList.add("hidden");
+    document.getElementById("NPCtalk").classList.remove("hidden");
 
     document.getElementById("locIcon").classList.add("hidden");
     document.getElementById("backIcon").classList.add("hidden");
-
-
 }
 
 
@@ -1050,18 +1050,21 @@ function afterNPC() {
     // Change to transparent img
     document.getElementById("home-image").innerHTML =
         `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
-    // Unhide buttons that npcFunct() hid
-    hidePage("npc-buttons");
-    curCheck();
     // let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
     // curNPC.classList.add('hidden');
     // Set text back to locational text
     document.getElementById("text-output").innerText = locoText;
+    document.getElementById("text-output").classList.remove("hidden");
 
     if (document.getElementById("button-container").classList.contains("current")) {
         document.getElementById("button-container").classList.remove("current");
         document.getElementById("button-container").classList.remove("hidden");
     }
+
+    document.getElementById('npc-buttons').classList.add("hidden");
+    document.getElementById("button-container").classList.remove("hidden");
+    document.getElementById("NPCtalk").classList.add("hidden");
+
 
     document.getElementById("locIcon").classList.remove("hidden");
     document.getElementById("backIcon").classList.remove("hidden");
@@ -1093,7 +1096,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var endSound = new Audio("Sounds/taco.mp3");
                 endSound.play();
                 time -= 15;
-                document.getElementById("health").innerText = `${time} + " minutes"`;
+                document.getElementById("health").innerText = time + " minutes";
                 afterNPC();
 
                 if (time <= 0) {
