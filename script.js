@@ -419,47 +419,81 @@ function npcFunct() {
 
         // Take guard dialogue as well
         setText(svNPC.guard.dialogue[getRandomInt()]);
-
     }
 
     ranDia();
 }
 
+function shuffle(arr) {
+    let i = 0,
+        res = [], index;
+
+    while (i <= arr.length - 1) {
+        index = Math.floor(Math.random() * arr.length);
+
+        if (!res.includes(arr[index])) {
+            res.push(arr[index]);
+            i++;
+        }
+    }
+
+    return res;
+}
+
 function ranDia() {
-    // let buttons = document.getElementById("npc-buttons");
+    let buttons = document.querySelectorAll("#npc-buttons button");
+    shuffle(buttons);
 
-    // //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
-    // if (randomLab != ("tech" || "biomed")) {
+    //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
+    if (randomLab != ("tech" || "biomed")) {
 
-    //     let starter = getRandomInt(2);
+        let pointer = 2;
 
-    //     if (starter == 0) {
-    //         part.innerText = NPC.randomLab.good[getRandomInt(NPC.randomLab.good.length)];
-    //     }
-    //     else if (starter == 1) {
-    //         part.innerText = NPC.randomLab.mid[getRandomInt(NPC.randomLab.mid.length)];
-    //     }
-    //     else if (starter == 2) {
-    //         part.innerText = NPC.randomLab.bad[getRandomInt(NPC.randomLab.bad.length)];
-    //     }
+        buttons.forEach(part => {
+            console.log(part);
 
-    //     [...buttons].forEach(part => {
-            
-            
-    //         starter--;
-    //         part.classList.add("currentBtn");
-    //     });
+            let randomThing = null;
 
-    // }
-    // else {
-    //     // Makes all buttons good if ally encounter and add money
-        
-    //     [...buttons].forEach(part => {
-    //         part.innerText = "Thanks!";
-    //         part.value = "good";
-    //         // Add money here
-    //     });
-    // }
+            switch (pointer) {
+                case 2:
+                    randomThing = getRandomInt(NPC[randomLab].good.length - 1);
+                    console.log(randomThing);
+                    part.innerText = NPC[randomLab].good[randomThing];
+                    part.attributes.value = "good";
+                    pointer--;
+                    break;
+
+                case 1:
+                    randomThing = getRandomInt(NPC[randomLab].mid.length - 1);
+                    console.log(randomThing);
+                    part.innerText = NPC[randomLab].mid[randomThing];
+                    part.attributes.value = "mid";
+                    pointer--;
+                    break;
+
+                case 0:
+                    randomThing = getRandomInt(NPC[randomLab].bad.length - 1);
+                    console.log(randomThing);
+                    part.innerText = NPC[randomLab].bad[randomThing];
+                    part.attributes.value = "die";
+                    break;
+            }
+        });
+
+    }
+    else {
+        // Makes all buttons good if ally encounter and add money
+
+        buttons.forEach(part => {
+            part.innerText = "Thanks!";
+            part.value = "good";
+            // Add money here
+        });
+    }
+
+    buttons.forEach(part => {
+        console.log(part.innerText);
+    });
 
     document.getElementById("button-container").classList.add("hidden");
     document.getElementById("button-container").classList.add("current");
@@ -468,14 +502,7 @@ function ranDia() {
     document.getElementById("locIcon").classList.add("hidden");
     document.getElementById("backIcon").classList.add("hidden");
 
-let ranBut = 0;
 
-    switch (ranBut) {
-        case 0:
-            document.getElementById('NPCtalk1').classList.remove('hidden');
-            document.getElementById('NPCtalk1').classList.add('curNPC');
-            break;
-    }
 }
 
 
