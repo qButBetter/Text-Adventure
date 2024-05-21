@@ -373,10 +373,20 @@ function npcFunct() {
             }
             console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
 
-            document.getElementById("home-image").innerHTML =
-                `<img src='${Ally.images[getRandomInt(8)]}' alt="A generic person colored in black and white.">`;
+            //take random NPC src & log
+            let home_image = Ally.images[getRandomInt(9)];
+            console.log("The ally chosen is: ", home_image);
 
-            curNPC = `<img src='${Ally.images[getRandomInt(8)]}' alt="A generic person colored in black and white.">`;
+            //plug into the code
+            document.getElementById("home-image").innerHTML =
+                `<img src='${home_image}' alt="A generic person colored in black and white.">`;
+            
+
+
+            // let curnpc_image = Ally.images[getRandomInt(9)];
+            // console.log("The NPC image is: ", curnpc_image);
+
+            // curNPC = `<img src='${curnpc_image}' alt="A generic person colored in black and white.">`;
 
             // Take ally dialogue as well
             locoText = document.getElementById("text-output").innerText;
@@ -403,9 +413,17 @@ function npcFunct() {
 
             console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
             console.log(NPC[ranLab]);
+
+            let npc_image = NPC.images[getRandomInt(9)];
+            console.log("The NPC image is: ", npc_image);
+
             document.getElementById("home-image").innerHTML =
-                `<img src='${NPC.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
-            curNPC = `<img src='${NPC.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
+                `<img src='${npc_image}' alt="A generic person colored in black and white.">`;
+               
+            // let curnpc_image =  NPC.images[getRandomInt(9)];
+            // console.log("Your current NPC is: ", curnpc_image);
+
+            // curNPC = `<img src='${NPC.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
 
             // Take enemey dialogue as well
             locoText = document.getElementById("text-output").innerText;
@@ -571,7 +589,9 @@ function removeBg(input) {
     document.getElementById("home-image").classList.remove(input);
 }
 
-// Debug functions
+// DEBUG FUNCTION SECTION 
+
+
 function addItem(id, num = 1) {
 
     let counter = parseInt(document.getElementById(id).innerText);
@@ -613,6 +633,20 @@ function addItem(id, num = 1) {
 
     }
 }
+
+//inserts an npc image to debug
+function insertImage(name){
+    document.getElementById("home-image").innerHTML =
+                `<img src='StudentImages/${name}.png' alt="A generic person colored in black and white.">`;
+}
+
+//removes any inserted images
+function removeImg(){
+    document.getElementById("home-image").innerHTML = "";
+}
+
+
+//END DEBUG SECTION
 
 let arsonImg = ["bucket", "gasTank", "styrofoam"];
 let paperImg = ["fastArt1", "fastArt2", "fastArt3", "fastArt4", "fastArt5", "fastArt6"];
