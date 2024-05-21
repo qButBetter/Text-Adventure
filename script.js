@@ -1059,7 +1059,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var endSound = new Audio("Sounds/taco.mp3");
                 endSound.play();
                 time -= 15;
-                document.getElementById("health").innerHTML = `<span id="health" class="tenEm">${time + " minutes"}</span>`;
+                document.getElementById("health").innerText = `${time} + " minutes"`;
                 afterNPC();
 
                 if (time <= 0) {
