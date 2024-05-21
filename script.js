@@ -459,7 +459,7 @@ function ranDia() {
                     randomThing = getRandomInt(NPC[randomLab].good.length - 1);
                     console.log(randomThing);
                     part.innerText = NPC[randomLab].good[randomThing];
-                    part.attributes.value = "good";
+                    part.attributes.value = "win";
                     pointer--;
                     break;
 
@@ -479,11 +479,9 @@ function ranDia() {
                     break;
             }
         });
-
     }
     else {
         // Makes all buttons good if ally encounter and add money
-
         buttons.forEach(part => {
             part.innerText = "Thanks!";
             part.value = "good";
@@ -493,16 +491,16 @@ function ranDia() {
 
     buttons.forEach(part => {
         console.log(part.innerText);
+        console.log(part.value);
     });
 
-    document.getElementById("button-container").classList.add("hidden");
-    document.getElementById("button-container").classList.add("current");
     document.getElementById('npc-buttons').classList.remove("hidden");
+    document.getElementById("button-container").classList.add("hidden");
+    document.getElementById("NPCtalk").classList.remove("hidden");
+
 
     document.getElementById("locIcon").classList.add("hidden");
     document.getElementById("backIcon").classList.add("hidden");
-
-
 }
 
 
@@ -1017,17 +1015,22 @@ function afterNPC() {
     document.getElementById("home-image").innerHTML =
         `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
     // Unhide buttons that npcFunct() hid
-    hidePage("npc-buttons");
     curCheck();
     // let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
     // curNPC.classList.add('hidden');
     // Set text back to locational text
     document.getElementById("text-output").innerText = locoText;
+    document.getElementById("text-output").classList.remove("hidden");
 
     if (document.getElementById("button-container").classList.contains("current")) {
         document.getElementById("button-container").classList.remove("current");
         document.getElementById("button-container").classList.remove("hidden");
     }
+
+    document.getElementById('npc-buttons').classList.add("hidden");
+    document.getElementById("button-container").classList.remove("hidden");
+    document.getElementById("NPCtalk").classList.add("hidden");
+
 
     document.getElementById("locIcon").classList.remove("hidden");
     document.getElementById("backIcon").classList.remove("hidden");
@@ -1059,7 +1062,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var endSound = new Audio("Sounds/taco.mp3");
                 endSound.play();
                 time -= 15;
-                document.getElementById("health").innerText = `${time} + " minutes"`;
+                document.getElementById("health").innerText = time + " minutes";
                 afterNPC();
 
                 if (time <= 0) {
