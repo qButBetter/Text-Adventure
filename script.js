@@ -464,7 +464,7 @@ function ranDia() {
     let buttons = document.querySelectorAll("#npc-buttons button");
 
     //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
-    if (randomLab != ("tech" && "biomed")) {
+    if ((randomLab != "tech") && (randomLab != "biomed")) {
 
         let pointer = 2;
 
