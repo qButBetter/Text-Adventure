@@ -32,7 +32,7 @@ var Ally = {
     },
 
     biomed: {
-        dialogue: ["Slouching is actually really bad for 16.5 of your internal organs as well as your upper spine. If I give you this will you sit up straighter?", "It's actually really interesting seeing how computer light affects retinal processing and circadian rhythm. Study sesh sometime? About what? Well, you'd be the subject. Here, just. Think about it.", "I didn't know that tech students could actually walk' I thought the chairs were, like, a part of the anatomy. Now that I think about it, it makes sense why I'm failing.", "Dude I know more about computers from playing Valorant than I will ever learn in this class.", "Biomed is my passion."],
+        dialogue: ["Slouching is actually really bad for 16.5 of your internal organs as well as your upper spine. If I give you this will you sit up straighter?", "It's actually really interesting seeing how computer light affects retinal processing and circadian rhythm. Study sesh sometime? About what? Well, you'd be the subject. Here, just... think about it.", "I didn't know that tech students could actually walk' I thought the chairs were, like, a part of the anatomy. Now that I think about it, it makes sense why I'm failing.", "Dude I know more about computers from playing Valorant than I will ever learn in this class.", "Biomed is my passion."],
 
         good: ["Thanks!"],
         atk: [1],
@@ -1074,6 +1074,15 @@ function healthFlash() {
     document.getElementById("health").classList.add("redFlash");
 }
 
+function addRed() {
+    document.getElementById("health").classList.add("redFlash");
+}
+
+function removeRed() {
+    document.getElementById("health").classList.remove("redFlash");
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("npc-buttons").addEventListener("click", function (e) {
@@ -1100,7 +1109,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 var endSound = new Audio("Sounds/taco.mp3");
                 endSound.play();
                 time -= 15;
-                healthFlash();
+
+                addRed();
+                // Count for 5 seconds, then remove class slide
+                setTimeout(removeRed(), 1000);
+                
                 document.getElementById("health").innerText = time + " minutes";
                 afterNPC();
 
