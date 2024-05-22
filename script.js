@@ -25,7 +25,7 @@ class Player {
 var Ally = {
     tech: {
         dialogue: ["Hey, did you hear about what happened in Web today? Go get yourself a snack or something. We're all doomed.", "I'm on a streak in Laser Grids rn.", "Schawlgalawg! My new simlish coding language is really takin' off! It goes something like this:  You not ooh rah dah en dahp ooh rah daht endaht en dik ah poo ra ta teek a poo rah doo rah do dik oh mumblio dah dah dosa pa errah sa de.", "Dude I did NOT sign up for this.. I've gotta get outta here.", "I shoulda stayed in theatre tech like the clown I am. Good luck, man. Could this help?", "(scream)", "UX is my passion.", "IGD is my passion.", "Don't get your panties in a twist, babe. Here.", "Yo tengo tu mama!", "Look under there! HAHAHAHAHAHAHAHAHAHAHAHAHA! You said underwear!", "Dont trip, chocolate chip.", "So BOOM!", "Bless!", "I'm totally Grending right now.", "*Metal pipe sound effects*", "Don't Violate Section 3", "My name is John.", "I've gyatt to get my work done.", "I pushed my fingers into my eyes.", "I'm totally Grending right now."],
-        
+
         good: ["Thanks!"],
         atk: [1],
         drop: [1],
@@ -33,7 +33,7 @@ var Ally = {
 
     biomed: {
         dialogue: ["Slouching is actually really bad for 16.5 of your internal organs as well as your upper spine. If I give you this will you sit up straighter?", "It's actually really interesting seeing how computer light affects retinal processing and circadian rhythm. Study sesh sometime? About what? Well, you'd be the subject. Here, just. Think about it.", "I didn't know that tech students could actually walk' I thought the chairs were, like, a part of the anatomy. Now that I think about it, it makes sense why I'm failing.", "Dude I know more about computers from playing Valorant than I will ever learn in this class.", "Biomed is my passion."],
-        
+
         good: ["Thanks!"],
         atk: [1],
         drop: [1],
@@ -55,9 +55,9 @@ var NPC = {
             "Business is my passion.",
             "Hey bro."],
 
-        good: ["Isn't crypto cool?", "Bitcoin is up by 0.1%.", "I only invest in crypto.",],
+        good: ["Isn't crypto cool?", "Bitcoin is up by 0.1%.", "I only invest in crypto.", "Do you know Edwin Reyes?", "Is Wolf of WallStreet Good?"],
         mid: ["Leave me alone.", "I'm busy.", "(Silence).", "OK."],
-        bad: ["How's your stocks?", "Tesla went bankrupt.", "You're obsessed with being rich.", "Doge is the only true currency."],
+        bad: ["How's your stocks?", "Tesla went bankrupt.", "You're obsessed with being rich.", "Doge is the only true currency.", "(Money Spread)", "Band for Band rn.", "You sucked at showcase."],
         atk: [1],
         drop: [1],
     },
@@ -73,9 +73,9 @@ var NPC = {
             "You look like you love freedom. Care to talk to me about the American dream?",
             "Law is my passion."],
 
-        good: ["I love George Washington!", "Law is so underappreciated!", "Trump 2024."],
-        mid: ["OK.", "I'm right wing.", "Heck yeah America!", "I love your tie!",],
-        bad: ["I'm busy right now.", "I rewatched Top Gun recently.", "I watch Judge Judy"],
+        good: ["I love George Washington!", "Law is so underappreciated!", "Trump 2024.", "Pride and Prejudice best book ever, real?", "I hate myself."],
+        mid: ["OK.", "I'm right wing.", "Heck yeah America!", "I love your tie!", "Leave me alone.", "(Silence)."],
+        bad: ["I'm busy right now.", "I rewatched Top Gun recently.", "I watch Judge Judy.", "Hamilton mid.", "I heart Martin Van Buuren.", "Biden 2024.", "I'm a communist."],
         atk: [1],
         drop: [1],
     },
@@ -83,9 +83,9 @@ var NPC = {
     multimedia: {
         dialogue: ["Quick, take my survey! If I don't look busy Mr. Love will drop me from the class!", "WATCH MY SHORT FILM NOW.", "FOLLOW MY SHORT FILM'S INSTAGRAM PLEASE PLEASE PLEASE PLEASE PLE-", "Graphic design is my passion.", "Ever heard of Adobe photoshop?", "You're a web kid?? I hate you guys! I won't remember beating you by dinner.", "You're scared of failing your web class? Typical. Not even worth my time.", "Will you join me in this dance?", "Don't worry. This'll only hurt A LOT.", "This is gonna be fun!", "You best kneel before this gets ugly.", "First we crack the shell, then we crack the nuts inside!", "Finally! An opponent! Can't wait to tell Mr. Love about this!", "Multimedia is my passion."],
 
-        good: ["Your boom mic's broken.", "I already follow your film insta.", "I can't draw a stickman."],
-        mid: ["I did theatre.", "MM is easy, right?", "(silence)"],
-        bad: ["Graphic design is mid", "Can you draw me?", "Digital art isn't real art."],
+        good: ["Your boom mic's broken.", "I already follow your film insta.", "I can't draw a stickman.", "How's the potluck?", "TAWOG peak character design.", "Do you like spiderman?"],
+        mid: ["I did theatre.", "MM is easy, right?", "(silence)", "New MHA episode drop?", "FireAlpaca W", "I drew a full piece using magma"],
+        bad: ["Graphic design is mid", "Can you draw me?", "Digital art isn't real art.", "Green fn.", "Go animate or something.", "Go away painter boy."],
         atk: [1],
         drop: [1],
     },
@@ -97,10 +97,10 @@ var NPC = {
 var svNPC = {
     guard: {
         dialogue: ["Where do you think you're going?", "Lemme see some ID.", "Area's off limits.", "I can't wait to be paid tomorrow.", "Have you seen a person with a lot of makeup on?", "What are you even doing?", "Have you tried that new corndog place yet?", "Finally, I get to use my baton."],
-        reply: ["Sir, I'm not concealed carrying.", "Where's the bathroom?", "Garbage men get paid more than you.", "When's Santa coming?", "Chimpken Shacc.", "They should put a Nike store here.", "Do you want some Monster Energy.", "IS THAT PAUL BLART?!"],
-        good: [],
-        mid: [],
-        bad: [],
+
+        good: ["Sir, I'm not concealed carrying.", "Chimpken Shacc.", "I like Panera Bread"],
+        mid: ["Where's the bathroom?", "When's Santa coming?", "Do you want some Monster Energy."],
+        bad: ["Garbage men get paid more than you.", "They should put a Nike store here.", "IS THAT PAUL BLART?!"],
         atk: [1],
         drop: [1],
         images: ["svImages/guardOne", "svImages/guardTwo", "svImages/guardThree"],
@@ -166,7 +166,6 @@ var Summary = {
     deafeats: null,
     ending: null,
     money: null,
-
 }
 
 var Map = {
@@ -196,13 +195,10 @@ var Map = {
         [0], ["h4"], ["h4"],
         [0], [0], [0]],
 
-    Road: []
-
 };
 
 var ItemMap = {
     CART: [
-
         [0, "i", 0],
         [0, 0, 0],
         ["i2", "i", "i2"],
@@ -212,11 +208,6 @@ var ItemMap = {
         [0, 0, "i"],
         ["i", 0, 0],
         ["i", 0, 0]
-    ],
-
-    toodee: [
-        [0, 0, 0],
-        [0, 0, 0],
     ],
 
     Outside: [["i2"], [0]],
@@ -382,7 +373,7 @@ function npcFunct() {
             //plug into the code
             document.getElementById("home-image").innerHTML =
                 `<img src='${home_image}' alt="A generic person colored in black and white.">`;
-            
+
 
 
             // let curnpc_image = Ally.images[getRandomInt(9)];
@@ -416,12 +407,12 @@ function npcFunct() {
             console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
             console.log(NPC[ranLab]);
 
-            let npc_image = NPC.images[getRandomInt(9)];
+            let npc_image = NPC.images[getRandomInt(8)];
             console.log("The NPC image is: ", npc_image);
 
             document.getElementById("home-image").innerHTML =
                 `<img src='${npc_image}' alt="A generic person colored in black and white.">`;
-               
+
             // let curnpc_image =  NPC.images[getRandomInt(9)];
             // console.log("Your current NPC is: ", curnpc_image);
 
@@ -466,6 +457,10 @@ function ranDia() {
     //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
     if ((randomLab != "tech") && (randomLab != "biomed")) {
 
+        let arrReply = [];
+
+        console.log("Not Ally");
+
         let pointer = 2;
 
         buttons.forEach(part => {
@@ -476,42 +471,41 @@ function ranDia() {
             switch (pointer) {
                 case 2:
                     randomThing = getRandomInt(NPC[randomLab].good.length - 1);
-                    console.log(randomThing);
                     part.innerText = NPC[randomLab].good[randomThing];
-                    part.attributes.value = "win";
+                    part.value = "win";
                     pointer--;
+                    arrReply.push(part);
                     break;
 
                 case 1:
                     randomThing = getRandomInt(NPC[randomLab].mid.length - 1);
-                    console.log(randomThing);
                     part.innerText = NPC[randomLab].mid[randomThing];
-                    part.attributes.value = "mid";
+                    part.value = "mid";
                     pointer--;
+                    arrReply.push(part);
                     break;
 
                 case 0:
                     randomThing = getRandomInt(NPC[randomLab].bad.length - 1);
-                    console.log(randomThing);
                     part.innerText = NPC[randomLab].bad[randomThing];
-                    part.attributes.value = "die";
+                    part.value = "die";
+                    arrReply.push(part);
                     break;
             }
-
-            shuffle(buttons);
         });
     }
     else {
         // Makes all buttons good if ally encounter and add money
+        console.log("An Ally");
+
         buttons.forEach(part => {
             part.innerText = "Thanks!";
-            part.attributes.value = "win";
+            part.value = "win";
             // Add money here
         });
     }
 
     buttons.forEach(part => {
-        console.log(part.innerText);
         console.log(part.value);
     });
 
@@ -551,7 +545,7 @@ function endDisplay() {
             console.log(`text & head elements found`);
         }
     }
-    else{
+    else {
         console.log(`we're so cooked.`);
     }
 
@@ -635,13 +629,13 @@ function addItem(id, num = 1) {
 }
 
 //inserts an npc image to debug
-function insertImage(name){
+function insertImage(name) {
     document.getElementById("home-image").innerHTML =
-                `<img src='StudentImages/${name}.png' alt="A generic person colored in black and white.">`;
+        `<img src='StudentImages/${name}.png' alt="A generic person colored in black and white.">`;
 }
 
 //removes any inserted images
-function removeImg(){
+function removeImg() {
     document.getElementById("home-image").innerHTML = "";
 }
 
@@ -1070,6 +1064,16 @@ function afterNPC() {
     document.getElementById("backIcon").classList.remove("hidden");
 }
 
+
+function healthFlash() {
+
+    if (document.getElementById("health").classList.contains("redFlash")) {
+        document.getElementById("health").classList.remove("redFlash");
+    }
+
+    document.getElementById("health").classList.add("redFlash");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("npc-buttons").addEventListener("click", function (e) {
@@ -1096,6 +1100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var endSound = new Audio("Sounds/taco.mp3");
                 endSound.play();
                 time -= 15;
+                healthFlash();
                 document.getElementById("health").innerText = time + " minutes";
                 afterNPC();
 
