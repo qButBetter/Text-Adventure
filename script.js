@@ -435,20 +435,35 @@ function npcFunct() {
     ranDia();
 }
 
-function shuffle(arr) {
-    let i = 0,
-        res = [], index;
+function shuffle() {
 
-    while (i <= arr.length - 1) {
-        index = Math.floor(Math.random() * arr.length);
+    let newVal = [];
+    let num = getRandomInt(3);
 
-        if (!res.includes(arr[index])) {
-            res.push(arr[index]);
-            i++;
-        }
+    console.log("Random Num is: " + num)
+
+    switch (num) {
+        case 0:
+            newVal = ["die", "win", "mid"];
+            console.log("Accessed case 0");
+            break;
+
+        case 1:
+            newVal = ["win", "mid", "die"];
+            console.log("Accessed case 1");
+            break;
+
+        case 2:
+            newVal = ["mid", "win", "die"];
+            console.log("Accessed case 2");
+            break;
+
+        default:
+            console.log("YOUNG MAN... KILL YOURSELF!");
+            break;
     }
 
-    return res;
+    return(newVal);
 }
 
 function ranDia() {
@@ -457,42 +472,45 @@ function ranDia() {
     //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
     if ((randomLab != "tech") && (randomLab != "biomed")) {
 
-        let arrReply = [];
+        // Used to be shuffled later
+        let arrVal = ["win", "mid", "die"];
 
-        console.log("Not Ally");
+        // Shuffle values
+        arrVal = shuffle();
+        // console.log("Shuffled to: ", arrVal);
 
-        let pointer = 2;
+        let i = 0;
+        buttons.forEach(part => {
+            part.value = arrVal[i];
+            console.log(part.value);
+            i++;
+            // Add money here
+        });
 
         buttons.forEach(part => {
-            console.log(part);
-
             let randomThing = null;
+            let valCheck = part.value;
+            console.log("Part Value: " + part.value);
 
-            switch (pointer) {
-                case 2:
-                    randomThing = getRandomInt(NPC[randomLab].good.length - 1);
+            // Change button text based on their values
+            switch (valCheck) {
+                case "win":
+                    randomThing = getRandomInt(NPC[randomLab].good.length);
                     part.innerText = NPC[randomLab].good[randomThing];
-                    part.value = "win";
-                    pointer--;
-                    arrReply.push(part);
                     break;
 
-                case 1:
-                    randomThing = getRandomInt(NPC[randomLab].mid.length - 1);
+                case "mid":
+                    randomThing = getRandomInt(NPC[randomLab].mid.length);
                     part.innerText = NPC[randomLab].mid[randomThing];
-                    part.value = "mid";
-                    pointer--;
-                    arrReply.push(part);
                     break;
 
-                case 0:
-                    randomThing = getRandomInt(NPC[randomLab].bad.length - 1);
+                case "die":
+                    randomThing = getRandomInt(NPC[randomLab].bad.length);
                     part.innerText = NPC[randomLab].bad[randomThing];
-                    part.value = "die";
-                    arrReply.push(part);
                     break;
             }
         });
+
     }
     else {
         // Makes all buttons good if ally encounter and add money
@@ -505,9 +523,10 @@ function ranDia() {
         });
     }
 
-    buttons.forEach(part => {
-        console.log(part.value);
-    });
+    // buttons.forEach(part => {
+    //     console.log(part.innerText)
+    //     console.log(part.value);
+    // });
 
     document.getElementById('npc-buttons').classList.remove("hidden");
     document.getElementById("button-container").classList.add("hidden");
@@ -1067,11 +1086,9 @@ function afterNPC() {
 
 function healthFlash() {
 
-    if (document.getElementById("health").classList.contains("redFlash")) {
-        document.getElementById("health").classList.remove("redFlash");
-    }
-
-    document.getElementById("health").classList.add("redFlash");
+    addRed();
+    // Count for 5 seconds, then remove class slide
+    setTimeout(removeRed, 200);
 }
 
 function addRed() {
@@ -1105,15 +1122,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "die":
+                healthFlash();
 
                 var endSound = new Audio("Sounds/taco.mp3");
                 endSound.play();
                 time -= 15;
 
-                addRed();
-                // Count for 5 seconds, then remove class slide
-                setTimeout(removeRed(), 1000);
-                
                 document.getElementById("health").innerText = time + " minutes";
                 afterNPC();
 

@@ -89,7 +89,6 @@ body {
 }
 
 /* Universal */
-
 .text-container {
     height: 15em;
     margin-bottom: .2em;
@@ -103,9 +102,9 @@ body {
     margin-top: 5em;
 }
 
-/* #home-page #home-image{
+#home-page .button-container, #home-page .npc-buttons{
     animation: fadein .5s forwards;
-} */
+}
 
 #home-image img{
     animation: fadein .5s forwards;
@@ -462,7 +461,7 @@ button:hover {
 }
 
 
-/* @keyframes redFlash{
+@keyframes redFlash{
     from{
         color: white;
     }
@@ -470,8 +469,7 @@ button:hover {
     to{
         color: red;
     }
-} */
-
+}
 
 .redFlash{
     color: red;
@@ -487,9 +485,9 @@ button:hover {
     }
 }
 
-/* .fadein {
+.fadeIn {
     animation: fadein 2s forwards;
-} */
+}
 
 
 /* Mobie Compatibility */
