@@ -1016,6 +1016,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 pickUp();
                 console.log("Picked up Item");
+                e.target.classList.add("hidden");
                 return ("");
 
             case "continue":
