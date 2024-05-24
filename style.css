@@ -102,11 +102,12 @@ body {
     margin-top: 5em;
 }
 
-#home-page .button-container, #home-page .npc-buttons{
+#home-page .button-container,
+#home-page .npc-buttons {
     animation: fadein .5s forwards;
 }
 
-#home-image img{
+#home-image img {
     animation: fadein .5s forwards;
 }
 
@@ -370,8 +371,6 @@ button:hover {
     display: none;
 }
 
-
-
 /* Background Classes */
 /* CART */
 .mrMog {
@@ -441,7 +440,6 @@ button:hover {
 }
 
 /* Outdoors */
-
 .outdoorEntry {
     background-image: url(BackgroundImages/SV_outside_hallway.jpg);
 }
@@ -462,18 +460,17 @@ button:hover {
     background-image: url(BackgroundImages/minecraft-mall.png);
 }
 
-
-@keyframes redFlash{
-    from{
+@keyframes redFlash {
+    from {
         color: white;
     }
 
-    to{
+    to {
         color: red;
     }
 }
 
-.redFlash{
+.redFlash {
     color: red;
 }
 
@@ -491,11 +488,8 @@ button:hover {
     animation: fadein 2s forwards;
 }
 
-
 /* Mobie Compatibility */
-
 @media only screen and (max-width: 600px) {
-
 
     /* Universal font sizes */
     .tenEm {
@@ -629,7 +623,6 @@ button:hover {
         width: 80%;
     }
 }
-
 
 /* laptop sizing */
 @media only screen and (max-width: 2200px) {

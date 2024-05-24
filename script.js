@@ -1,7 +1,6 @@
 let randomLab = null;
 let time = 180;
 
-
 class Player {
     constructor() {
         this.name = "";
@@ -330,7 +329,6 @@ function checkHidden(input) {
             break;
         default: console.log('somethings busted');
     }
-
 }
 
 function utilBackground(input) {
@@ -436,7 +434,6 @@ function npcFunct() {
 }
 
 function shuffle() {
-
     let newVal = [];
     let num = getRandomInt(3);
 
@@ -463,7 +460,7 @@ function shuffle() {
             break;
     }
 
-    return(newVal);
+    return (newVal);
 }
 
 function ranDia() {
@@ -523,11 +520,6 @@ function ranDia() {
         });
     }
 
-    // buttons.forEach(part => {
-    //     console.log(part.innerText)
-    //     console.log(part.value);
-    // });
-
     document.getElementById('npc-buttons').classList.remove("hidden");
     document.getElementById("button-container").classList.add("hidden");
     document.getElementById("NPCtalk").classList.remove("hidden");
@@ -538,7 +530,6 @@ function ranDia() {
 
 
 function endImg() {
-
     let ranUs = getRandomInt(9);
 
     console.log(`img picker got: ` + ranUs);
@@ -567,9 +558,6 @@ function endDisplay() {
     else {
         console.log(`we're so cooked.`);
     }
-
-
-
 
     switch (ranNum) {
         case 0:
@@ -606,7 +594,6 @@ function removeBg(input) {
 
 
 function addItem(id, num = 1) {
-
     let counter = parseInt(document.getElementById(id).innerText);
 
     switch (id) {
@@ -1083,7 +1070,6 @@ function afterNPC() {
     document.getElementById("locIcon").classList.remove("hidden");
     document.getElementById("backIcon").classList.remove("hidden");
 }
-
 
 function healthFlash() {
 
