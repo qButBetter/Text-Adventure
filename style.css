@@ -491,13 +491,30 @@ button:hover {
 /* Mobie Compatibility */
 @media only screen and (max-width: 600px) {
 
+    /* .wrapper{
+        height: fit-content;
+    } */
+
+    .text-container{
+        height: 15vh;
+    }
+
+    #home-page{
+        margin-top: 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
     /* Universal font sizes */
     .tenEm {
         font-size: 3.5em;
     }
 
     .main-size {
-        font-size: 1.5em;
+        font-size: 1.7em;
     }
 
     .midsize {
@@ -513,7 +530,8 @@ button:hover {
     }
 
     #health {
-        font-size: 2em;
+        font-size: 1em;
+        text-align: left;
     }
 
     #money {
@@ -525,17 +543,28 @@ button:hover {
         font-size: 3em;
     }
 
+    .button-container.buttons{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    .buttons button{
+        width: 100%;
+        margin: .04em;
+    }
+
     /* Icon sizing */
-    .locIcon {
+    /* .locIcon {
         width: 3rem;
     }
 
     .backIcon {
         width: 3rem;
-    }
+    } */
 
     /* Fixing content sizing*/
-    .image-container img {
+    /* .image-container img {
         width: 95%;
     }
 
@@ -553,12 +582,13 @@ button:hover {
 
     .centersize {
         width: 70%;
-    }
+    } */
 
     /* load page styling */
 
     .load-page.column {
         justify-content: space-around;
+        flex-wrap: nowrap;
     }
 
     .title {
@@ -570,27 +600,34 @@ button:hover {
         text-decoration: underline;
     }
 
+    /* #home-page{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    } */
+
     /* Inventory Styling */
 
     .inventory {
-        height: 50vh;
+        width: 70%;
     }
 
     .invItem {
-        display: flex;
+        /* display: flex;
         flex-flow: column;
         width: 95%;
         margin: .5em;
         justify-content: space-between;
         align-items: center;
-        padding: .5em;
+        padding: .5em; */
     }
 
-    .invItem .row {
-        display: flex;
+    .inventory .invItem {
+        /* display: flex;
         flex-flow: column;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
     }
 
     .valHold {
@@ -599,7 +636,7 @@ button:hover {
 
     /* Ending Screen */
 
-    .ending h1 {
+    /* .ending h1 {
         font-size: 6em;
     }
 
@@ -621,11 +658,16 @@ button:hover {
 
     .fiftyWidth {
         width: 80%;
-    }
+    } */
+/* 
+    .hidden{
+        display: none;
+    } */
 }
 
+
 /* laptop sizing */
-@media only screen and (max-width: 2200px) {
+@media only screen and (max-width: 2200px) and (min-width: 600px){
 
     /* end screen siziing */
     .tenEm {
