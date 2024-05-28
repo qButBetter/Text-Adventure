@@ -518,7 +518,7 @@ button:hover {
     }
 
     .main-size {
-        font-size: 1.7em;
+        font-size: 1.5em;
     }
 
     .midsize {
@@ -536,6 +536,7 @@ button:hover {
     #health {
         font-size: 1em;
         text-align: left;
+        margin: 0 .3em 0 .3em;
     }
 
     #money {
@@ -557,6 +558,7 @@ button:hover {
         width: 100%;
         margin: .04em;
     }
+
 
     /* Icon sizing */
     /* .locIcon {
@@ -611,28 +613,66 @@ button:hover {
         align-items: center;
     } */
 
+    .buttons{
+        width: 90%;
+    }
+
+
+    .butcolumn{
+        width: 100%;
+    }
+
+
+    #atGallery{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+
+    #atGallery #interact{
+        width: 70%;
+    }
+
+
+    #contBtn1{
+        width: fit-content;
+    }
+
+    .npc-buttons{
+        margin: 0 0 0 2.02em;
+    }
+
+    .buttons::after{
+        background-color: inherit;
+        color: inherit;
+    }
+
     /* Inventory Styling */
 
     .inventory {
         width: 70%;
     }
 
-    .invItem {
-        /* display: flex;
-        flex-flow: column;
-        width: 95%;
-        margin: .5em;
-        justify-content: space-between;
-        align-items: center;
-        padding: .5em; */
+    .invItem{
+        justify-content: center;
     }
 
-    .inventory .invItem {
-        /* display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center; */
+
+    .invItem .row{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
+
+
+    .valHold {
+        margin: 0;
+        margin-top: .5em;
+        align-self: center;
+    }
+
 
     .valHold {
         margin: 0;
@@ -640,7 +680,7 @@ button:hover {
 
     /* Ending Screen */
 
-    /* .ending h1 {
+     .ending h1 {
         font-size: 6em;
     }
 
@@ -662,7 +702,7 @@ button:hover {
 
     .fiftyWidth {
         width: 80%;
-    } */
+    } 
 /* 
     .hidden{
         display: none;
