@@ -120,7 +120,7 @@ var staticNPC = {
         reply: [],
         atk: [1],
         drop: [1],
-        images: ["StudentImages/icaruy.png"],
+        images: ["StudentImages/icaga.png"],
     },
 
     lady: {
