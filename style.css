@@ -289,13 +289,14 @@ button:hover {
     width: 95%;
     margin: .5em;
     padding: .5em;
+    flex-wrap: nowrap;
 }
 
 .invItem .column {
     align-self: flex-start;
     margin: 1em 0 0 1em;
     align-items: flex-start;
-    width: 70%;
+    width: 50%;
 }
 
 .invItem .column p {
@@ -314,12 +315,8 @@ button:hover {
     justify-content: flex-start;
 }
 
-.objHold section {
-    width: 70%;
-}
-
 .valHold {
-    margin-right: 3em;
+    margin-right: 1em;
     align-self: center;
 }
 
