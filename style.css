@@ -307,7 +307,7 @@ button:hover {
 }
 
 .invItem img {
-    height: 10rem;
+    width: 25%;
 }
 
 .objHold {
@@ -320,6 +320,7 @@ button:hover {
 
 .valHold {
     margin-right: 3em;
+    align-self: center;
 }
 
 /* Map Page */
@@ -496,7 +497,9 @@ button:hover {
 @media only screen and (max-width: 600px) {
 
     /* .wrapper{
-        height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     } */
 
     .text-container{
@@ -504,13 +507,15 @@ button:hover {
     }
 
     #home-page{
-        margin-top: 0;
+          margin-top: 0; 
+    }
+
+    .mobile-column{
         display: flex;
         flex-flow: column;
         justify-content: center;
         align-items: center;
     }
-
 
     /* Universal font sizes */
     .tenEm {
@@ -656,7 +661,10 @@ button:hover {
     }
 
     .invItem{
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
+        text-align: center;
     }
 
 
@@ -666,6 +674,15 @@ button:hover {
         align-items: center;
     }
 
+    .invItem img{
+        width: 100%;
+    }
+
+    .objHold .left{
+        text-align: center;
+        margin: 0 0 0 .3em;
+        width: 95%;
+    }
 
     .valHold {
         margin: 0;
@@ -703,10 +720,10 @@ button:hover {
     .fiftyWidth {
         width: 80%;
     } 
-/* 
+
     .hidden{
         display: none;
-    } */
+    }
 }
 
 
