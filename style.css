@@ -289,13 +289,14 @@ button:hover {
     width: 95%;
     margin: .5em;
     padding: .5em;
+    flex-wrap: nowrap;
 }
 
 .invItem .column {
     align-self: flex-start;
     margin: 1em 0 0 1em;
     align-items: flex-start;
-    width: 70%;
+    width: 50%;
 }
 
 .invItem .column p {
@@ -307,19 +308,16 @@ button:hover {
 }
 
 .invItem img {
-    height: 10rem;
+    width: 25%;
 }
 
 .objHold {
     justify-content: flex-start;
 }
 
-.objHold section {
-    width: 70%;
-}
-
 .valHold {
-    margin-right: 3em;
+    margin-right: 1em;
+    align-self: center;
 }
 
 /* Map Page */
@@ -440,6 +438,10 @@ button:hover {
 }
 
 /* Outdoors */
+.vistaEnt {
+    background-image: url(BackgroundImages/SV_theater.png);
+}
+
 .outdoorEntry {
     background-image: url(BackgroundImages/SV_outside_hallway.jpg);
 }
@@ -491,6 +493,27 @@ button:hover {
 /* Mobie Compatibility */
 @media only screen and (max-width: 600px) {
 
+    /* .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    .text-container{
+        height: 15vh;
+    }
+
+    #home-page{
+          margin-top: 0; 
+    }
+
+    .mobile-column{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     /* Universal font sizes */
     .tenEm {
         font-size: 3.5em;
@@ -513,7 +536,9 @@ button:hover {
     }
 
     #health {
-        font-size: 2em;
+        font-size: 1em;
+        text-align: left;
+        margin: 0 .3em 0 .3em;
     }
 
     #money {
@@ -525,17 +550,29 @@ button:hover {
         font-size: 3em;
     }
 
+    .button-container.buttons{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+
+    .buttons button{
+        width: 100%;
+        margin: .04em;
+    }
+
+
     /* Icon sizing */
-    .locIcon {
+    /* .locIcon {
         width: 3rem;
     }
 
     .backIcon {
         width: 3rem;
-    }
+    } */
 
     /* Fixing content sizing*/
-    .image-container img {
+    /* .image-container img {
         width: 95%;
     }
 
@@ -553,12 +590,13 @@ button:hover {
 
     .centersize {
         width: 70%;
-    }
+    } */
 
     /* load page styling */
 
     .load-page.column {
         justify-content: space-around;
+        flex-wrap: nowrap;
     }
 
     .title {
@@ -570,28 +608,85 @@ button:hover {
         text-decoration: underline;
     }
 
+    /* #home-page{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    .buttons{
+        width: 90%;
+    }
+
+
+    .butcolumn{
+        width: 100%;
+    }
+
+
+    #atGallery{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+
+    #atGallery #interact{
+        width: 70%;
+    }
+
+
+    #contBtn1{
+        width: fit-content;
+    }
+
+    .npc-buttons{
+        margin: 0 0 0 2.02em;
+    }
+
+    .buttons::after{
+        background-color: inherit;
+        color: inherit;
+    }
+
     /* Inventory Styling */
 
     .inventory {
-        height: 50vh;
+        width: 70%;
     }
 
-    .invItem {
-        display: flex;
-        flex-flow: column;
-        width: 95%;
-        margin: .5em;
+    .invItem{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    .invItem .row{
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding: .5em;
     }
 
-    .invItem .row {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
+    .invItem img{
+        width: 100%;
     }
+
+    .objHold .left{
+        text-align: center;
+        margin: 0 0 0 .3em;
+        width: 95%;
+    }
+
+    .valHold {
+        margin: 0;
+        margin-top: .5em;
+        align-self: center;
+    }
+
 
     .valHold {
         margin: 0;
@@ -599,7 +694,7 @@ button:hover {
 
     /* Ending Screen */
 
-    .ending h1 {
+     .ending h1 {
         font-size: 6em;
     }
 
@@ -621,11 +716,16 @@ button:hover {
 
     .fiftyWidth {
         width: 80%;
+    } 
+
+    .hidden{
+        display: none;
     }
 }
 
+
 /* laptop sizing */
-@media only screen and (max-width: 2200px) {
+@media only screen and (max-width: 2200px) and (min-width: 600px){
 
     /* end screen siziing */
     .tenEm {

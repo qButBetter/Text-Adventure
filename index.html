@@ -25,7 +25,7 @@
 
         </section>
 
-        <section id="home-page" class="home-page hidden fadeIn">
+        <section id="home-page" class="home-page hidden fadeIn mobile-column">
 
             <section id="name-container" class="name-container center">
 
@@ -51,6 +51,49 @@
                 </section>
 
                 <section id="inventory" class="inventory hidden centersize black border">
+                    
+                    <!-- lore important items -->
+
+                    <section class="invItem row black border" id="inspo">
+                        <section class="objHold row">
+                            <img src="InspoImages/finSix.png" alt="Pickle Object">
+                            <section class="column left">
+                                <h3 class="midsize">Inspiration</h3>
+                                <p class="small-txt">A vivid image of the poster resides in your memory.</p>
+                            </section>
+                        </section>
+                        <section class="valHold">
+                            <p id="inspoValue" class="main-size">0</p>
+                        </section>
+                    </section>
+
+                    <section class="invItem row black border" id="napalm">
+                        <section class="objHold row">
+                            <img src="arsonImages/styrofoam.png" alt="Pickle Object">
+                            <section class="column left">
+                                <h3 class="midsize">Napalm Materials?</h3>
+                                <p class="small-txt">Some items that seem very prone to chemical reaction.</p>
+                            </section>
+                        </section>
+                        <section class="valHold">
+                            <p id="arsonValue" class="main-size">0</p>
+                        </section>
+                    </section>
+                    
+                    <section class="invItem row black border" id="papers">
+                        <section class="objHold row">
+                            <img src="PortraitImages/fastArt1.jpeg" alt="Pickle Object">
+                            <section class="column left">
+                                <h3 class="midsize">Portrait</h3>
+                                <p class="small-txt">A crudely drawn illustration of your Web teacher by your classmate
+                                    Lily Sanchez.</p>
+                            </section>
+                        </section>
+                        <section class="valHold">
+                            <p id="paperValue" class="main-size">0</p>
+                        </section>
+                    </section>
+
                     <!-- misc items -->
                     <section class="invItem row black border" id="pickle">
                         <section class="objHold row">
@@ -78,45 +121,6 @@
                         </section>
                     </section>
 
-                    <!-- lore important items -->
-                    <section class="invItem row black border" id="papers">
-                        <section class="objHold row">
-                            <img src="PortraitImages/fastArt1.jpeg" alt="Pickle Object">
-                            <section class="column left">
-                                <h3 class="midsize">Portrait</h3>
-                                <p class="small-txt">A crudely drawn illustration of your Web teacher by your classmate Lily Sanchez.</p>
-                            </section>
-                        </section>
-                        <section class="valHold">
-                            <p id="paperValue" class="main-size">0</p>
-                        </section>
-                    </section>
-
-                    <section class="invItem row black border" id="inspo">
-                        <section class="objHold row">
-                            <img src="InspoImages/finSix.png" alt="Pickle Object">
-                            <section class="column left">
-                                <h3 class="midsize">Inspiration</h3>
-                                <p class="small-txt">A vivid image of the poster resides in your memory.</p>
-                            </section>
-                        </section>
-                        <section class="valHold">
-                            <p id="inspoValue" class="main-size">0</p>
-                        </section>
-                    </section>
-
-                    <section class="invItem row black border" id="napalm">
-                        <section class="objHold row">
-                            <img src="arsonImages/styrofoam.png" alt="Pickle Object">
-                            <section class="column left">
-                                <h3 class="midsize">Napalm Materials?</h3>
-                                <p class="small-txt">Some items that seem very prone to chemical reaction.</p>
-                            </section>
-                        </section>
-                        <section class="valHold">
-                            <p id="arsonValue" class="main-size">0</p>
-                        </section>
-                    </section>
 
                 </section>
 
@@ -218,8 +222,8 @@
 
                     </section>
 
-                    <button class="black border main-size" id="interact" value="pickup"
-                        onclick="pickUp()">Pick Up Item</button>
+                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
+                        Item</button>
 
                     <section class="butcolumn">
 
@@ -246,50 +250,54 @@
                     <button class="black border main-size" id="n105" value="ux">Go into User Design</button>
                     <button class="black border main-size" id="h" value="atrium">Go into atrium</button>
                     <button class="black border main-size hidden" id="n107" value="web2">Wander deeper into Web</button>
-                    <button class="black border main-size" id="interact" value="pickup"
-                        onclick="pickUp()">Pick Up Item</button>
+                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
+                        Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="inMultimedia">
                     <button class="black border main-size" id="h" value="hall">Go into hall</button>
-                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up Item</button>
+                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
+                        Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="atStairs">
                     <button class="black border main-size" id="h" value="gallery">Go into gallery</button>
-                    <button class="black border main-size" id="interact" value="pickup"
-                        onclick="pickUp()">Pick Up Item</button>
+                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
+                        Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="atJanitor">
                     <button class="black border main-size" id="h" value="gallery">Go into gallery</button>
-                    <button class="black border main-size" id="interact" value="pickup"
-                        onclick="pickUp()">Pick Up Item</button>
-                </section>
-
-                <section class="buttons row hidden" id="outsideGal">
-                    <button class="black border main-size" id="h" value="gallery">Go into gallery</button>
-                    <button class="black border main-size" id="interact" value="pickup"
-                        onclick="pickUp()">Pick Up Item</button>
+                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
+                        Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="inUX">
                     <button class="black border main-size" id="h" value="web">Go into Web</button>
                     <button class="black border main-size" id="h" value="atrium">Go into the atrium</button>
-                    <button class="black border main-size" id="interact" value="pickup"
-                        onclick="pickUp()">Pick Up Item</button>
+                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
+                        Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="inEnglish">
                     <button class="black border main-size" id="h" value="atrium">Go into the atrium</button>
-                    <button class="black border main-size" id="interact" value="pickup"
-                        onclick="pickUp()">Pick Up Item</button>
+                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
+                        Item</button>
+                </section>
+
+                <section class="buttons row hidden" id="outsideGal">
+                    <button class="black border main-size" id="h" value="gallery">Go into gallery</button>
+                    <button class="black border main-size" id="h" value="vistaEnt" onclick="changeLoc(`SV`)">Go to Sierra Vista</button>
+                    <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
+                        Item</button>
                 </section>
 
                 <!-- Vista -->
-                <button class="black border main-size hidden" id="n110" value=0>vistar</button>
-
-
+                <section class="buttons row hidden" id="atVistaEnt">
+                    <button class="black border main-size" id="h" value="outside" onclick="changeLoc(`CART`)">Go Back to CART</button>
+                    <!-- Set location to [3, 4] in script -->
+                    <button class="black border main-size" id="h" value="moreVista">Go further into Sierra Vista</button>
+                </section>
 
             </section>
         </section>
@@ -301,7 +309,7 @@
                 <img class="endImg" src="BackgroundImages/landbg.png" alt="Game Over Screen">
             </section>
             <br>
-            <section class="endingMessage column main-size seventyWidth" id="endingMessage">
+            <section class="endingMessage column main-size seventyWidth">
                 <h3 class="center endHead">You Turned Mr. Slow back into Mr. Fast!</h3>
                 <p class="left">After all of your efforts, you've finally reached the final hurdle to
                     reversing Mr. Fast's overPower(school)ed transformation. Page by page, you piece his old self onto
@@ -337,7 +345,7 @@
                 <img class="endImg" src="Images/burn.png" alt="Game Over Screen">
             </section>
             <br>
-            <section class="endingMessage column main-size seventyWidth" id="endingMessage">
+            <section class="endingMessage column main-size seventyWidth">
                 <h3 class="center endHead">You Burned Down CART!</h3>
                 <p class="left">
                     You burn down CART, flipping the fire alarm and comandeering a bus to go to Wendy's on Cedar. Mr.
@@ -367,7 +375,7 @@
                 <img class="endImg" src="MiscItemImages/pickleObj.png" alt="Game Over Screen">
             </section>
             <br>
-            <section class="endingMessage column main-size seventyWidth" id="endingMessage">
+            <section class="endingMessage column main-size seventyWidth">
                 <h3 class="center endHead">Pickle?</h3>
                 <p class="left">
                     You hand James Pickle the Velociraptor the moment you obtain it.
@@ -401,7 +409,7 @@
 
             <h2 class="tenEm">Death Achieved</h2>
             <section id="endImgCont" class="endImgCont fiftyWidth">
-                
+
             </section>
             <br>
             <section class="endingMessage column main-size seventyWidth" id="endingMessage">
@@ -410,7 +418,7 @@
                 </h3>
 
                 <p class="center" id="endText">
-                    
+
                 </p>
                 <!-- two span tags with these classes, content of span tags is held in an array with just the two which will iterate to give both the h3 and the p! -->
             </section>

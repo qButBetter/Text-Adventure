@@ -168,61 +168,31 @@ var Summary = {
 }
 
 var Map = {
-    CART:
-        [[0], ["s"], [0],
-        [0], [0], [0],
-        ["e1",], ["g", "galleryEntry"], ["j", "mrMog"],
-        ["n100", "mrMog"], ["h", "mrMog"], [0],
-        ["n101", "mrMog"], ["h", "mrMog"], [0],
-        [0], ["h", "mrMog"], [0],
-        ["n104", ""], ["h", "mrMog"], ["b2"],
-        ["n105", ""], ["h", "mrMog"], ["n110"],
-        ["n107"], ["e3"], [0]],
-
-    Janitor: [["e5"], ["b3"]],
-
-    Outside: [["p"], ["e2"]],
-
-    Vista:
-        [[0], ["c"], [0],
-        [0], ["h3"], ["h3"],
-        [0], ["m"], [0],
-        [0], ["h2"], [0],
-        ["e4"], ["h2"], ["h2"],
-        [0], ["h2"], [0],
-        [0], ["t"], [0],
-        [0], ["h4"], ["h4"],
-        [0], [0], [0]],
-
+    CART: [
+        [0], ["s"], [0], [0], ["c"], [0],
+        [0], [0], [0], [0], ["h3"], ["h3"],
+        ["e1"], ["g"], ["j"], [0], ["m"], [0],
+        ["n100"], ["h"], [0], [0], ["h2"], [0],
+        ["n101"], ["h"], [0], ["e4"], ["h2"], ["h2"],
+        [0], ["h"], [0], [0], ["h2"], [0],
+        ["n104"], ["h"], ["b2"], [0], ["t"], [0],
+        ["n105"], ["h"], ["n110"], [0], ["h4"], ["h4"],
+        ["n107"], ["e3"], [0], [0], [0], [0],
+    ],
 };
 
 var ItemMap = {
     CART: [
-        [0, "i", 0],
-        [0, 0, 0],
-        ["i2", "i", "i2"],
-        ["i2", "p", 0],
-        ["i", "i", 0],
-        [0, 0, 0],
-        [0, 0, "i"],
-        ["i", 0, 0],
-        ["i", 0, 0]
+        [0, "i", 0, 0, "i3", 0],
+        [0, 0, 0, 0, 0, "i3"],
+        ["i2", "i", "i2", 0, "i3", 0],
+        ["i2", "p", 0, 0, 0, 0],
+        ["i", "i", 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, "i", 0, 0, 0],
+        ["i", 0, 0, 0, "i3", 0],
+        ["i", 0, 0, 0, 0, 0]
     ],
-
-    Outside: [["i2"], [0]],
-
-    Janitor: [[0], ["i2"]],
-
-    Vista:
-        [[0], ["i3"], [0],
-        [0], [0], ["i3"],
-        [0], ["i3"], [0],
-        [0], [0], [0],
-        [0], [0], [0],
-        [0], [0], [0],
-        [0], [0], [0],
-        [0], ["i3"], [0],
-        [0], [0], [0]],
 };
 
 
@@ -239,6 +209,10 @@ function setBackground(input) {
     document.getElementById("home-image").classList.add(input);
 }
 
+function changeLoc(input) {
+    student.mapLocation = input;
+    console.log(student.mapLocation);
+}
 
 function displayInv() {
     let elements = document.getElementsByClassName("valHold");
@@ -343,94 +317,95 @@ function getRandomInt(max) {
 let locoText = null;
 
 // NPC Function
-function npcFunct() {
+function npcFunct(input = null) {
 
-    // Change to work, idea is here
-    if (student.mapLocation != "Vista") {
-        let ranNum = getRandomInt(2);
+    switch (input) {
 
-        if (ranNum == 0) {
+        case "james":
 
-            let ranLab = getRandomInt(2);
-            console.log("ranLab Before: " + ranLab);
+            break;
 
-            if (ranLab == 0) {
-                ranLab = "tech";
-                randomLab = 'tech';
+        case "icarus":
+
+            break;
+
+        case "allen":
+
+            break;
+
+        case null:
+            // Change to work, idea is here
+            if (student.mapLocation == "CART") {
+                let ranNum = getRandomInt(2);
+
+                if (ranNum == 0) {
+
+                    let ranLab = getRandomInt(2);
+                    console.log("ranLab Before: " + ranLab);
+
+                    if (ranLab == 0) {
+                        ranLab = "tech";
+                        randomLab = 'tech';
+                    }
+                    else if (ranLab == 1) {
+                        ranLab = "biomed";
+                        randomLab = 'biomed';
+                    }
+                    console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
+
+                    //take random NPC src & log
+                    let home_image = Ally.images[getRandomInt(9)];
+                    console.log("The ally chosen is: ", home_image);
+
+                    //plug into the code
+                    document.getElementById("home-image").innerHTML =
+                        `<img src='${home_image}' alt="A generic person colored in black and white.">`;
+
+                    locoText = document.getElementById("text-output").innerText;
+                    setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)]);
+                    curDia = Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)];
+                }
+                else if (ranNum == 1) {
+
+                    let ranLab = getRandomInt(3);
+                    console.log("ranLab Before: " + ranLab);
+
+                    if (ranLab == 0) {
+                        ranLab = "multimedia";
+                        randomLab = "multimedia";
+                    }
+                    else if (ranLab == 1) {
+                        ranLab = "law";
+                        randomLab = 'law';
+                    }
+                    else if (ranLab == 2) {
+                        ranLab = "business";
+                        randomLab = 'business';
+                    }
+
+                    console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
+                    console.log(NPC[ranLab]);
+
+                    let npc_image = NPC.images[getRandomInt(8)];
+                    console.log("The NPC image is: ", npc_image);
+
+                    document.getElementById("home-image").innerHTML =
+                        `<img src='${npc_image}' alt="A generic person colored in black and white.">`;
+
+                    locoText = document.getElementById("text-output").innerText;
+                    setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)]);
+                    curDia = NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)];
+                }
+                ranDia();
             }
-            else if (ranLab == 1) {
-                ranLab = "biomed";
-                randomLab = 'biomed';
+            else {
+                document.getElementById("home-image").innerHTML =
+                    `<img src='${svNPC.guard.images[getRandomInt(3)]}' alt="A generic person colored in black and white.">`;
+
+                // Take guard dialogue as well
+                ranSV();
             }
-            console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
-
-            //take random NPC src & log
-            let home_image = Ally.images[getRandomInt(9)];
-            console.log("The ally chosen is: ", home_image);
-
-            //plug into the code
-            document.getElementById("home-image").innerHTML =
-                `<img src='${home_image}' alt="A generic person colored in black and white.">`;
-
-
-
-            // let curnpc_image = Ally.images[getRandomInt(9)];
-            // console.log("The NPC image is: ", curnpc_image);
-
-            // curNPC = `<img src='${curnpc_image}' alt="A generic person colored in black and white.">`;
-
-            // Take ally dialogue as well
-            locoText = document.getElementById("text-output").innerText;
-            setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)]);
-            curDia = Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)];
-        }
-        else if (ranNum == 1) {
-
-            let ranLab = getRandomInt(3);
-            console.log("ranLab Before: " + ranLab);
-
-            if (ranLab == 0) {
-                ranLab = "multimedia";
-                randomLab = "multimedia";
-            }
-            else if (ranLab == 1) {
-                ranLab = "law";
-                randomLab = 'law';
-            }
-            else if (ranLab == 2) {
-                ranLab = "business";
-                randomLab = 'business';
-            }
-
-            console.log("Ran Num is: " + ranNum + ", with the Random Lab: " + ranLab);
-            console.log(NPC[ranLab]);
-
-            let npc_image = NPC.images[getRandomInt(8)];
-            console.log("The NPC image is: ", npc_image);
-
-            document.getElementById("home-image").innerHTML =
-                `<img src='${npc_image}' alt="A generic person colored in black and white.">`;
-
-            // let curnpc_image =  NPC.images[getRandomInt(9)];
-            // console.log("Your current NPC is: ", curnpc_image);
-
-            // curNPC = `<img src='${NPC.images[getRandomInt(9)]}' alt="A generic person colored in black and white.">`;
-
-            // Take enemey dialogue as well
-            locoText = document.getElementById("text-output").innerText;
-            setText(NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)]);
-            curDia = NPC[ranLab].dialogue[getRandomInt(NPC[ranLab].dialogue.length - 1)];
-        }
     }
-    else {
-        document.getElementById("home-image").innerHTML =
-            `<img src='${svNPC.guard.images[getRandomInt(3)]}' alt="A generic person colored in black and white.">`;
-
-        // Take guard dialogue as well
-        setText(svNPC.guard.dialogue[getRandomInt()]);
-    }
-
-    ranDia();
 }
 
 function shuffle() {
@@ -461,6 +436,57 @@ function shuffle() {
     }
 
     return (newVal);
+}
+
+function ranSV() {
+    let buttons = document.querySelectorAll("#npc-buttons button");
+
+    //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
+    // Used to be shuffled later
+    let arrVal = ["win", "mid", "die"];
+
+    // Shuffle values
+    arrVal = shuffle();
+    // console.log("Shuffled to: ", arrVal);
+
+    let i = 0;
+    buttons.forEach(part => {
+        part.value = arrVal[i];
+        console.log(part.value);
+        i++;
+        // Add money here
+    });
+
+    buttons.forEach(part => {
+        let randomThing = null;
+        let valCheck = part.value;
+        console.log("Part Value: " + part.value);
+
+        // Change button text based on their values
+        switch (valCheck) {
+            case "win":
+                randomThing = getRandomInt(svNPC[guard].good.length);
+                part.innerText = svNPC[guard].good[randomThing];
+                break;
+
+            case "mid":
+                randomThing = getRandomInt(svNPC[guard].mid.length);
+                part.innerText = svNPC[guard].mid[randomThing];
+                break;
+
+            case "die":
+                randomThing = getRandomInt(svNPC[guard].bad.length);
+                part.innerText = svNPC[guard].bad[randomThing];
+                break;
+        }
+    });
+
+    document.getElementById('npc-buttons').classList.remove("hidden");
+    document.getElementById("button-container").classList.add("hidden");
+    document.getElementById("NPCtalk").classList.remove("hidden");
+
+    document.getElementById("locIcon").classList.add("hidden");
+    document.getElementById("backIcon").classList.add("hidden");
 }
 
 function ranDia() {
@@ -999,6 +1025,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 setImg();
                 break;
 
+            case "vistaEnt":
+                document.getElementById("outsideGal").classList.toggle("hidden");
+                document.getElementById("atVistaEnt").classList.toggle("hidden");
+                removeBg('outsideGal');
+                setBackground('vistaEnt');
+                setText("You at SV Entrance die die die die die die die die die die");
+                student.locationX = 3;
+                student.locationY = 4;
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
+                break;
+
             case "pickup":
 
                 pickUp();
@@ -1026,7 +1064,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let ranNum = getRandomInt(5);
         if (ranNum == 0) {
-
             npcFunct();
         }
 
