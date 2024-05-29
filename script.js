@@ -1029,8 +1029,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("outsideGal").classList.toggle("hidden");
                 document.getElementById("atVistaEnt").classList.toggle("hidden");
                 removeBg('outsideGal');
-                setBackground('SV_theater');
-                setText("You at SV Entrance");
+                setBackground('vistaEnt');
+                setText("You at SV Entrance die die die die die die die die die die");
                 student.locationX = 3;
                 student.locationY = 4;
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
