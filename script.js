@@ -336,9 +336,9 @@ function npcFunct(input = null) {
         case null:
             // Change to work, idea is here
             if (student.mapLocation == "CART") {
-                let ranNum = getRandomInt(2);
+                let ranNum = getRandomInt(10);
 
-                if (ranNum == 0) {
+                if (ranNum < 2) {
 
                     let ranLab = getRandomInt(2);
                     console.log("ranLab Before: " + ranLab);
@@ -365,7 +365,7 @@ function npcFunct(input = null) {
                     setText(Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)]);
                     curDia = Ally[ranLab].dialogue[getRandomInt(Ally[ranLab].dialogue.length - 1)];
                 }
-                else if (ranNum == 1) {
+                else if (ranNum >= 2) {
 
                     let ranLab = getRandomInt(3);
                     console.log("ranLab Before: " + ranLab);
@@ -540,7 +540,7 @@ function ranDia() {
         console.log("An Ally");
 
         buttons.forEach(part => {
-            part.innerText = "Thanks!";
+            part.innerText = "Ok?";
             part.value = "win";
             // Add money here
         });
