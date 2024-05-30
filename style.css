@@ -356,6 +356,10 @@ button:hover {
     margin: .5em 0 .5em 0;
 }
 
+.endingMessage p{
+    font-weight: 300;
+}
+
 .endHead {
     margin: .3em;
 }

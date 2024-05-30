@@ -143,7 +143,6 @@ var Story = {
 
 var Descriptions = {
     // Descriptions for all rooms
-
 };
 
 var GameOver = {
@@ -330,6 +329,43 @@ function npcFunct(input = null) {
             break;
 
         case "allen":
+            console.log("Allen Spawned");
+            document.getElementById("home-image").innerHTML = `<img src='TeacherImages/allen.png' alt="Ms. Allen">`;
+
+            if (student.mapLocation == "CART") {
+                setText("Are you tagging along on our field trip?");
+
+                // Unhide CART Allen Button Set, Yes and No
+                // <button class="black border main-size" id="h" value="vistaEnt" onclick="changeLoc(`SV`)">Go to Sierra Vista</button>, or saying no thanks despawns her
+                document.getElementById("allenTalkCART").classList.remove("hidden");
+                document.getElementById("button-container").classList.add("hidden");
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    document.getElementById("button-container").addEventListener("click", function (e) {
+                        let btnVal = e.target.value;
+
+                        if (btnVal == "alCARTyes") {
+                            student.mapLocation = "SV";
+                            document.getElementById("outsideGal").classList.toggle("hidden");
+                            document.getElementById("atVistaEnt").classList.toggle("hidden");
+                            removeBg('outsideGal');
+                            setBackground('vistaEnt');
+                            setText("You at SV Entrance die die die die die die die die die die");
+                            student.locationX = 3;
+                            student.locationY = 4;
+                            console.log("[" + student.locationX + ", " + student.locationY + "]");
+                            setImg();
+                        }
+
+                    });
+                });
+
+
+            }
+            else {
+                // SV Allen
+                setText("We're leaving, are you ready to go?");
+            }
 
             break;
 
@@ -1003,7 +1039,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById("inWeb").classList.toggle("hidden");
                 // document.getElementById("inWeb").classList.add("current");
-                setText("You walk into Web Applications. The room is very gray and dull, along with the dimly lit lights. There are 3 long tables with computers for every workstation, along with chairs and monitors. A poster on the far wall says “Tech Lab'' with 80's video game memorabilia. Web Application's room number reads N105.");
+                setText("You walk into Web Applications. The room is very gray and dull, along with the dimly lit lights. There are 3 long tables with computers for every workstation, along with chairs and monitors. A poster on the far wall says “Tech Lab'' with 80's video game memorabilia. Web Application's room number reads N107.");
                 setBackground('web')
                 student.locationX = 0;
                 student.locationY = 8;
@@ -1021,18 +1057,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You trudge your way into N110, the English classroom for the Tech Labs. The tables are oriented to be in the middle, and the edges of the classroom. The tables use the same chairs as Web Applications, but they have different tables. On one wall, there's a Jurassic Park poster, and on the other there's a Ready Player One poster. A DC lineup canvas of the Flash, Batman, Superman, and Wonder Woman swings from one of the walls precariously, looking like it's about to fall.");
                 student.locationX = 2;
                 student.locationY = 6;
-                console.log("[" + student.locationX + ", " + student.locationY + "]");
-                setImg();
-                break;
-
-            case "vistaEnt":
-                document.getElementById("outsideGal").classList.toggle("hidden");
-                document.getElementById("atVistaEnt").classList.toggle("hidden");
-                removeBg('outsideGal');
-                setBackground('vistaEnt');
-                setText("You at SV Entrance die die die die die die die die die die");
-                student.locationX = 3;
-                student.locationY = 4;
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
                 setImg();
                 break;
@@ -1057,6 +1081,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Stop npcFunct() from running
                 return ("");
+
+            // Static NPC BtnVals
+
+            case "alSVno":
+
+                break;
+
+            case "alSVyes":
+
+                break;
 
             default:
                 return ("");
@@ -1084,32 +1118,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function afterNPC() {
-    // Change to transparent img
-    document.getElementById("home-image").innerHTML =
-        `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
-    // let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
-    // curNPC.classList.add('hidden');
-    // Set text back to locational text
-    document.getElementById("text-output").innerText = locoText;
-    document.getElementById("text-output").classList.remove("hidden");
+function afterNPC(input) {
+    switch (input) {
 
-    if (document.getElementById("button-container").classList.contains("current")) {
-        document.getElementById("button-container").classList.remove("current");
-        document.getElementById("button-container").classList.remove("hidden");
+        case "allen":
+            setText("YOU MAKE YOUR WAY OUTSIDE FROM THE EXIT OF THE GALLERY. YOU SEE 2 BIG SOLAR PANELS ANGLED AT THE PREFERRED DEGREE. THERE'S A COUPLE WIRES HANGING FROM THE SOLAR CELLS.");
+            document.getElementById("allenTalkCART").classList.add("hidden");
+            console.log("Static Talk Unhidden");
+            document.getElementById("button-container").classList.remove("hidden");
+
+        default:
+            // Change to transparent img
+            document.getElementById("home-image").innerHTML =
+                `<img src='MiscItemImages/transpartns.png' id="transparent" alt="Nothin">`;
+            // let curNPC = document.getElementById('npc-buttons').classList.contains('curNPC');
+            // curNPC.classList.add('hidden');
+            // Set text back to locational text
+            document.getElementById("text-output").innerText = locoText;
+            document.getElementById("text-output").classList.remove("hidden");
+
+            if (document.getElementById("button-container").classList.contains("current")) {
+                document.getElementById("button-container").classList.remove("current");
+                document.getElementById("button-container").classList.remove("hidden");
+            }
+
+            document.getElementById('npc-buttons').classList.add("hidden");
+            document.getElementById("button-container").classList.remove("hidden");
+            document.getElementById("NPCtalk").classList.add("hidden");
+
+            document.getElementById("locIcon").classList.remove("hidden");
+            document.getElementById("backIcon").classList.remove("hidden");
+            break;
     }
-
-    document.getElementById('npc-buttons').classList.add("hidden");
-    document.getElementById("button-container").classList.remove("hidden");
-    document.getElementById("NPCtalk").classList.add("hidden");
-
-
-    document.getElementById("locIcon").classList.remove("hidden");
-    document.getElementById("backIcon").classList.remove("hidden");
 }
 
 function healthFlash() {
-
     addRed();
     // Count for 5 seconds, then remove class slide
     setTimeout(removeRed, 200);
@@ -1123,9 +1166,7 @@ function removeRed() {
     document.getElementById("health").classList.remove("redFlash");
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
-
     document.getElementById("npc-buttons").addEventListener("click", function (e) {
 
         let npcVal = e.target.value;
