@@ -446,16 +446,17 @@ button:hover {
 }
 
 /* Outdoors */
-.vistaEnt {
-    background-image: url(BackgroundImages/SV_theater.png);
-}
 
 .outdoorEntry {
-    background-image: url(BackgroundImages/SV_outside_hallway.jpg);
+    background-image: url(BackgroundImages/SV_outside_hallway.png);
 }
 
 .theaterEntry {
-    background-image: url(BackgroundImages/SV_theater.jpg);
+    background-image: url(BackgroundImages/SV_theater.png);
+}
+
+.mallEntry{
+    background-image: url(BackgroundImages/SV_mall_hallway.png);
 }
 
 .blartPoster {

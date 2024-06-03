@@ -1018,7 +1018,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("inWeb").classList.toggle("hidden");
                 // document.getElementById("inWeb").classList.add("current");
                 setText("You walk into Web Applications. The room is very gray and dull, along with the dimly lit lights. There are 3 long tables with computers for every workstation, along with chairs and monitors. A poster on the far wall says “Tech Lab'' with 80's video game memorabilia. Web Application's room number reads N107.");
-                setBackground('web')
+                setBackground('web');
                 student.locationX = 0;
                 student.locationY = 8;
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
@@ -1060,18 +1060,48 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Stop npcFunct() from running
                 return ("");
 
+
+            // SV movement
+
             case "outside2":
                 document.getElementById("atVistaEnt").classList.toggle("hidden");
                 document.getElementById("outsideGal").classList.toggle("hidden");
                 // document.getElementById("atGallery").classList.remove("current");
                 // document.getElementById("outsideGal").classList.add("current");
                 setText("You make your way outside from the exit of the Gallery. You see 2 big solar panels angled at the preferred degree. There's a couple wires hanging from the solar cells.");
-                removeBg("vistaEnt");
+                removeBg("outdoorEntry");
                 setBackground('outsideGal');
                 student.locationX = 0;
                 student.locationY = 2;
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
                 changeLoc("CART");
+                setImg();
+                break;
+
+            case "theatreEntry":
+                document.getElementById("atVistaEnt").classList.toggle("hidden");
+                document.getElementById("atTheatreEnt").classList.toggle("hidden");
+                setText("principium finis venit");
+                removeBg('outdoorEntry');
+                setBackground('theaterEntry');
+                setImg();
+                break;
+
+            case "plaza":
+                if(!isHidden("atTheatreEnt")){
+                    console.log("Prev location:  theatrenetry");
+                    document.getElementById("atTheatreEnt").classList.toggle("hidden");
+                    removeBg('theatreEntry');
+                }
+                else{
+                    console.log("Prev location:  inside sv");
+                    document.getElementById("insideSV").classList.toggle("hidden");
+                    removeBg('mallEntry');
+                }
+                
+                document.getElementById("atVistaEnt").classList.toggle("hidden");
+                setBackground("outdoorEntry");
+                setText("principium finis venit ut progredimini");
                 setImg();
                 break;
 
@@ -1102,7 +1132,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("atVistaEnt").classList.remove("hidden");
                 student.mapLocation = "SV";
                 removeBg('outsideGal');
-                setBackground('vistaEnt');
+                setBackground('outdoorEntry');
                 setText("You at SV Entrance die die die die die die die die die die");
                 student.locationX = 3;
                 student.locationY = 4;
