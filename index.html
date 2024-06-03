@@ -295,28 +295,29 @@
 
                 <!-- Vista -->
                 <section class="buttons row hidden" id="atVistaEnt">
-                    <button class="black border main-size" value="outside" onclick="changeLoc(`CART`)">Go Back to
+                    <button class="black border main-size" value="outside2">Go Back to
                         CART</button>
                     <!-- Set location to [3, 4] in script -->
                     <button class="black border main-size" value="moreVista">Go further into Sierra
                         Vista</button>
                 </section>
+
+                <!-- Static NPC dialogue -->
+                <section id="staticTalk" class="hidden statictalkcont">
+                    <section class="buttons row hidden" id="allenTalkCART">
+                        <button class="black border main-size" value="alCARTyes">Yeah (Go to Sierra Vista Mall)</button>
+
+                        <button class="black border main-size" value="alCARTno">Nah I'm good.</button>
+                    </section>
+
+                    <section class="buttons row hidden" id="allenTalkSV">
+                        <button class="black border main-size" value="alSVyes">Yeah (Go back to CART)</button>
+
+                        <button class="black border main-size" value="alSVno">Not yet....</button>
+                    </section>
+                </section>
             </section>
 
-            <!-- Static NPC dialogue -->
-            <section id="staticTalk">
-                <section class="buttons row hidden" id="allenTalkCART">
-                    <button class="black border main-size" value="alCARTyes">Yeah (Go to Sierra Vista Mall)</button>
-
-                    <button class="black border main-size" value="alCARTno" onclick="afterNPC(`allen`)">Nah I'm good.</button>
-                </section>
-
-                <section class="buttons row hidden" id="allenTalkSV">
-                    <button class="black border main-size" value="alSVyes">Yeah (Go back to CART)</button>
-
-                    <button class="black border main-size" value="alSVno">Not yet....</button>
-                </section>
-            </section>
 
         </section>
 
@@ -408,7 +409,8 @@
                     <br>
                     “<a href="https://picklesbites.netlify.app">https://picklesbites.netlify.app</a>”
                     <br>
-                    “That's all I need, here's something from me. Don't tell the other game dev Icarus that I gave you this, he wants the game to go on for as long as humanely possible.”
+                    “That's all I need, here's something from me. Don't tell the other game dev Icarus that I gave you
+                    this, he wants the game to go on for as long as humanely possible.”
                     <br>
                     <br>
                     <i>He hands you a Shiny Quagsire Seal of Approval for your hard work...</i>
@@ -462,23 +464,31 @@
                 You tell Icarus that graphic design is your passion.
                 <br>
                 “Me too!” he laughs. "That was a lie. I hate graphic design actually, but James is way worse at it than
-                I am, which is why I styled this entire game. I did the mobile queries, too! Do you know how <em>long<em> that took? I thought I was going to die. It was actually horrible. I think I'm doing mobile-first designing from now on."
-                <br>
-                “Wow... okay.”
-                <br>
-                “Anyways, I have a really cool portfolio. You should check it out.”
-                <br>
-                “<a href="https://wedekindicarus.netlify.app">https://wedekindicarus.netlify.app</a>”
-                <br>
-                He pauses for a second.
-                <br>
-                "Just don't open it on mobile. I'm warning you."
-                <br>
-                "If you hate graphic design so much, what <em>do<em> you like? Your designs seem pretty OK to me. Is there a game you like at all? Like, I don't know, Final Fantasy or something?"
-                <br>
-                "Don't even joke with me lad..."
-                <br>
-                You realise you've made a poor decision mentioning Final Fantasy as soon as Icarus opens his mouth. For the next five centuries, he endlessly rambles about the Fabula Nova Crysallis offbranch of recent final fantasy games (consisting of Final Fantasy Type-0, XV, and XIII 1-3). In fact, he got so caught up in talking to you he forgot to remind his fellow game dev James to continue mantaining the game. Mr. Slow fades into oblivion...
+                I am, which is why I styled this entire game. I did the mobile queries, too! Do you know how
+                <em>long<em> that took? I thought I was going to die. It was actually horrible. I think I'm doing
+                        mobile-first designing from now on."
+                        <br>
+                        “Wow... okay.”
+                        <br>
+                        “Anyways, I have a really cool portfolio. You should check it out.”
+                        <br>
+                        “<a href="https://wedekindicarus.netlify.app">https://wedekindicarus.netlify.app</a>”
+                        <br>
+                        He pauses for a second.
+                        <br>
+                        "Just don't open it on mobile. I'm warning you."
+                        <br>
+                        "If you hate graphic design so much, what <em>do<em> you like? Your designs seem pretty OK to
+                                me. Is there a game you like at all? Like, I don't know, Final Fantasy or something?"
+                                <br>
+                                "Don't even joke with me lad..."
+                                <br>
+                                You realise you've made a poor decision mentioning Final Fantasy as soon as Icarus opens
+                                his mouth. For the next five centuries, he endlessly rambles about the Fabula Nova
+                                Crysallis offbranch of recent final fantasy games (consisting of Final Fantasy Type-0,
+                                XV, and XIII 1-3). In fact, he got so caught up in talking to you he forgot to remind
+                                his fellow game dev James to continue mantaining the game. Mr. Slow fades into
+                                oblivion...
             </p>
             <!-- two span tags with these classes, content of span tags is held in an array with just the two which will iterate to give both the h3 and the p! -->
         </section>

@@ -335,32 +335,10 @@ function npcFunct(input = null) {
             if (student.mapLocation == "CART") {
                 setText("Are you tagging along on our field trip?");
 
-                // Unhide CART Allen Button Set, Yes and No
-                // <button class="black border main-size" id="h" value="vistaEnt" onclick="changeLoc(`SV`)">Go to Sierra Vista</button>, or saying no thanks despawns her
+
                 document.getElementById("allenTalkCART").classList.remove("hidden");
-                document.getElementById("button-container").classList.add("hidden");
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    document.getElementById("button-container").addEventListener("click", function (e) {
-                        let btnVal = e.target.value;
-
-                        if (btnVal == "alCARTyes") {
-                            student.mapLocation = "SV";
-                            document.getElementById("outsideGal").classList.toggle("hidden");
-                            document.getElementById("atVistaEnt").classList.toggle("hidden");
-                            removeBg('outsideGal');
-                            setBackground('vistaEnt');
-                            setText("You at SV Entrance die die die die die die die die die die");
-                            student.locationX = 3;
-                            student.locationY = 4;
-                            console.log("[" + student.locationX + ", " + student.locationY + "]");
-                            setImg();
-                        }
-
-                    });
-                });
-
-
+                document.getElementById("staticTalk").classList.remove("hidden");
+                document.getElementById("outsideGal").classList.toggle("hidden");
             }
             else {
                 // SV Allen
@@ -1082,14 +1060,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Stop npcFunct() from running
                 return ("");
 
-            // Static NPC BtnVals
-
-            case "alSVno":
-
-                break;
-
-            case "alSVyes":
-
+            case "outside2":
+                document.getElementById("atVistaEnt").classList.toggle("hidden");
+                document.getElementById("outsideGal").classList.toggle("hidden");
+                // document.getElementById("atGallery").classList.remove("current");
+                // document.getElementById("outsideGal").classList.add("current");
+                setText("You make your way outside from the exit of the Gallery. You see 2 big solar panels angled at the preferred degree. There's a couple wires hanging from the solar cells.");
+                removeBg("vistaEnt");
+                setBackground('outsideGal');
+                student.locationX = 0;
+                student.locationY = 2;
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                changeLoc("CART");
+                setImg();
                 break;
 
             default:
@@ -1101,6 +1084,39 @@ document.addEventListener("DOMContentLoaded", function () {
             npcFunct();
         }
 
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("staticTalk").addEventListener("click", function (e) {
+        let btnVal = e.target.value;
+
+        switch (btnVal) {
+
+            // Static NPC BtnVals
+
+            case "alCARTyes":
+                document.getElementById("outsideGal").classList.add("hidden");
+                document.getElementById("allenTalkCART").classList.add("hidden");
+                document.getElementById("staticTalk").classList.add("hidden");
+                document.getElementById("atVistaEnt").classList.remove("hidden");
+                student.mapLocation = "SV";
+                removeBg('outsideGal');
+                setBackground('vistaEnt');
+                setText("You at SV Entrance die die die die die die die die die die");
+                student.locationX = 3;
+                student.locationY = 4;
+                console.log("[" + student.locationX + ", " + student.locationY + "]");
+                setImg();
+
+                break;
+
+            case "alCARTno":
+                afterNPC("allen");
+                setText("YOU MAKE YOUR WAY OUTSIDE FROM THE EXIT OF THE GALLERY. YOU SEE 2 BIG SOLAR PANELS ANGLED AT THE PREFERRED DEGREE. THERE'S A COUPLE WIRES HANGING FROM THE SOLAR CELLS.");
+                break;
+
+        }
     });
 });
 
@@ -1122,10 +1138,14 @@ function afterNPC(input) {
     switch (input) {
 
         case "allen":
-            setText("YOU MAKE YOUR WAY OUTSIDE FROM THE EXIT OF THE GALLERY. YOU SEE 2 BIG SOLAR PANELS ANGLED AT THE PREFERRED DEGREE. THERE'S A COUPLE WIRES HANGING FROM THE SOLAR CELLS.");
             document.getElementById("allenTalkCART").classList.add("hidden");
             console.log("Static Talk Unhidden");
             document.getElementById("button-container").classList.remove("hidden");
+
+            if (student.mapLocation == "CART") {
+                document.getElementById("button-container").classList.toggle("hidden");
+                document.getElementById("outsideGal").classList.toggle("hidden");
+            }
 
         default:
             // Change to transparent img
