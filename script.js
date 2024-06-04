@@ -1,4 +1,5 @@
 let randomLab = null;
+let randomGuard = null;
 let time = 180;
 
 class Player {
@@ -412,9 +413,16 @@ function npcFunct(input = null) {
                 }
                 ranDia();
             }
-            else {
+            else if (student.mapLocation == "SV"){
+
+                let npc_image = svNPC.guard.images[getRandomInt(2)];
+                console.log("The NPC image is: ", npc_image);
+
                 document.getElementById("home-image").innerHTML =
-                    `<img src='${svNPC.guard.images[getRandomInt(3)]}' alt="A generic person colored in black and white.">`;
+                    `<img src='${npc_image}.png' alt="A generic person colored in black and white.">`;
+                    setText(svNPC.guard.dialogue[getRandomInt(svNPC.guard.dialogue.length - 1)]);
+
+                    locoText = document.getElementById("text-output").innerText;
 
                 // Take guard dialogue as well
                 ranSV();
@@ -457,7 +465,7 @@ function ranSV() {
 
     //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
     // Used to be shuffled later
-    let arrVal = ["win", "mid", "die"];
+    let arrVal = ["win", "mid2", "die"];
 
     // Shuffle values
     arrVal = shuffle();
@@ -479,18 +487,18 @@ function ranSV() {
         // Change button text based on their values
         switch (valCheck) {
             case "win":
-                randomThing = getRandomInt(svNPC[guard].good.length);
-                part.innerText = svNPC[guard].good[randomThing];
+                randomThing = getRandomInt(svNPC.guard.good.length);
+                part.innerText = svNPC.guard.good[randomThing];
                 break;
 
-            case "mid":
-                randomThing = getRandomInt(svNPC[guard].mid.length);
-                part.innerText = svNPC[guard].mid[randomThing];
+            case "mid2":
+                randomThing = getRandomInt(svNPC.guard.mid.length);
+                part.innerText = svNPC.guard.mid[randomThing];
                 break;
 
             case "die":
-                randomThing = getRandomInt(svNPC[guard].bad.length);
-                part.innerText = svNPC[guard].bad[randomThing];
+                randomThing = getRandomInt(svNPC.guard.bad.length);
+                part.innerText = svNPC.guard.bad[randomThing];
                 break;
         }
     });
