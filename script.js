@@ -1088,15 +1088,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "theatreEntry":
-                if (!isHidden('atVistaEnt')){
+                if (!isHidden('atVistaEnt')) {
                     document.getElementById("atVistaEnt").classList.toggle("hidden");
                     removeBg('outdoorEntry');
                 }
-                else if(!isHidden('theatreRight')){
+                else if (!isHidden('theatreRight')) {
                     document.getElementById("theatreRight").classList.toggle("hidden");
                     removeBg('minecraftPoster');
                 }
-                else{
+                else {
                     document.getElementById("theatreLeft").classList.toggle("hidden");
                     removeBg('blartPoster');
                 }
@@ -1111,7 +1111,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!isHidden("atTheatreEnt")) {
                     console.log("Prev location:  theatrenetry");
                     document.getElementById("atTheatreEnt").classList.toggle("hidden");
-                    removeBg('theatreEntry');
+                    removeBg('theaterEntry');
                 }
                 else {
                     console.log("Prev location:  inside sv");
@@ -1158,15 +1158,62 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "insideEntry":
-                document.getElementById("atVistaEnt").classList.toggle("hidden");
-                removeBg('outdoorEntry');
+                if (!isHidden('atVistaEnt')) {
+                    document.getElementById("atVistaEnt").classList.toggle("hidden");
+                    removeBg('outdoorEntry');
+                }
+                else if (!isHidden('outsideEvolution')) {
+                    document.getElementById("outsideEvolution").classList.toggle("hidden");
+                    removeBg('evolutionEntry');
+                }
+                else {
+                    document.getElementById("insideGamestop").classList.toggle("hidden");
+                    removeBg('gamestop');
+                }
+                document.getElementById("insideSV").classList.toggle("hidden");
+                setBackground('indoorEntry');
                 setText('currite bellatores rubri donec animi dati matre extinguant')
+                setImg();
+                break;
+
+            case "gamestop":
+                document.getElementById("insideSV").classList.toggle("hidden");
+                removeBg('indoorEntry');
+                document.getElementById("insideGamestop").classList.toggle("hidden");
+                setBackground('gamestop');
+                setText('bahamut');
+                setImg();
+                break;
+
+            case "evolution":
+                if (!isHidden('insideSV')) {
+                    document.getElementById("insideSV").classList.toggle("hidden");
+                    removeBg('indoorEntry');
+                }
+                else {
+                    document.getElementById("insideEvolution").classList.toggle("hidden");
+                    removeBg('evolution');
+                }
+                document.getElementById("outsideEvolution").classList.toggle("hidden");
+                setBackground('evolutionEntry');
+                setText('ramuh');
+                setImg();
+                break;
+
+            case "inEvolution":
+                document.getElementById("outsideEvolution").classList.toggle("hidden");
+                removeBg('evolutionEntry');
+                document.getElementById("insideEvolution").classList.toggle("hidden");
+                setBackground('evolution');
+                setText('shiva');
                 setImg();
                 break;
 
             default:
                 return ("");
         }
+
+
 
         let ranNum = getRandomInt(7);
         if (ranNum == 0) {
