@@ -1101,7 +1101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     removeBg('blartPoster');
                 }
                 document.getElementById("atTheatreEnt").classList.toggle("hidden");
-                setText("principium finis venit");
+                setText(`You walk into the Sierra Vista Movie Theater. It is mostly open in the lobby, with a weird mix of 2000’s arcade carpet, and modern architecture. There’s a large section for Concessions and Snacks, with an equally long line of people waiting.`);
                 removeBg('outdoorEntry');
                 setBackground('theaterEntry');
                 setImg();
@@ -1121,7 +1121,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById("atVistaEnt").classList.toggle("hidden");
                 setBackground("outdoorEntry");
-                setText("principium finis venit ut progredimini");
+                setText(`Sierra Vista is a big, open mall with a couple seats every now and again. The air smells vaguely like Hot Dog On a Stick, a corndog restaurant. All the buildings are filled to the brim with somewhat miscellaneous stores and mid-tier food joints. You also see a large building labeled “Sierra Vista Cinema 16” with a couple movie posters along it. There’s an inside section with more stores.`);
                 setImg();
                 break;
 
@@ -1137,7 +1137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById("theatreRight").classList.toggle("hidden");
                 setBackground("minecraftPoster");
-                setText("bellatores albi delete legatum veorum deterum ut progredimini at mundum novum");
+                setText("The Minecraft movie will be in theatres soon? You can't believe it. It felt like that movie was announced yesterday.");
                 setImg();
                 break;
 
@@ -1153,7 +1153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById("theatreLeft").classList.toggle("hidden");
                 setBackground("blartPoster");
-                setText("expegiscimini bellatores rubri principium finis venit");
+                setText("Wow! Looks like cult classic 'Mall Cop' is re-airing.");
                 setImg();
                 break;
 
@@ -1172,7 +1172,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById("insideSV").classList.toggle("hidden");
                 setBackground('indoorEntry');
-                setText('currite bellatores rubri donec animi dati matre extinguant')
+                setText(`You make your way to the inside section of Sierra Vista Mall. You can feel the frigid air of GameStop emanating through the place. A lot of the spaces are vacant in the middle of the building. Farther down, there's a trading card store called Evolution Gaming and Collectibles.`)
                 setImg();
                 break;
 
@@ -1181,7 +1181,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeBg('indoorEntry');
                 document.getElementById("insideGamestop").classList.toggle("hidden");
                 setBackground('gamestop');
-                setText('bahamut');
+                setText('GameStop is as icey as ever. Its walls are lined with bunches of mediocre games. The new release section was all that ever had anything good on it anyways, unless you felt like playing Sheep Decimator 3 or whatever was getting released nowadays.');
                 setImg();
                 break;
 
@@ -1196,7 +1196,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById("outsideEvolution").classList.toggle("hidden");
                 setBackground('evolutionEntry');
-                setText('ramuh');
+                setText('You walk into Evolution Gaming and Collectibles. The first thing you notice are the bright lights. There are tables on the right when you first walk in, probably for game nights when people play TCG titles like Pokemon and Magic the Gathering. The rest of the store is allocated to housing Pop! figures, rare cards, and resources for TCG games.');
                 setImg();
                 break;
 
