@@ -1168,7 +1168,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return ("");
         }
 
-        let ranNum = getRandomInt(5);
+        let ranNum = getRandomInt(7);
         if (ranNum == 0) {
             npcFunct();
         }
@@ -1300,7 +1300,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 var endSound = new Audio("Sounds/taco.mp3");
                 endSound.play();
-                time -= 15;
+                time -= 30
 
                 document.getElementById("health").innerText = time + " minutes";
                 afterNPC();
