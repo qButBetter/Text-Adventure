@@ -414,6 +414,7 @@ function npcFunct(input = null) {
                 ranDia();
             }
             else if (student.mapLocation == "SV") {
+                locoText = document.getElementById("text-output").innerText;
 
                 let npc_image = svNPC.guard.images[getRandomInt(2)];
                 console.log("The NPC image is: ", npc_image);
@@ -491,7 +492,7 @@ function ranSV() {
                 part.innerText = svNPC.guard.good[randomThing];
                 break;
 
-            case "mid2":
+            case "mid":
                 randomThing = getRandomInt(svNPC.guard.mid.length);
                 part.innerText = svNPC.guard.mid[randomThing];
                 break;
