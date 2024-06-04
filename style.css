@@ -235,6 +235,7 @@ button:hover {
     overflow-y: scroll;
     width: 97%;
     padding: .3em;
+    font-weight: 300;
 }
 
 /* .text-container::-webkit-scrollbar {
