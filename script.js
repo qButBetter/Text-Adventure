@@ -413,16 +413,15 @@ function npcFunct(input = null) {
                 }
                 ranDia();
             }
-            else if (student.mapLocation == "SV"){
+            else if (student.mapLocation == "SV") {
+                locoText = document.getElementById("text-output").innerText;
 
                 let npc_image = svNPC.guard.images[getRandomInt(2)];
                 console.log("The NPC image is: ", npc_image);
 
                 document.getElementById("home-image").innerHTML =
                     `<img src='${npc_image}.png' alt="A generic person colored in black and white.">`;
-                    setText(svNPC.guard.dialogue[getRandomInt(svNPC.guard.dialogue.length - 1)]);
-
-                    locoText = document.getElementById("text-output").innerText;
+                setText(svNPC.guard.dialogue[getRandomInt(svNPC.guard.dialogue.length - 1)]);
 
                 // Take guard dialogue as well
                 ranSV();
@@ -491,7 +490,7 @@ function ranSV() {
                 part.innerText = svNPC.guard.good[randomThing];
                 break;
 
-            case "mid2":
+            case "mid":
                 randomThing = getRandomInt(svNPC.guard.mid.length);
                 part.innerText = svNPC.guard.mid[randomThing];
                 break;
@@ -1096,17 +1095,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "plaza":
-                if(!isHidden("atTheatreEnt")){
+                if (!isHidden("atTheatreEnt")) {
                     console.log("Prev location:  theatrenetry");
                     document.getElementById("atTheatreEnt").classList.toggle("hidden");
                     removeBg('theatreEntry');
                 }
-                else{
+                else {
                     console.log("Prev location:  inside sv");
                     document.getElementById("insideSV").classList.toggle("hidden");
                     removeBg('mallEntry');
                 }
-                
+
                 document.getElementById("atVistaEnt").classList.toggle("hidden");
                 setBackground("outdoorEntry");
                 setText("principium finis venit ut progredimini");
