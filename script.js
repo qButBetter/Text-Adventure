@@ -413,16 +413,16 @@ function npcFunct(input = null) {
                 }
                 ranDia();
             }
-            else if (student.mapLocation == "SV"){
+            else if (student.mapLocation == "SV") {
 
                 let npc_image = svNPC.guard.images[getRandomInt(2)];
                 console.log("The NPC image is: ", npc_image);
 
                 document.getElementById("home-image").innerHTML =
                     `<img src='${npc_image}.png' alt="A generic person colored in black and white.">`;
-                    setText(svNPC.guard.dialogue[getRandomInt(svNPC.guard.dialogue.length - 1)]);
+                setText(svNPC.guard.dialogue[getRandomInt(svNPC.guard.dialogue.length - 1)]);
 
-                    locoText = document.getElementById("text-output").innerText;
+                locoText = document.getElementById("text-output").innerText;
 
                 // Take guard dialogue as well
                 ranSV();
@@ -1087,7 +1087,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "theatreEntry":
-                document.getElementById("atVistaEnt").classList.toggle("hidden");
+                if (!isHidden('atVistaEnt')){
+                    document.getElementById("atVistaEnt").classList.toggle("hidden");
+                    removeBg('outdoorEntry');
+                }
+                else if(!isHidden('theatreRight')){
+                    document.getElementById("theatreRight").classList.toggle("hidden");
+                    removeBg('minecraftPoster');
+                }
+                else{
+                    document.getElementById("theatreLeft").classList.toggle("hidden");
+                    removeBg('blartPoster');
+                }
                 document.getElementById("atTheatreEnt").classList.toggle("hidden");
                 setText("principium finis venit");
                 removeBg('outdoorEntry');
@@ -1096,20 +1107,59 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "plaza":
-                if(!isHidden("atTheatreEnt")){
+                if (!isHidden("atTheatreEnt")) {
                     console.log("Prev location:  theatrenetry");
                     document.getElementById("atTheatreEnt").classList.toggle("hidden");
                     removeBg('theatreEntry');
                 }
-                else{
+                else {
                     console.log("Prev location:  inside sv");
                     document.getElementById("insideSV").classList.toggle("hidden");
                     removeBg('mallEntry');
                 }
-                
+
                 document.getElementById("atVistaEnt").classList.toggle("hidden");
                 setBackground("outdoorEntry");
                 setText("principium finis venit ut progredimini");
+                setImg();
+                break;
+
+            case "rightPosters":
+                if (!isHidden("atTheatreEnt")) {
+                    document.getElementById("atTheatreEnt").classList.toggle("hidden");
+                    removeBg('theatreEntry');
+                }
+                else {
+                    document.getElementById("theatreLeft").classList.toggle("hidden");
+                    removeBg('blartPoster');
+                }
+
+                document.getElementById("theatreRight").classList.toggle("hidden");
+                setBackground("minecraftPoster");
+                setText("bellatores albi delete legatum veorum deterum ut progredimini at mundum novum");
+                setImg();
+                break;
+
+            case "leftPosters":
+                if (!isHidden("atTheatreEnt")) {
+                    document.getElementById("atTheatreEnt").classList.toggle("hidden");
+                    removeBg('theatreEntry');
+                }
+                else {
+                    document.getElementById("theatreRight").classList.toggle("hidden");
+                    removeBg('minecraftPoster');
+                }
+
+                document.getElementById("theatreLeft").classList.toggle("hidden");
+                setBackground("blartPoster");
+                setText("expegiscimini bellatores rubri principium finis venit");
+                setImg();
+                break;
+
+            case "insideEntry":
+                document.getElementById("atVistaEnt").classList.toggle("hidden");
+                removeBg('outdoorEntry');
+                setText('currite bellatores rubri donec animi dati matre extinguant')
                 setImg();
                 break;
 
