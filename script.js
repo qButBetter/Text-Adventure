@@ -1125,6 +1125,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// interact with static npcs
+
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("staticTalk").addEventListener("click", function (e) {
         let btnVal = e.target.value;
