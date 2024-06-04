@@ -1091,7 +1091,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if(!isHidden("atTheatreEnt")){
                     console.log("Prev location:  theatrenetry");
                     document.getElementById("atTheatreEnt").classList.toggle("hidden");
-                    removeBg('theatreEntry');
+                    removeBg('theaterEntry');
                 }
                 else{
                     console.log("Prev location:  inside sv");
