@@ -173,8 +173,8 @@ var Map = {
         [0], [0], [0], [0], ["h3"], ["h3"],
         ["e1"], ["g"], ["j"], [0], ["m"], [0],
         ["n100"], ["h"], [0], [0], ["h2"], [0],
-        ["n101"], ["h"], [0], ["e4"], ["h2"], ["h2"],
-        [0], ["h"], [0], [0], ["h2"], [0],
+        ["n101"], ["h"], [0], [0], ["e4"], ["h2"],
+        [0], ["h"], [0], ["h2"],      ["t"], ["h2"],
         ["n104"], ["h"], ["b2"], [0], ["t"], [0],
         ["n105"], ["h"], ["n110"], [0], ["h4"], ["h4"],
         ["n107"], ["e3"], [0], [0], [0], [0],
@@ -183,14 +183,14 @@ var Map = {
 
 var ItemMap = {
     CART: [
-        [0, "i", 0, 0, "i3", 0],
+        [0, "i", 0, 0, 0, 0],
         [0, 0, 0, 0, 0, "i3"],
-        ["i2", "i", "i2", 0, "i3", 0],
-        ["i2", "p", 0, 0, 0, 0],
-        ["i", "i", 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0],
+        ["i2", "i", "i2", "i3", 0, 0],
+        ["i2", "p", 0, 0, 0, "i3"],
+        ["i", "i", 0, 0, "x", 0],
+        [0, 0, 0, "i3", 0, "i3"],
         [0, 0, "i", 0, 0, 0],
-        ["i", 0, 0, 0, "i3", 0],
+        ["i", 0, 0, 0, 0, 0],
         ["i", 0, 0, 0, 0, 0]
     ],
 };
@@ -422,8 +422,6 @@ function npcFunct(input = null) {
                 document.getElementById("home-image").innerHTML =
                     `<img src='${npc_image}.png' alt="A generic person colored in black and white.">`;
                 setText(svNPC.guard.dialogue[getRandomInt(svNPC.guard.dialogue.length - 1)]);
-
-                locoText = document.getElementById("text-output").innerText;
 
                 // Take guard dialogue as well
                 ranSV();
@@ -750,7 +748,6 @@ function pickUp() {
             checkItems();
             break;
     }
-
 }
 
 function checkItems() {
@@ -774,7 +771,6 @@ function checkItems() {
         // Do the pickle ending
         endingScreen("pickle");
     }
-
 }
 
 // Helper function for checkItems
@@ -809,7 +805,6 @@ function endingScreen(input) {
             endDisplay();
             hidePage("ending4");
             break;
-
     }
 }
 
@@ -1240,7 +1235,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeBg('outsideGal');
                 setBackground('outdoorEntry');
                 setText("You at SV Entrance die die die die die die die die die die");
-                student.locationX = 3;
+                student.locationX = 4;
                 student.locationY = 4;
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
                 setImg();
