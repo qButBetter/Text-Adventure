@@ -25,18 +25,14 @@ class Player {
 var Ally = {
     tech: {
         dialogue: ["Hey, did you hear about what happened in Web today? Go get yourself a snack or something. We're all doomed.", "I'm on a streak in Laser Grids rn.", "Schawlgalawg! My new simlish coding language is really takin' off! It goes something like this:  You not ooh rah dah en dahp ooh rah daht endaht en dik ah poo ra ta teek a poo rah doo rah do dik oh mumblio dah dah dosa pa errah sa de.", "Dude I did NOT sign up for this.. I've gotta get outta here.", "I shoulda stayed in theatre tech like the clown I am. Good luck, man. Could this help?", "(scream)", "UX is my passion.", "IGD is my passion.", "Don't get your panties in a twist, babe. Here.", "Yo tengo tu mama!", "Look under there! HAHAHAHAHAHAHAHAHAHAHAHAHA! You said underwear!", "Dont trip, chocolate chip.", "So BOOM!", "Bless!", "I'm totally Grending right now.", "*Metal pipe sound effects*", "Don't Violate Section 3", "My name is John.", "I've gyatt to get my work done.", "I pushed my fingers into my eyes.", "I'm totally Grending right now."],
-
         good: ["Thanks!"],
-        atk: [1],
-        drop: [1],
+
     },
 
     biomed: {
         dialogue: ["Slouching is actually really bad for 16.5 of your internal organs as well as your upper spine. If I give you this will you sit up straighter?", "It's actually really interesting seeing how computer light affects retinal processing and circadian rhythm. Study sesh sometime? About what? Well, you'd be the subject. Here, just... think about it.", "I didn't know that tech students could actually walk' I thought the chairs were, like, a part of the anatomy. Now that I think about it, it makes sense why I'm failing.", "Dude I know more about computers from playing Valorant than I will ever learn in this class.", "Biomed is my passion."],
-
         good: ["Thanks!"],
-        atk: [1],
-        drop: [1],
+
     },
 
     images: ["StudentImages/landon.png", "StudentImages/finn.png", "StudentImages/gamer.png",
@@ -100,17 +96,11 @@ var svNPC = {
 var staticNPC = {
     steedle: {
         dialogue: ["Baki is peak.", "Pickle is my favorite character, besides Biscuit Oliva.", "Cya."],
-        reply: ["Ok", "Here's Pickle!", "bye"],
-        atk: [1],
-        drop: [1],
         images: ["StudentImages/steed.png"],
     },
 
     icaraga: {
         dialogue: ["What's up?", "Wanna play UNO with us?", "Ok....."],
-        reply: [],
-        atk: [1],
-        drop: [1],
         images: ["StudentImages/icaga.png"],
     },
 }
@@ -367,7 +357,7 @@ function npcFunct(input = null) {
 
                 document.getElementById("home-image").innerHTML =
                     `<img src='${npc_image}.png' alt="A generic person colored in black and white.">`;
-                setText(svNPC.guard.dialogue[getRandomInt(svNPC.guard.dialogue.length - 1)]);
+                setText(svNPC.guard.dialogue[getRandomInt(svNPC.guard.dialogue.length)]);
 
                 // Take guard dialogue as well
                 ranSV();
@@ -434,7 +424,7 @@ function ranSV() {
                 part.innerText = svNPC.guard.good[randomThing];
                 break;
 
-            case "mid":
+            case "mid2":
                 randomThing = getRandomInt(svNPC.guard.mid.length);
                 part.innerText = svNPC.guard.mid[randomThing];
                 break;
