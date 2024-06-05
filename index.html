@@ -51,12 +51,12 @@
                 </section>
 
                 <section id="inventory" class="inventory hidden centersize black border">
-                    
+
                     <!-- lore important items -->
 
                     <section class="invItem row black border" id="inspo">
                         <section class="objHold row">
-                            <img src="InspoImages/finSix.png" alt="Pickle Object">
+                            <img src="InspoImages/finTZ.png" alt="Pickle Object">
                             <section class="column left">
                                 <h3 class="midsize">Inspiration</h3>
                                 <p class="small-txt">A vivid image of the poster resides in your memory.</p>
@@ -79,7 +79,7 @@
                             <p id="arsonValue" class="main-size">0</p>
                         </section>
                     </section>
-                    
+
                     <section class="invItem row black border" id="papers">
                         <section class="objHold row">
                             <img src="PortraitImages/fastArt1.jpeg" alt="Pickle Object">
@@ -100,7 +100,8 @@
                             <img src="MiscItemImages/pickleObj.png" alt="Pickle Object">
                             <section class="column left">
                                 <h3 class="midsize">Pickle</h3>
-                                <p class="small-txt">A figurine-sized dinosaur. You think it's alive.</p>
+                                <p class="small-txt">A figurine-sized dinosaur. You think it's alive. It belongs to one
+                                    of the game's creators, James Steed.</p>
                             </section>
                         </section>
                         <section class="valHold">
@@ -113,7 +114,7 @@
                             <img src="MiscItemImages/cresselia.png" alt="Pickle Object">
                             <section class="column left">
                                 <h3 class="midsize">Cresselia PokeCard</h3>
-                                <p class="small-txt">A Cresselia card. It's in mint condition.</p>
+                                <p class="small-txt">A Cresselia card you acquired under dubious circumstances. It's in mint condition.</p>
                             </section>
                         </section>
                         <section class="valHold">
@@ -234,72 +235,125 @@
                 </section>
 
                 <section class="buttons row hidden" id="inHall">
-                    <button class="black border main-size" id="g" value="gallery">Go to the gallery</button>
-                    <button class="black border main-size" id="n100" value="multimedia">Go into MultiMedia</button>
-                    <button class="black border main-size" id="h" value="atrium">Go to the atrium</button>
+                    <button class="black border main-size" value="gallery">Go to the gallery</button>
+                    <button class="black border main-size" value="multimedia">Go into MultiMedia</button>
+                    <button class="black border main-size" value="atrium">Go to the atrium</button>
                 </section>
 
                 <section class="buttons four row hidden" id="atrium">
-                    <button class="black border main-size" id="n105" value="ux">Go into User Design</button>
-                    <button class="black border main-size" id="n107" value="web">Go into Web</button>
-                    <button class="black border main-size" id="n110" value="eng">Go into English</button>
-                    <button class="black border main-size" id="h" value="hall">Go up the hall</button>
+                    <button class="black border main-size" value="ux">Go into User Design</button>
+                    <button class="black border main-size" value="web">Go into Web</button>
+                    <button class="black border main-size" value="eng">Go into English</button>
+                    <button class="black border main-size" value="hall">Go up the hall</button>
                 </section>
 
                 <section class="buttons row hidden" id="inWeb">
-                    <button class="black border main-size" id="n105" value="ux">Go into User Design</button>
-                    <button class="black border main-size" id="h" value="atrium">Go into atrium</button>
-                    <button class="black border main-size hidden" id="n107" value="web2">Wander deeper into Web</button>
+                    <button class="black border main-size" value="ux">Go into User Design</button>
+                    <button class="black border main-size" value="atrium">Go into atrium</button>
+                    <button class="black border main-size hidden" value="web2">Wander deeper into Web</button>
                     <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
                         Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="inMultimedia">
-                    <button class="black border main-size" id="h" value="hall">Go into hall</button>
+                    <button class="black border main-size" value="hall">Go into hall</button>
                     <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
                         Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="atStairs">
-                    <button class="black border main-size" id="h" value="gallery">Go into gallery</button>
+                    <button class="black border main-size" value="gallery">Go into gallery</button>
                     <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
                         Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="atJanitor">
-                    <button class="black border main-size" id="h" value="gallery">Go into gallery</button>
+                    <button class="black border main-size" value="gallery">Go into gallery</button>
                     <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
                         Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="inUX">
-                    <button class="black border main-size" id="h" value="web">Go into Web</button>
-                    <button class="black border main-size" id="h" value="atrium">Go into the atrium</button>
+                    <button class="black border main-size" value="web">Go into Web</button>
+                    <button class="black border main-size" value="atrium">Go into the atrium</button>
                     <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
                         Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="inEnglish">
-                    <button class="black border main-size" id="h" value="atrium">Go into the atrium</button>
+                    <button class="black border main-size" value="atrium">Go into the atrium</button>
                     <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
                         Item</button>
                 </section>
 
                 <section class="buttons row hidden" id="outsideGal">
-                    <button class="black border main-size" id="h" value="gallery">Go into gallery</button>
-                    <!-- <button class="black border main-size" id="h" value="vistaEnt" onclick="changeLoc(`SV`)">Go to Sierra Vista</button> -->
+                    <button class="black border main-size" value="gallery">Go into gallery</button>
                     <button class="black border main-size" id="interact" value="pickup" onclick="pickUp()">Pick Up
                         Item</button>
+                    <button class="black border main-size" onclick="npcFunct(`allen`)">Mrs. Allen?</button>
                 </section>
 
                 <!-- Vista -->
-                <!-- <section class="buttons row hidden" id="atVistaEnt">
-                    <button class="black border main-size" id="h" value="outside" onclick="changeLoc(`CART`)">Go Back to CART</button> -->
+                <section class="buttons row hidden" id="atVistaEnt">
+                    <button class="black border main-size" value="outside2">Go Back to
+                        CART</button>
                     <!-- Set location to [3, 4] in script -->
-                    <!-- <button class="black border main-size" id="h" value="moreVista">Go further into Sierra Vista</button>
-                </section> -->
+                    <button class="black border main-size" value="theatreEntry">Investigate the theatre</button>
+                    <button class="black border main-size" value="insideEntry">Go inside the mall</button>
+                </section>
 
+                <section class="buttons row hidden" id="atTheatreEnt">
+                    <button class="black border main-size" value="plaza">Go back to the plaza</button>
+                    <button class="black border main-size" value="rightPosters">Look at posters on the right</button>
+                    <button class="black border main-size" value="leftPosters">Look at posters on the left</button>
+                </section>
+
+                <section class="buttons row hidden" id="theatreRight">
+                    <button class="black border main-size" value="theatreEntry">Back to theatre entrance area</button>
+                    <button class="black border main-size" value="interact" onclick="pickUp()">Double check the premiere date</button>
+                    <button class="black border main-size" value="leftPosters">Go to the other side</button>
+                </section>
+
+                <section class="buttons row hidden" id="theatreLeft">
+                    <button class="black border main-size" value="theatreEntry">Back to theatre entrance area</button>
+                    <button class="black border main-size" value="interact" onclick="pickUp()">Double check the premiere date</button>
+                    <button class="black border main-size" value="rightPosters">Go to the other side</button>
+                </section>
+
+                <section class="buttons row hidden" id="insideSV">
+                    <button class="black border main-size" value="plaza">Go to the plaza</button>
+                    <button class="black border main-size" value="gamestop">Go into Gamestop</button>
+                    <button class="black border main-size" value="evolution">Check out the front of Evolution Games</button>
+                </section>
+
+                <section class="buttons row hidden" id="insideGamestop">
+                    <button class="black border main-size" value="insideEntry">Go back</button>
+                    <button class="black border main-size" value="interact" onclick="pickUp()">Check the posters</button>
+                </section>
+
+                <section class="buttons row hidden" id="outsideEvolution">
+                    <button class="black border main-size" value="insideEntry">Go back</button>
+                    <button class="black border main-size" value="inEvolution">Go into Evolution Games</button>
+                    <button class="black border main-size" value="interact" onclick="pickUp()">Check out the poster</button>
+                </section>
+
+                <section class="buttons row hidden" id="insideEvolution">
+                    <button class="black border main-size" value="evolution">Go back outside</button>
+                    <button class="black border main-size" value="interact" onclick="pickUp()">Check out the poster</button>
+                </section>
+
+
+                <!-- Static NPC dialogue -->
+                <section id="staticTalk" class="hidden statictalkcont">
+                    <section class="buttons row hidden" id="allenTalkCART">
+                        <button class="black border main-size" value="alCARTyes">Yeah (Go to Sierra Vista Mall)</button>
+
+                        <button class="black border main-size" value="alCARTno">Nah I'm good.</button>
+                    </section>
+                </section>
             </section>
+
+
         </section>
 
         <section id="ending1" class="ending column center hidden">
@@ -374,7 +428,9 @@
             <section class="endImgCont fiftyWidth">
                 <img class="endImg" src="MiscItemImages/pickleObj.png" alt="Game Over Screen">
             </section>
+
             <br>
+
             <section class="endingMessage column main-size seventyWidth">
                 <h3 class="center endHead">Pickle?</h3>
                 <p class="left">
@@ -386,9 +442,10 @@
                     <br>
                     “If you want, here's the link I'm thinking of for the website.”
                     <br>
-                    “https://picklesbites.netlify.app”
+                    “<a href="https://picklesbites.netlify.app">https://picklesbites.netlify.app</a>”
                     <br>
-                    “That's all I need, here's something from me.”
+                    “That's all I need, here's something from me. Don't tell the other game dev Icarus that I gave you
+                    this, he wants the game to go on for as long as humanely possible.”
                     <br>
                     <br>
                     <i>He hands you a Shiny Quagsire Seal of Approval for your hard work...</i>
@@ -421,6 +478,81 @@
 
                 </p>
                 <!-- two span tags with these classes, content of span tags is held in an array with just the two which will iterate to give both the h3 and the p! -->
+            </section>
+            <br>
+            <a class="loadEndBtn main-size" id="end-btn" onclick='window.location.reload();'>New Game?</a>
+        </section>
+
+        <section id="ending5" class="ending column center hidden">
+
+            <h2 class="tenEm">Unable to escape Icarus achieved</h2>
+            <section class="endImgCont fiftyWidth">
+                <img class="endImg" src="MiscItemImages/final-fantasy.png" alt="Game Over Screen">
+            </section>
+    
+            <br>
+    
+            <section class="endingMessage column main-size seventyWidth">
+                <h3 class="center endHead">You found your passion?</h3>
+                <p class="left">
+                    You tell Icarus that graphic design is your passion.
+                    <br>
+                    “Me too!” he laughs. "That was a lie. I hate graphic design actually, but James is way worse at it than
+                    I am, which is why I styled this entire game. I did the mobile queries, too! Do you know how
+                    <em>long</em> that took? I thought I was going to die. It was actually horrible. I think I'm doing
+                            mobile-first designing from now on."
+                            <br>
+                            “Wow... okay.”
+                            <br>
+                            “Anyways, I have a really cool portfolio. You should check it out.”
+                            <br>
+                            “<a href="https://wedekindicarus.netlify.app">https://wedekindicarus.netlify.app</a>”
+                            <br>
+                            He pauses for a second.
+                            <br>
+                            "Just don't open it on mobile. I'm warning you."
+                            <br>
+                            "If you hate graphic design so much, what <em>do</em> you like? Your designs seem pretty OK to
+                                    me. Is there a game you like at all? Like, I don't know, Final Fantasy or something?"
+                                    <br>
+                                    "Don't even joke with me lad..."
+                                    <br>
+                                    You realise you've made a poor decision mentioning Final Fantasy as soon as Icarus opens
+                                    his mouth. For the next five centuries, he endlessly rambles about the Fabula Nova
+                                    Crysallis offbranch of recent final fantasy games (consisting of Final Fantasy Type-0,
+                                    XV, and XIII 1-3). In fact, he got so caught up in talking to you he forgot to remind
+                                    his fellow game dev James to continue mantaining the game. Mr. Slow fades into
+                                    oblivion...
+                </p>
+                <!-- two span tags with these classes, content of span tags is held in an array with just the two which will iterate to give both the h3 and the p! -->
+            </section>
+            <br>
+            <a class="loadEndBtn main-size" id="end-btn" onclick='window.location.reload();'>New Game?</a>
+        </section>
+    
+        <section id="ending6" class="ending column center hidden">
+    
+            <h2 class="tenEm">while true( ) Achieved</h2>
+            <section class="endImgCont fiftyWidth">
+                <img class="endImg" src="Images/crash.png" alt="Game Over Screen">
+            </section>
+            <br>
+            <section class="endingMessage column main-size seventyWidth">
+                <h3 class="center endHead">You're feeling inspired!</h3>
+                <p class="left">Your great adventures through Sierra Vista Mall proved fruitful. You sit back down into your chair, rejuvenated, ready to write the ultimate function:  One which would create your entire project for you as soon as the browser booted.
+                    <br>
+                    You look at your Javascript creation, feeling fulfilled, knowing this majesty will negate the Super F- with its holy Github power. Anticipation peaks as you right click your empty HTML file and see the Liveserver extension appear in the options.
+                    <br>
+                    In a bout of determination, you boot Liveserver. Edge takes a moment to load, and the page quickly comes to life. You open the DevTools, and you can see the function you wrote violently logging its actions into the console.
+                    <br>
+                    But when you notice there's no end to the loop, it's already too late. The while true( ); function keeps running and running, adding endless aspects to your site and overruning the computer like a virus. Frantically, you try to close the tab. 
+                    <br>
+                    Edge freezes. The exit button is frozen red, and your cursor refuses to move, as if stuck in sheer terror of the site you've created. 
+                    <br>
+                    <em>"NO!"</em> you cry.
+                    <br>
+                    The clock strikes 10:45, and you desperately need to get to the bus before it takes off without you. But your computer isn't coming back to life, and you stupidly hadn't pushed your work. You crumple to the floor as your computer bluescreens from your horrible, unstoppable loop, and you feel defeated.
+                </p> 
             </section>
             <br>
             <a class="loadEndBtn main-size" id="end-btn" onclick='window.location.reload();'>New Game?</a>

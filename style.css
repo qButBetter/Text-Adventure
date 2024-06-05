@@ -117,6 +117,10 @@ body {
     justify-content: space-around;
 }
 
+.statictalkcont{
+    width: 100%;
+}
+
 .buttons {
     width: 100%;
     display: flex;
@@ -357,6 +361,10 @@ button:hover {
     margin: .5em 0 .5em 0;
 }
 
+.endingMessage p{
+    font-weight: 300;
+}
+
 .endHead {
     margin: .3em;
 }
@@ -415,23 +423,23 @@ button:hover {
 /* SV */
 /* Indoors */
 .indoorEntry {
-    background-image: url(BackgroundImages/SV_mall_hallway.jpg);
+    background-image: url(BackgroundImages/SV_mall_hallway.png);
 }
 
 .gamestopEntry {
-    background-image: url(BackgroundImages/SV_gamestop.jpg);
+    background-image: url(BackgroundImages/SV_gamestop.png);
 }
 
 .gamestop {
-    background-image: url(BackgroundImages/SV_gamestop_inside.jpg);
+    background-image: url(BackgroundImages/SV_gamestop_inside.png);
 }
 
 .evolutionEntry {
-    background-image: url(BackgroundImages/SV_evolution.jpg);
+    background-image: url(BackgroundImages/SV_evolution.png);
 }
 
 .evolution {
-    background-image: url(BackgroundImages/SV_evolution_inside.jpg);
+    background-image: url(BackgroundImages/SV_evolution_inside.png);
 }
 
 .outsideGal {
@@ -439,24 +447,21 @@ button:hover {
 }
 
 /* Outdoors */
-.vistaEnt {
-    background-image: url(BackgroundImages/SV_theater.png);
-}
 
 .outdoorEntry {
-    background-image: url(BackgroundImages/SV_outside_hallway.jpg);
+    background-image: url(BackgroundImages/SV_outside_hallway.png);
 }
 
 .theaterEntry {
-    background-image: url(BackgroundImages/SV_theater.jpg);
+    background-image: url(BackgroundImages/SV_theater.png);
+}
+
+.mallEntry{
+    background-image: url(BackgroundImages/SV_mall_hallway.png);
 }
 
 .blartPoster {
     background-image: url(BackgroundImages/blart-mall.png);
-}
-
-.doomPoster {
-    background-image: url(BackgroundImages/doom-mall.png);
 }
 
 .minecraftPoster {
