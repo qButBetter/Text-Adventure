@@ -284,7 +284,7 @@ function npcFunct(input = null) {
 
             break;
 
-        case null:
+        default:
             // Change to work, idea is here
             if (student.mapLocation == "CART") {
                 let ranNum = getRandomInt(10);
@@ -396,11 +396,13 @@ function shuffle() {
 }
 
 function ranSV() {
+
+    console.log("RANSV() CALLED");
     let buttons = document.querySelectorAll("#npc-buttons button");
 
     //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
     // Used to be shuffled later
-    let arrVal = ["win", "mid2", "die"];
+    let arrVal = ["win", "mid", "die"];
 
     // Shuffle values
     arrVal = shuffle();
@@ -415,25 +417,27 @@ function ranSV() {
     buttons.forEach(part => {
         let randomThing = null;
         let valCheck = part.value;
-        console.log("Part Value: " + part.value);
 
         // Change button text based on their values
         switch (valCheck) {
             case "win":
-                randomThing = getRandomInt(svNPC.guard.good.length);
+                randomThing = getRandomInt(svNPC.guard.good.length - 1);
                 part.innerText = svNPC.guard.good[randomThing];
                 break;
 
-            case "mid2":
-                randomThing = getRandomInt(svNPC.guard.mid.length);
+            case "mid":
+                randomThing = getRandomInt(svNPC.guard.mid.length - 1);
                 part.innerText = svNPC.guard.mid[randomThing];
                 break;
 
             case "die":
-                randomThing = getRandomInt(svNPC.guard.bad.length);
+                randomThing = getRandomInt(svNPC.guard.bad.length - 1);
                 part.innerText = svNPC.guard.bad[randomThing];
                 break;
         }
+
+        console.log("Part Value: " + part.value);
+        console.log("Part Text: " + part.innerText);
     });
 
     document.getElementById('npc-buttons').classList.remove("hidden");
@@ -444,6 +448,8 @@ function ranSV() {
 }
 
 function ranDia() {
+    console.log("RANDIA() RAN")
+        ;
     let buttons = document.querySelectorAll("#npc-buttons button");
 
     //If it's not allys, then it grabs 1 from good, mid, bad obj for enemies and puts one of them on each button
@@ -1220,8 +1226,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             case "mid":
                 // Hides all dialogue, then reassigns a random dialogue option
-                curCheck();
-                ranDia();
+                if (student.mapLocation == "CART") {
+                    curCheck();
+                    ranDia();
+                }
+                else {
+                    curCheck();
+                    ranSV();
+                }
 
                 break;
 
