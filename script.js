@@ -663,6 +663,7 @@ function pickUp() {
             addItem("inspoValue");
             ItemMap.CART[student.locationY][student.locationX] = 0;
             console.log("Inspo Location");
+            setText('You were Inspired!');
             checkItems();
             document.getElementById("home-image").innerHTML = `<img src='InspoImages/${inspoImg[inspoImg.length - 1]}.png' alt="One of the portraits needed for Slowversal!">`;
             inspoImg.pop();
