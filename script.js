@@ -221,8 +221,6 @@ function displayInv() {
         document.getElementById(elements[i].parentElement.id).classList.add("hidden");
         if (elements[i].children[0].innerText > 0) {
             // Iterates thru items, if the item in player inv is < 0, then it unhides.
-            // Will have to somehow reference the items in the array to the items in the HTML
-
             document.getElementById(elements[i].parentElement.id).classList.remove("hidden");
         }
     }
@@ -231,14 +229,13 @@ function displayInv() {
 }
 
 function displayMap() {
-    // Functionality
     switch (student.mapLocation) {
 
         case "CART":
             document.getElementById("map").innerHTML = `<img src="mapImages/cart.png" alt="A map of CART"></img>`;
             break;
 
-        case "Vista":
+        case "SV":
             document.getElementById("map").innerHTML = `<img src="mapImages/sierra.png" alt="A map of CART"></img>`;
             break;
 
@@ -251,7 +248,6 @@ function displayMap() {
 }
 
 function isHidden(elementID) {
-    // console.log(document.getElementById(elementID).classList.contains("hidden"));
     return document.getElementById(elementID).classList.contains("hidden");
 
 }
@@ -268,19 +264,16 @@ function checkHidden(input) {
             if (isHidden("inventory") && isHidden("map")) { //open map, both are closed
                 hidePage("map");
                 toggleElements();
-                // console.log(isHidden("inventory") && isHidden("map"));
             }
 
             else if (isHidden("inventory")) { //closing map
                 hidePage("map");
                 toggleElements();
-                // console.log(isHidden("inventory"));
             }
 
             else if (!isHidden("inventory")) { //opening map if inv is open
                 hidePage("map");
                 hidePage("inventory");
-                // console.log(!isHidden("inventory"));
             }
             break;
 
@@ -333,18 +326,11 @@ function npcFunct(input = null) {
             console.log("Allen Spawned");
             document.getElementById("home-image").innerHTML = `<img src='TeacherImages/allen.png' alt="Ms. Allen">`;
 
-            if (student.mapLocation == "CART") {
-                setText("Are you tagging along on our field trip?");
+            setText("Are you tagging along on our field trip?");
 
-
-                document.getElementById("allenTalkCART").classList.remove("hidden");
-                document.getElementById("staticTalk").classList.remove("hidden");
-                document.getElementById("outsideGal").classList.toggle("hidden");
-            }
-            else {
-                // SV Allen
-                setText("We're leaving, are you ready to go?");
-            }
+            document.getElementById("allenTalkCART").classList.remove("hidden");
+            document.getElementById("staticTalk").classList.remove("hidden");
+            document.getElementById("outsideGal").classList.toggle("hidden");
 
             break;
 
