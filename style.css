@@ -235,6 +235,7 @@ button:hover {
     overflow-y: scroll;
     width: 97%;
     padding: .3em;
+    font-weight: 300;
 }
 
 /* .text-container::-webkit-scrollbar {
@@ -422,23 +423,23 @@ button:hover {
 /* SV */
 /* Indoors */
 .indoorEntry {
-    background-image: url(BackgroundImages/SV_mall_hallway.jpg);
+    background-image: url(BackgroundImages/SV_mall_hallway.png);
 }
 
 .gamestopEntry {
-    background-image: url(BackgroundImages/SV_gamestop.jpg);
+    background-image: url(BackgroundImages/SV_gamestop.png);
 }
 
 .gamestop {
-    background-image: url(BackgroundImages/SV_gamestop_inside.jpg);
+    background-image: url(BackgroundImages/SV_gamestop_inside.png);
 }
 
 .evolutionEntry {
-    background-image: url(BackgroundImages/SV_evolution.jpg);
+    background-image: url(BackgroundImages/SV_evolution.png);
 }
 
 .evolution {
-    background-image: url(BackgroundImages/SV_evolution_inside.jpg);
+    background-image: url(BackgroundImages/SV_evolution_inside.png);
 }
 
 .outsideGal {
@@ -461,10 +462,6 @@ button:hover {
 
 .blartPoster {
     background-image: url(BackgroundImages/blart-mall.png);
-}
-
-.doomPoster {
-    background-image: url(BackgroundImages/doom-mall.png);
 }
 
 .minecraftPoster {
