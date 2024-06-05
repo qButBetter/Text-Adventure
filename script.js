@@ -174,7 +174,7 @@ var Map = {
         ["e1"], ["g"], ["j"], [0], ["m"], [0],
         ["n100"], ["h"], [0], [0], ["h2"], [0],
         ["n101"], ["h"], [0], [0], ["e4"], ["h2"],
-        [0], ["h"], [0], ["h2"],      ["t"], ["h2"],
+        [0], ["h"], [0], ["h2"], ["t"], ["h2"],
         ["n104"], ["h"], ["b2"], [0], ["t"], [0],
         ["n105"], ["h"], ["n110"], [0], ["h4"], ["h4"],
         ["n107"], ["e3"], [0], [0], [0], [0],
@@ -184,7 +184,7 @@ var Map = {
 var ItemMap = {
     CART: [
         [0, "i", 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, "i3"],
+        [0, 0, 0, "i3", 0, 0],
         ["i2", "i", "i2", "i3", 0, 0],
         ["i2", "p", 0, 0, 0, "i3"],
         ["i", "i", 0, 0, "x", 0],
@@ -475,7 +475,6 @@ function ranSV() {
         part.value = arrVal[i];
         console.log(part.value);
         i++;
-        // Add money here
     });
 
     buttons.forEach(part => {
@@ -505,7 +504,6 @@ function ranSV() {
     document.getElementById('npc-buttons').classList.remove("hidden");
     document.getElementById("button-container").classList.add("hidden");
     document.getElementById("NPCtalk").classList.remove("hidden");
-
     document.getElementById("locIcon").classList.add("hidden");
     document.getElementById("backIcon").classList.add("hidden");
 }
@@ -521,14 +519,12 @@ function ranDia() {
 
         // Shuffle values
         arrVal = shuffle();
-        // console.log("Shuffled to: ", arrVal);
 
         let i = 0;
         buttons.forEach(part => {
             part.value = arrVal[i];
             console.log(part.value);
             i++;
-            // Add money here
         });
 
         buttons.forEach(part => {
@@ -554,7 +550,6 @@ function ranDia() {
                     break;
             }
         });
-
     }
     else {
         // Makes all buttons good if ally encounter and add money
@@ -563,18 +558,15 @@ function ranDia() {
         buttons.forEach(part => {
             part.innerText = "Ok?";
             part.value = "win";
-            // Add money here
         });
     }
 
     document.getElementById('npc-buttons').classList.remove("hidden");
     document.getElementById("button-container").classList.add("hidden");
     document.getElementById("NPCtalk").classList.remove("hidden");
-
     document.getElementById("locIcon").classList.add("hidden");
     document.getElementById("backIcon").classList.add("hidden");
 }
-
 
 function endImg() {
     let ranUs = getRandomInt(9);
@@ -591,7 +583,6 @@ function endImg() {
         document.getElementById("endImgCont").innerHTML = `<img class="endImg" src="Images/icDead.png" alt="Game Over Screen">`;
     }
 }
-
 
 function endDisplay() {
     let ranNum = getRandomInt(3);
@@ -638,8 +629,6 @@ function removeBg(input) {
 }
 
 // DEBUG FUNCTION SECTION 
-
-
 function addItem(id, num = 1) {
     let counter = parseInt(document.getElementById(id).innerText);
 
@@ -691,13 +680,11 @@ function insertImage(name) {
 function removeImg() {
     document.getElementById("home-image").innerHTML = "";
 }
-
-
-//END DEBUG SECTION
+// END DEBUG SECTION
 
 let arsonImg = ["bucket", "gasTank", "styrofoam"];
 let paperImg = ["fastArt1", "fastArt2", "fastArt3", "fastArt4", "fastArt5", "fastArt6"];
-let inspoImg = ["doomPost", "finSix", "mallCop", "minMov", "pokePost"];
+let inspoImg = ["doomPost", "finTZ", "mallCop", "minMov", "pokePost"];
 
 // Picking up functions
 function pickUp() {
@@ -751,20 +738,16 @@ function pickUp() {
 }
 
 function checkItems() {
-
     // Checks paper value
     if (student.inventory[0] >= 5) {
-        // Display a given ending
         endingScreen("paper");
     }
     // Then checks arson value
     else if (student.inventory[1] >= 3) {
-        // Display a given ending
         endingScreen("arson");
     }
     // Then checks inspo value
     else if (student.inventory[2] >= 5) {
-        // Display a given ending
         endingScreen("inspo");
     }
     else if (student.inventory[3] >= 1) {
@@ -782,26 +765,22 @@ function endingScreen(input) {
 
     switch (input) {
         case "paper":
-            // G
             hidePage("ending1");
             break;
 
         case "arson":
-            // G
             hidePage("ending2");
             break;
 
         case "inspo":
-            // G
+            hidePage("ending6")
             break;
 
         case "pickle":
-            // G
             hidePage("ending3");
             break;
 
         case "dead":
-            // G
             endDisplay();
             hidePage("ending4");
             break;
@@ -826,10 +805,6 @@ var student = new Player();
 // After start button is pressed
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("start-btn").addEventListener("click", function () {
-        // let nameInput = prompt("What's your name?");
-        // student.name = nameInput;
-        // student.updatePlayer();
-
         hidePage("load-page");
         hidePage("home-page");
         document.getElementById("name-container").innerText = student.name;
@@ -845,8 +820,6 @@ document.addEventListener("DOMContentLoaded", function () {
             case "stairs":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("atStairs").classList.toggle("hidden");
-                // document.getElementById("atGallery").classList.remove("current");
-                // document.getElementById("atStairs").classList.add("current");
                 setBackground("stairs");
                 removeBg('galleryEntry');
                 setText("You're at the stairs.");
@@ -859,8 +832,6 @@ document.addEventListener("DOMContentLoaded", function () {
             case "janitor":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("atJanitor").classList.toggle("hidden");
-                // document.getElementById("atGallery").classList.remove("current");
-                // document.getElementById("atJanitor").classList.add("current");
                 setText("As you walk through the hall, you see an unfamiliar door ajar. Upon closer inspection, it seems to be the janitor's closet. The room is fairly small, but not too crowded. There are many shelves, stacked with supplies. Bigger cleaning tools, such as brooms and mops, are stored near the dimly lit back wall.");
                 setBackground('janitor')
                 removeBg('galleryEntry');
@@ -873,8 +844,6 @@ document.addEventListener("DOMContentLoaded", function () {
             case "outside":
                 document.getElementById("atGallery").classList.toggle("hidden");
                 document.getElementById("outsideGal").classList.toggle("hidden");
-                // document.getElementById("atGallery").classList.remove("current");
-                // document.getElementById("outsideGal").classList.add("current");
                 setText("You make your way outside from the exit of the Gallery. You see 2 big solar panels angled at the preferred degree. There's a couple wires hanging from the solar cells.");
                 removeBg("galleryEntry");
                 setBackground('outsideGal');
@@ -887,24 +856,20 @@ document.addEventListener("DOMContentLoaded", function () {
             case "hall":
                 if (!isHidden('atrium')) {
                     document.getElementById("atrium").classList.toggle("hidden");
-                    // document.getElementById("atrium").classList.remove("current");
                     removeBg('atrium');
                 }
                 else if (!isHidden('atGallery')) {
                     document.getElementById("atGallery").classList.toggle("hidden");
-                    // document.getElementById("atGallery").classList.remove("current");
                     removeBg("galleryEntry");
                 }
                 else if (!isHidden('inMultimedia')) {
                     document.getElementById("inMultimedia").classList.toggle("hidden");
-                    // document.getElementById("inMultimedia").classList.remove("current");
                     removeBg('multimedia');
                 }
                 document.getElementById("inHall").classList.toggle("hidden");
                 document.getElementById("inHall").classList.add("current");
                 setBackground('hall');
                 setText("You make your way to the hallway, there's nothing too special about it, other than the yellow walls and brown-ish carpet on the floor. Where would you like to go?");
-
                 student.locationX = 1;
                 student.locationY = 3;
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
@@ -914,17 +879,14 @@ document.addEventListener("DOMContentLoaded", function () {
             case "atrium":
                 if (!isHidden('inUX')) {
                     document.getElementById("inUX").classList.toggle("hidden");
-                    // document.getElementById("inUX").classList.remove("current");
                     removeBg('ux');
                 }
                 else if (!isHidden('inWeb')) {
                     document.getElementById("inWeb").classList.toggle("hidden");
-                    // document.getElementById("inWeb").classList.remove("current");
                     removeBg('web');
                 }
                 else if (!isHidden('inEnglish')) {
                     document.getElementById("inEnglish").classList.toggle("hidden");
-                    // document.getElementById("inEnglish").classList.remove("current");
                     removeBg('english');
                 }
                 else if (!isHidden('inHall')) {
@@ -932,7 +894,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     removeBg('hall');
                 }
                 document.getElementById("atrium").classList.toggle("hidden");
-                // document.getElementById("atrium").classList.add("current");
                 setText("You're in the atrium connecting UX, English, Web, and the Gallery. Where would you like to go?");
                 setBackground('atrium');
                 student.locationX = 1;
@@ -944,26 +905,21 @@ document.addEventListener("DOMContentLoaded", function () {
             case "gallery":
                 if (!isHidden('inHall')) {
                     document.getElementById("inHall").classList.toggle("hidden");
-                    // document.getElementById("inHall").classList.remove("current");
                     removeBg('hall');
                 }
                 else if (!isHidden('atStairs')) {
                     document.getElementById("atStairs").classList.toggle("hidden");
-                    // document.getElementById("atStairs").classList.remove("current");
                     removeBg('stairs');
                 }
                 else if (!isHidden('atJanitor')) {
                     document.getElementById("atJanitor").classList.toggle("hidden");
-                    // document.getElementById("atJanitor").classList.remove("current");
                     removeBg('janitor');
                 }
                 else if (!isHidden('outsideGal')) {
                     document.getElementById("outsideGal").classList.toggle("hidden");
                     removeBg('outsideGal');
-                    // document.getElementById("current").classList.remove("current");
                 }
                 document.getElementById("atGallery").classList.toggle("hidden");
-                // document.getElementById("gallery").classList.add("current");
                 setText("The gallery is now in your view. It's a very large, open space to compensate for the large amounts of students during their breaks throughout the day. A group of six people sit at one of the tables, playing a very violent Uno game. There's tables everywhere, some with tabletop games on them. Closer to the exit, there's an abundance of vending machines and appliances. There seems to be something flimsy inside one of the vending machines.");
                 setBackground("galleryEntry");
                 student.locationX = 1;
@@ -975,8 +931,6 @@ document.addEventListener("DOMContentLoaded", function () {
             case "multimedia":
                 document.getElementById("inHall").classList.toggle("hidden");
                 document.getElementById("inMultimedia").classList.toggle("hidden");
-                // document.getElementById("inHall").classList.remove("current");
-                // document.getElementById("inMultimedia").classList.add("current");
                 removeBg('hall');
                 setBackground('multimedia');
                 setText("You walk into a big room, all filled with dispersed tables. On the wall, there's old short-film posters. It's a lot more colorful than most of the other labs at CART. From what you see, there's definitely more people in this lab than Tech Lab ever will.");
@@ -988,18 +942,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             case "ux":
                 if (!isHidden('inWeb')) {
-
                     document.getElementById("inWeb").classList.toggle("hidden");
-                    // document.getElementById("inWeb").classList.remove("current");
                     removeBg('web');
                 }
                 else if (!isHidden('atrium')) {
                     document.getElementById("atrium").classList.toggle("hidden");
-                    // document.getElementById("atrium").classList.remove("current");
                     removeBg('atrium');
                 }
                 document.getElementById("inUX").classList.toggle("hidden");
-                // document.getElementById("inUX").classList.add("current");
                 setBackground('ux');
                 setText("You trek your way to the User Experience Lab, or UX for short. It's the middle child of the Tech Lab, in terms of space in the room. The room is a lot brighter and more colorful than Web Applications. The overall vibe is a lot more lively than the other Tech Labs. At the back of the classroom, there's a phone holder with numbers for every student. The tables have the occasional bouncy-ball or seat different from a chair.");
                 student.locationX = 0;
@@ -1010,17 +960,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             case "web":
                 if (!isHidden('inUX')) {
-                    // document.getElementById("inUX").classList.remove("current");
                     document.getElementById("inUX").classList.toggle("hidden");
                     removeBg('ux');
                 }
                 else if (!isHidden('atrium')) {
-                    // document.getElementById("atrium").classList.remove("current");
                     document.getElementById("atrium").classList.toggle("hidden");
                     removeBg('atrium');
                 }
                 document.getElementById("inWeb").classList.toggle("hidden");
-                // document.getElementById("inWeb").classList.add("current");
                 setText("You walk into Web Applications. The room is very gray and dull, along with the dimly lit lights. There are 3 long tables with computers for every workstation, along with chairs and monitors. A poster on the far wall says “Tech Lab'' with 80's video game memorabilia. Web Application's room number reads N107.");
                 setBackground('web');
                 student.locationX = 0;
@@ -1032,8 +979,6 @@ document.addEventListener("DOMContentLoaded", function () {
             case "eng":
                 document.getElementById("atrium").classList.toggle("hidden");
                 document.getElementById("inEnglish").classList.toggle("hidden");
-                // document.getElementById("atrium").classList.remove("current");
-                // document.getElementById("inEnglish").classList.add("current");
                 removeBg('atrium');
                 setBackground('english');
                 setText("You trudge your way into N110, the English classroom for the Tech Labs. The tables are oriented to be in the middle, and the edges of the classroom. The tables use the same chairs as Web Applications, but they have different tables. On one wall, there's a Jurassic Park poster, and on the other there's a Ready Player One poster. A DC lineup canvas of the Flash, Batman, Superman, and Wonder Woman swings from one of the walls precariously, looking like it's about to fall.");
@@ -1044,7 +989,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 break;
 
             case "pickup":
-
                 pickUp();
                 console.log("Picked up Item");
                 e.target.classList.add("hidden");
@@ -1057,21 +1001,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText("You walk into Web Applications. The room is very gray and dull, along with the dimly lit lights. There are 3 long tables with computers for every workstation, along with chairs and monitors. A poster on the far wall says “Tech Lab'' with 80's video game memorabilia. Web Application's room number reads N105.");
                 student.locationX = 0;
                 student.locationY = 8;
-
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
                 setImg();
 
                 // Stop npcFunct() from running
                 return ("");
 
-
             // SV movement
-
             case "outside2":
                 document.getElementById("atVistaEnt").classList.toggle("hidden");
                 document.getElementById("outsideGal").classList.toggle("hidden");
-                // document.getElementById("atGallery").classList.remove("current");
-                // document.getElementById("outsideGal").classList.add("current");
                 setText("You make your way outside from the exit of the Gallery. You see 2 big solar panels angled at the preferred degree. There's a couple wires hanging from the solar cells.");
                 removeBg("outdoorEntry");
                 setBackground('outsideGal');
@@ -1099,6 +1038,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 setText(`You walk into the Sierra Vista Movie Theater. It is mostly open in the lobby, with a weird mix of 2000’s arcade carpet, and modern architecture. There’s a large section for Concessions and Snacks, with an equally long line of people waiting.`);
                 removeBg('outdoorEntry');
                 setBackground('theaterEntry');
+                student.locationX = 4;
+                student.locationY = 5;
                 setImg();
                 break;
 
@@ -1117,6 +1058,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("atVistaEnt").classList.toggle("hidden");
                 setBackground("outdoorEntry");
                 setText(`Sierra Vista is a big, open mall with a couple seats every now and again. The air smells vaguely like Hot Dog On a Stick, a corndog restaurant. All the buildings are filled to the brim with somewhat miscellaneous stores and mid-tier food joints. You also see a large building labeled “Sierra Vista Cinema 16” with a couple movie posters along it. There’s an inside section with more stores.`);
+                student.locationX = 4;
+                student.locationY = 4;
                 setImg();
                 break;
 
@@ -1133,6 +1076,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("theatreRight").classList.toggle("hidden");
                 setBackground("minecraftPoster");
                 setText("The Minecraft movie will be in theatres soon? You can't believe it. It felt like that movie was announced yesterday.");
+                student.locationX = 3;
+                student.locationY = 5;
                 setImg();
                 break;
 
@@ -1149,6 +1094,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("theatreLeft").classList.toggle("hidden");
                 setBackground("blartPoster");
                 setText("Wow! Looks like cult classic 'Mall Cop' is re-airing.");
+                student.locationX = 5;
+                student.locationY = 5;
                 setImg();
                 break;
 
@@ -1168,6 +1115,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("insideSV").classList.toggle("hidden");
                 setBackground('indoorEntry');
                 setText(`You make your way to the inside section of Sierra Vista Mall. You can feel the frigid air of GameStop emanating through the place. A lot of the spaces are vacant in the middle of the building. Farther down, there's a trading card store called Evolution Gaming and Collectibles.`)
+                student.locationX = 4;
+                student.locationY = 3;
                 setImg();
                 break;
 
@@ -1177,6 +1126,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("insideGamestop").classList.toggle("hidden");
                 setBackground('gamestop');
                 setText('GameStop is as icey as ever. Its walls are lined with bunches of mediocre games. The new release section was all that ever had anything good on it anyways, unless you felt like playing Sheep Decimator 3 or whatever was getting released nowadays.');
+                student.locationX = 5;
+                student.locationY = 3;
                 setImg();
                 break;
 
@@ -1192,6 +1143,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("outsideEvolution").classList.toggle("hidden");
                 setBackground('evolutionEntry');
                 setText('You walk into Evolution Gaming and Collectibles. The first thing you notice are the bright lights. There are tables on the right when you first walk in, probably for game nights when people play TCG titles like Pokemon and Magic the Gathering. The rest of the store is allocated to housing Pop! figures, rare cards, and resources for TCG games.');
+                student.locationX = 3;
+                student.locationY = 2;
                 setImg();
                 break;
 
@@ -1201,14 +1154,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("insideEvolution").classList.toggle("hidden");
                 setBackground('evolution');
                 setText('shiva');
+                student.locationX = 3;
+                student.locationY = 1;
                 setImg();
                 break;
 
             default:
                 return ("");
         }
-
-
 
         let ranNum = getRandomInt(7);
         if (ranNum == 0) {
@@ -1234,7 +1187,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.mapLocation = "SV";
                 removeBg('outsideGal');
                 setBackground('outdoorEntry');
-                setText("You at SV Entrance die die die die die die die die die die");
+                setText("SIERRA VISTA IS A BIG, OPEN MALL WITH A COUPLE SEATS EVERY NOW AND AGAIN. THE AIR SMELLS VAGUELY LIKE HOT DOG ON A STICK, A CORNDOG RESTAURANT. ALL THE BUILDINGS ARE FILLED TO THE BRIM WITH SOMEWHAT MISCELLANEOUS STORES AND MID-TIER FOOD JOINTS. YOU ALSO SEE A LARGE BUILDING LABELED “SIERRA VISTA CINEMA 16” WITH A COUPLE MOVIE POSTERS ALONG IT. THERE’S AN INSIDE SECTION WITH MORE STORES.");
                 student.locationX = 4;
                 student.locationY = 4;
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
