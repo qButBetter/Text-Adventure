@@ -1020,7 +1020,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById("theatreRight").classList.toggle("hidden");
                 setBackground("minecraftPoster");
-                setText("The Minecraft movie will be in theatres soon? You can't believe it. It felt like that movie was announced yesterday.");
+                setText("A long stretch of posters reaches out to your right.  A couple game posters are also hung up; it seems like GameStop and the cinema are helping each other to advertise.");
                 student.locationX = 3;
                 student.locationY = 5;
                 setImg();
@@ -1038,7 +1038,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById("theatreLeft").classList.toggle("hidden");
                 setBackground("blartPoster");
-                setText("Wow! Looks like cult classic 'Mall Cop' is re-airing.");
+                setText("A long stretch of posters reaches out to your left.  A couple game posters are also hung up; it seems like GameStop and the cinema are helping each other to advertise.");
                 student.locationX = 5;
                 student.locationY = 5;
                 setImg();
@@ -1070,7 +1070,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeBg('indoorEntry');
                 document.getElementById("insideGamestop").classList.toggle("hidden");
                 setBackground('gamestop');
-                setText('GameStop is as icey as ever. Its walls are lined with bunches of mediocre games. The new release section was all that ever had anything good on it anyways, unless you felt like playing Sheep Decimator 3 or whatever was getting released nowadays.');
+                setText('GameStop is as icey as ever. Its walls are lined with bunches of mediocre games. The new release section was all that ever had anything good on it anyways, unless you felt like playing Sheep Decimator 3 or whatever was getting released nowadays. A couple movie posters are also hung up; it seems like GameStop and the cinema are helping each other to advertise.');
                 student.locationX = 5;
                 student.locationY = 3;
                 setImg();
@@ -1087,7 +1087,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById("outsideEvolution").classList.toggle("hidden");
                 setBackground('evolutionEntry');
-                setText('You walk into Evolution Gaming and Collectibles. The first thing you notice are the bright lights. There are tables on the right when you first walk in, probably for game nights when people play TCG titles like Pokemon and Magic the Gathering. The rest of the store is allocated to housing Pop! figures, rare cards, and resources for TCG games.');
+                setText('');
                 student.locationX = 3;
                 student.locationY = 2;
                 setImg();
@@ -1098,7 +1098,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeBg('evolutionEntry');
                 document.getElementById("insideEvolution").classList.toggle("hidden");
                 setBackground('evolution');
-                setText('shiva');
+                setText('You walk into Evolution Gaming and Collectibles. The first thing you notice are the bright lights. There are tables on the right when you first walk in, probably for game nights when people play TCG titles like Pokemon and Magic the Gathering. The rest of the store is allocated to housing Pop! figures, rare cards, and resources for TCG games. You actually found your prize Cresselia card in this shop just a couple weeks ago, unmonitored, on a counter.....');
                 student.locationX = 3;
                 student.locationY = 1;
                 setImg();
