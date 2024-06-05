@@ -1077,7 +1077,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 document.getElementById("outsideEvolution").classList.toggle("hidden");
                 setBackground('evolutionEntry');
-                setText('');
+                setText('Two massive windows peer into the inside of Evolution. You can clearly see many people playing tabletop games or browsing. A poster is plastered onto the glass.');
                 student.locationX = 3;
                 student.locationY = 2;
                 setImg();
