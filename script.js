@@ -1239,7 +1239,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 student.mapLocation = "SV";
                 removeBg('outsideGal');
                 setBackground('outdoorEntry');
-                setText("You at SV Entrance die die die die die die die die die die");
+                setText("Sierra Vista is a big, open mall with a couple seats every now and again. The air smells vaguely like Hot Dog On a Stick, a corndog restaurant. All the buildings are filled to the brim with somewhat miscellaneous stores and mid-tier food joints. You also see a large building labeled “Sierra Vista Cinema 16” with a couple movie posters along it. There’s an inside section with more stores.");
                 student.locationX = 3;
                 student.locationY = 4;
                 console.log("[" + student.locationX + ", " + student.locationY + "]");
