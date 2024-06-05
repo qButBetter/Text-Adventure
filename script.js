@@ -58,8 +58,6 @@ var NPC = {
         good: ["Isn't crypto cool?", "Bitcoin is up by 0.1%.", "I only invest in crypto.", "Do you know Edwin Reyes?", "Is Wolf of WallStreet Good?"],
         mid: ["Leave me alone.", "I'm busy.", "(Silence).", "OK."],
         bad: ["How's your stocks?", "Tesla went bankrupt.", "You're obsessed with being rich.", "Doge is the only true currency.", "(Money Spread)", "Band for Band rn.", "You sucked at showcase."],
-        atk: [1],
-        drop: [1],
     },
 
     law: {
@@ -76,18 +74,13 @@ var NPC = {
         good: ["I love George Washington!", "Law is so underappreciated!", "Trump 2024.", "Pride and Prejudice best book ever, real?", "I hate myself."],
         mid: ["OK.", "I'm right wing.", "Heck yeah America!", "I love your tie!", "Leave me alone.", "(Silence)."],
         bad: ["I'm busy right now.", "I rewatched Top Gun recently.", "I watch Judge Judy.", "Hamilton mid.", "I heart Martin Van Buuren.", "Biden 2024.", "I'm a communist."],
-        atk: [1],
-        drop: [1],
     },
 
     multimedia: {
         dialogue: ["Quick, take my survey! If I don't look busy Mr. Love will drop me from the class!", "WATCH MY SHORT FILM NOW.", "FOLLOW MY SHORT FILM'S INSTAGRAM PLEASE PLEASE PLEASE PLEASE PLE-", "Graphic design is my passion.", "Ever heard of Adobe photoshop?", "You're a web kid?? I hate you guys! I won't remember beating you by dinner.", "You're scared of failing your web class? Typical. Not even worth my time.", "Will you join me in this dance?", "Don't worry. This'll only hurt A LOT.", "This is gonna be fun!", "You best kneel before this gets ugly.", "First we crack the shell, then we crack the nuts inside!", "Finally! An opponent! Can't wait to tell Mr. Love about this!", "Multimedia is my passion."],
-
         good: ["Your boom mic's broken.", "I already follow your film insta.", "I can't draw a stickman.", "How's the potluck?", "TAWOG peak character design.", "Do you like spiderman?"],
         mid: ["I did theatre.", "MM is easy, right?", "(silence)", "New MHA episode drop?", "FireAlpaca W", "I drew a full piece using magma"],
         bad: ["Graphic design is mid", "Can you draw me?", "Digital art isn't real art.", "Green fn.", "Go animate or something.", "Go away painter boy."],
-        atk: [1],
-        drop: [1],
     },
 
     images: ["StudentImages/peyton.png", "StudentImages/carl.png", "StudentImages/sharon.png", "StudentImages/wpm.png", "StudentImages/an.png", "StudentImages/ryan.png", "StudentImages/miles.png", "StudentImages/dylan.png"],
@@ -97,12 +90,9 @@ var NPC = {
 var svNPC = {
     guard: {
         dialogue: ["Where do you think you're going?", "Lemme see some ID.", "Area's off limits.", "I can't wait to be paid tomorrow.", "Have you seen a person with a lot of makeup on?", "What are you even doing?", "Have you tried that new corndog place yet?", "Finally, I get to use my baton."],
-
         good: ["Sir, I'm not concealed carrying.", "Chimpken Shacc.", "I like Panera Bread"],
         mid: ["Where's the bathroom?", "When's Santa coming?", "Do you want some Monster Energy."],
         bad: ["Garbage men get paid more than you.", "They should put a Nike store here.", "IS THAT PAUL BLART?!"],
-        atk: [1],
-        drop: [1],
         images: ["svImages/guardOne", "svImages/guardTwo", "svImages/guardThree"],
     },
 }
@@ -123,28 +113,7 @@ var staticNPC = {
         drop: [1],
         images: ["StudentImages/icaga.png"],
     },
-
-    lady: {
-        dialogue: [],
-        reply: [],
-        atk: [1],
-        drop: [1],
-        images: ["svImages/lady.png"],
-    }
 }
-
-var Story = {
-    // Endings
-    arson: ["Mr. Slow went down quickly, in stark contrast to his new name. As the sun slowly sets on the day, you breathe a sigh of relief, and get a Baconator from Wendy's. You still go to school the next day. When you come in, a substitute teacher waits for you, along with a new assignment. The assignment's name? “Text Adventure Project”.",],
-    inspo: ["Your great adventures through Sierra Vista Mall proved fruitful. You sit back down into your chair, rejuvenated, ready to write the ultimate function:  One which would create your entire project for you as soon as the browser booted.", "(you copy down notes of code to write a while true loop)", "You look at your Javascript creation, feeling fulfilled, knowing this majesty will negate the Super F- with its holy Github power. Anticipation peaks as you right click your empty HTML file and see the Liveserver extension appear in the options.",],
-    slowversal: ["After all of your efforts, you've finally reached the final hurdle to reversing Mr. Fast's overPower(school)ed transformation. Page by page, you piece his old self onto the wall.", "With the last page comes a blinding flash of light. Mr. Fast turns to you in a daze.", "He laughs at your response, which you delivered in a manner true to what he would provide you in the same case. Then he steps over to the computer, adjusting something on the screen.", "On your computer screen, the google classroom due changes to Monday. Not the most time, but time enough. With a sigh of relief, you collapse into your chair. It's over."],
-    steedle: [],
-    icaraga: [],
-};
-
-var Descriptions = {
-    // Descriptions for all rooms
-};
 
 var GameOver = {
     endingOne: ["The Wrath of Idleness Unleashed!", "In the hallowed halls of the Center for Advanced Research and Technology (CART), your loitering transgression has triggered a cataclysm of cosmic proportions! The fabric of reality itself quivers as the furies of idleness descend upon us, rending the very essence of innovation and progress. The heavens weep, and the earth trembles as the curse of idleness consumes all hope of enlightenment."],
@@ -156,16 +125,7 @@ var GameOver = {
 
 var Cutscene = {
     beginning: ["It's an early morning, and CART seems more dreary than ever. The sad, advil-like tones of Web Applications slowly fill your vision as you approach the sign in the computer.", "Everyone seems to be on edge; the air is tense and the keyboards are violently clacking beneath the fingers of every web student in the room.", "Sitting right in front of you is yesterday's assignment. 20 page website, with a prototype, competitive audit and all, which was due in a couple months. Now, it's due in 5 minutes.", "Despite everyone's panic, the due date does not change. Most everyone rushes to finish, but only manages to get down one function, which produces an undefined return.", "Right on cue at 7:45, Mr. Fast exclaims his frustration.", "With his calm demeanor overtaken by rage, Mr. (he wants it done) Fast starts grading furiously to get the horrible scores into the gradebook. He yells as he grades, which causes a sonic-like boom in the classroom, scattering his portraits across the CART space-time continuum. His rage—fuelled by the terrible, but legendary, Powerschool—slowly took a hold of him. The rare instances of his transformations had been rumored about by current Web students, overheard from the whispers of Web students long, long ago. He had transformed into what the e-folktales deemed as the horrible, dreadful… Mr. Slow.", "Mr. Slow utilizes his newfound abilities, granted by the PowerSchool grading system, to plague the classroom and give all the cowering students still in his sight a “SUPER F-”.", "This is even worse than the Budget Calculator; or the Dino Dossier!", "I need to get out of here! UX shares a wall, he'd probably still get me there! I need to get help! I know! I'll go to IGD", "IGD, filled with former Web students, seems to be standing on edge. A student sees your panic as you rush in and approaches you.", "'Do not grieve, wise warrior! It is better for each man that he avenge his friend than to mourn him much'. We can fix this for everyone; it's in the legend. Did you see all of his portraits get scattered during that blast? I think those are the key to turning him back into Mr. Fast. That boom was massive… I bet those papers could've gone virtually anywhere inside of CART. This one fell on my desk a few minutes ago, while I was designing a FNAF game with Beowulf characters. The only issue is, you'd probably have to sneak past him to get them back on the wall. He's definitely not safe to talk to right now. Maybe you should just do the failsafe thing and try to finish the project even though it's past due. Good luck, soldier.", "Thank you so much. Good luck with your FNAG game. I'll try to figure this out."],
-    allen: ["Hey there! What are you doing out here?", "We're going to Sierra Vista Mall for a final field trip."],
-    fast: ["What happened?", "I don't remember that.", "Since you're all so behind, I'll give you the weekend to finish."],
 };
-
-var Summary = {
-    encounters: null,
-    deafeats: null,
-    ending: null,
-    money: null,
-}
 
 var Map = {
     CART: [
