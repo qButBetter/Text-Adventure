@@ -468,7 +468,6 @@ function ranSV() {
 
     // Shuffle values
     arrVal = shuffle();
-    // console.log("Shuffled to: ", arrVal);
 
     let i = 0;
     buttons.forEach(part => {
@@ -773,7 +772,7 @@ function endingScreen(input) {
             break;
 
         case "inspo":
-            hidePage("ending6")
+            hidePage("ending6");
             break;
 
         case "pickle":
